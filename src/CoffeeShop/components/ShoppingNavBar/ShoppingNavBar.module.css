@@ -1,0 +1,46 @@
+.navBar{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0px;
+    color: red;
+    background: #c98d57;
+}
+
+.CartButton{
+    display: inline;
+    margin-left: 90%;
+}
+
+.Cart{
+    color: #374f2f;
+}
+
+@media(max-width: 960px){
+    .CartButton{
+        display: inline;
+        margin-left: 80%;
+    }
+}
+
+@media(max-width: 600px){
+    .CartButton{
+        display: inline;
+        margin-left: 75%;
+    }
+}
+
+@media(max-width: 400px){
+    .CartButton{
+        display: inline;
+        margin-left: 67%;
+    }
+}
+
+
+@media(max-width: 320px){
+    .CartButton{
+        display: inline;
+        margin-left: 60%;
+    }
+}
