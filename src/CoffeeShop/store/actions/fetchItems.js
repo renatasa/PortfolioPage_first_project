@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import axios from 'axios';
 
 export const fetchItemsStart=()=>{
     return{
@@ -6,9 +7,10 @@ export const fetchItemsStart=()=>{
     }
 }
 
-export const fetchItemsSuccess=()=>{
+export const fetchItemsSuccess=(items)=>{
     return{
-        type: actionTypes.FETCH_ITEMS_SUCCESS
+        type: actionTypes.FETCH_ITEMS_SUCCESS,
+        items: items
 
     }
 }
@@ -30,6 +32,20 @@ export const testAction=(test)=>{
 
 export const fetchItems=()=>{
     return dispatch=>{
-
+        let fetchedItems=null;
+       // this.setState({loading: true});
+        axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
+            .then(response=>{
+                // fetchedItems= response.data.items;
+                // let item = [];
+                // for (let i=0; i<fetchedItems.length; i++){
+                //     console.log('this is for loop fetchedItems i name ', fetchedItems[i].name);
+                //      item[i] = fetchedItems[i];
+                //      console.log(item[i].name);
+                // }
+                dispatch(fetchItemsSuccess(response.data.items));
+                // this.setState({items: item});
+               // this.setState({loading: false});
+            })
     }
 }

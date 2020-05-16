@@ -38,22 +38,23 @@ export class CoffeeShop extends Component {
         console.log(this.props.testVar);
         this.props.onTest();
         console.log(this.props.testVar);
+        this.props.onFetchItems();
+        console.log(this.props.items);
         let fetchedItems=null;
-        this.setState({loading: true});
-        axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
-            .then(response=>{
-                fetchedItems= response.data.items;
-                for (let i=0; i<fetchedItems.length; i++){
-                    console.log('this is for loop fetchedItems i name ', fetchedItems[i].name);
-                    let item = [...this.state.items];
-                   //let item=[];
-                     item[i] = fetchedItems[i];
-                     console.log(item[i].name);
-                    this.setState({items: item});
-                }
-        
-                this.setState({loading: false});
-            })
+       // this.setState({loading: true});
+        // axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
+        //     .then(response=>{
+        //         fetchedItems= response.data.items;
+        //         //let item = [...this.state.items];
+        //         // let item=[];
+        //         // for (let i=0; i<fetchedItems.length; i++){
+        //         //     console.log('this is for loop fetchedItems i name ', fetchedItems[i].name);
+        //         //      item[i] = fetchedItems[i];
+        //         //      console.log(item[i].name);
+        //         // }
+        //         this.setState({items: response.data.items});
+        //         this.setState({loading: false});
+        //     })
     }
 
     addItem=(index)=>{
@@ -184,12 +185,12 @@ export class CoffeeShop extends Component {
 
     render() {
       console.log( this.props.testVar);
-      console.log('this is shopping items ',this.state.items)
+      console.log('this is shopping items ',this.props.items)
         let shoppingItems=[]; 
         if (this.state.loading || !this.state.items){
              shoppingItems=<Spinner/>; 
         }else{
-            shoppingItems=this.state.items.map((item, index)=>{
+            shoppingItems=this.props.items.map((item, index)=>{
                 return(<ShoppingItem
                 key={index}
                 name={item.name}
@@ -235,13 +236,15 @@ export class CoffeeShop extends Component {
 
 const mapStateToProps=state=>{
     return{
-        testVar: state.test1
+        testVar: state.test1,
+        items: state.items
     }
 }
 
 const mapDispatchToProps=dispatch=>{
     return{
-        onTest: ()=>dispatch(actions.testAction('this is test 1'))
+        onTest: ()=>dispatch(actions.testAction('this is test 1')), 
+        onFetchItems: ()=>dispatch(actions.fetchItems())
     }
 }
 
