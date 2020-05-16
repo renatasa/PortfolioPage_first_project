@@ -7,6 +7,8 @@ import axios from 'axios';
 import Modal from '../../components/Modal/Modal';
 import Spinner from '../../components/Spinner/Spinner'
 import axiosErrorHandling from '../../../hoc/AxiosErrorHandling/AxiosErrorHandling';
+import {connect} from 'react-redux';
+import * as actions from '../../store/actions/index';
 
 export class CoffeeShop extends Component {
     state={
@@ -33,6 +35,9 @@ export class CoffeeShop extends Component {
 
     componentDidMount(){
         console.log('this is componentDidMount');
+        console.log(this.props.testVar);
+        this.props.onTest();
+        console.log(this.props.testVar);
         let fetchedItems=null;
         this.setState({loading: true});
         axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
@@ -178,7 +183,7 @@ export class CoffeeShop extends Component {
     }
 
     render() {
-      //  console.log('this is state ', this.state);
+      console.log( this.props.testVar);
       console.log('this is shopping items ',this.state.items)
         let shoppingItems=[]; 
         if (this.state.loading || !this.state.items){
@@ -228,4 +233,16 @@ export class CoffeeShop extends Component {
     }
 }
 
-export default axiosErrorHandling(CoffeeShop, axios);
+const mapStateToProps=state=>{
+    return{
+        testVar: state.test1
+    }
+}
+
+const mapDispatchToProps=dispatch=>{
+    return{
+        onTest: ()=>dispatch(actions.testAction('this is test 1'))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(axiosErrorHandling(CoffeeShop, axios));

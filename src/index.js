@@ -7,10 +7,10 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './CoffeeShop/store/reducers/fetchItems';
+import fetchItemsReducer from './CoffeeShop/store/reducers/fetchItems';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store=createStore(reducer, composeEnhancers(
+const store=createStore(fetchItemsReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 

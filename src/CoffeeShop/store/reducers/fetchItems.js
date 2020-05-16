@@ -1,32 +1,44 @@
 import * as actionTypes from '../actions/actionTypes';
+import {updateObject} from '../utility';
 
 let initialState = {
+    items: [],
+    showShoppingSummary: false,
+    loading: false,
+    totalPrice: 0,
+    test1: 'test lala'
 
 }
 
-export const fetchItemsStart=()=>{
+const fetchItemsStart=()=>{
     return{
 
     }
 }
 
-export const fetchItemsSuccess=()=>{
+const fetchItemsSuccess=()=>{
     return{
         
     }
 }
 
-export const fetchItemsFail=()=>{
+const fetchItemsFail=()=>{
     return{
         
     }
 }
+
+const testReducer=(state, action)=>{
+    return updateObject(state, {test1:action.test})  
+}
+
 
 const reducer=(state=initialState, action)=>{
     switch(action.type){
         case actionTypes.FETCH_ORDERS_START: return fetchItemsStart(state, action);
         case actionTypes.FETCH_ORDERS_START: return fetchItemsSuccess(state, action);
         case actionTypes.FETCH_ORDERS_START: return fetchItemsFail(state, action);
+        case actionTypes.TEST1: return testReducer(state, action);
         default: return state;
     }
 }

@@ -1,3 +1,4 @@
 export {
-    fetchItems
+    fetchItems, 
+    testAction
 } from './fetchItems';

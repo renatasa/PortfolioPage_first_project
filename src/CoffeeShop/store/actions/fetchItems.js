@@ -20,6 +20,14 @@ export const fetchItemsFail=()=>{
     }
 }
 
+export const testAction=(test)=>{
+    return{
+        type:actionTypes.TEST1, 
+        test: test
+
+    }
+}
+
 export const fetchItems=()=>{
     return dispatch=>{
 
