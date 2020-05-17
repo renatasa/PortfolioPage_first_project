@@ -187,7 +187,7 @@ export class CoffeeShop extends Component {
       console.log( this.props.testVar);
       console.log('this is shopping items ',this.props.items)
         let shoppingItems=[]; 
-        if (this.state.loading || !this.state.items){
+        if (this.props.loading || !this.props.items){
              shoppingItems=<Spinner/>; 
         }else{
             shoppingItems=this.props.items.map((item, index)=>{
@@ -237,14 +237,17 @@ export class CoffeeShop extends Component {
 const mapStateToProps=state=>{
     return{
         testVar: state.test1,
-        items: state.items
+        items: state.items, 
+        loading: state.loading
     }
 }
 
 const mapDispatchToProps=dispatch=>{
     return{
         onTest: ()=>dispatch(actions.testAction('this is test 1')), 
-        onFetchItems: ()=>dispatch(actions.fetchItems())
+        onFetchItems: ()=>dispatch(actions.fetchItems()), 
+        onAddItem: ()=>dispatch(), 
+        onRemoveItem: ()=>dispatch()
     }
 }
 

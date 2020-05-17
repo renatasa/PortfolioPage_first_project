@@ -34,6 +34,7 @@ export const fetchItems=()=>{
     return dispatch=>{
         let fetchedItems=null;
        // this.setState({loading: true});
+       dispatch(fetchItemsStart());
         axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
             .then(response=>{
                 // fetchedItems= response.data.items;

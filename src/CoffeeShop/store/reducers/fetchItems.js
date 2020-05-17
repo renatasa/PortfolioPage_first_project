@@ -11,12 +11,13 @@ let initialState = {
 }
 
 const fetchItemsStart=(state, action)=>{
-    return updateObject(state, {loading: true})
+    return {...state, loading: true}
 }
 
 const fetchItemsSuccess=(state, action)=>{
-    return {...state, items:action.items}
+    return {...state, items:action.items, loading: false}
 }
+
 
 const fetchItemsFail=()=>{
     return{
