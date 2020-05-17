@@ -9,6 +9,7 @@ import Spinner from '../../components/Spinner/Spinner'
 import axiosErrorHandling from '../../../hoc/AxiosErrorHandling/AxiosErrorHandling';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
+import Button from '../../components/Button/Button';
 
 export class CoffeeShop extends Component {
     state={
@@ -58,59 +59,27 @@ export class CoffeeShop extends Component {
     }
 
     addItem=(index)=>{
-        let newCount = this.state.items[index].count +1 ;
-        console.log(this.state.items[index]);
-        const updatedItems ={
-            ...this.state.items
-        }
-        console.log('updated items ', updatedItems);
-        const updatedItemsElement ={
-            ...updatedItems[index]
-        }
-        console.log('updated items element ', updatedItemsElement);
-        updatedItemsElement.count= newCount;
-        console.log('updated items element after update ', updatedItemsElement);
-        updatedItems[index] = updatedItemsElement;
-        console.log('updated items after update ', updatedItems);
+        // let newCount = this.state.items[index].count +1 ;
+         console.log('this is from add Item', index, this.props.items[index]);
+        // const updatedItems ={
+        //     ...this.state.items
+        // }
+        // console.log('updated items ', updatedItems);
+        // const updatedItemsElement ={
+        //     ...updatedItems[index]
+        // }
+        // console.log('updated items element ', updatedItemsElement);
+        // updatedItemsElement.count= newCount;
+        // console.log('updated items element after update ', updatedItemsElement);
+        // updatedItems[index] = updatedItemsElement;
+        // console.log('updated items after update ', updatedItems);
         
-        this.setState(Object.assign(this.state.items, updatedItems));
-
-     // this.setState({items: updatedItems});
-    //    this.setState({items : {...updatedItems}});
-    //    this.setState({items : ...updatedItems});
-    //    this.setState({this.state.items : ...updatedItems});
-    //    this.setState((this.state.items : ...updatedItems));
-    //    this.setState((this.state.items, ...updatedItems));
-       // this.setState({...this.state.items[index], count : updatedItemsElement.count});
-        //error this.setState({...this.state, items : updatedItems});
-       // this.setState({...this.state.items[index], count : updatedItemsElement.count});
-        //error this.setState({...this.state, items : updatedItems});
+        // this.setState(Object.assign(this.state.items, updatedItems));
     
-        console.log('updated item after setState', this.state.items[index]);
+        // console.log('updated item after setState', this.state.items[index]);
 
-        // delete this.state.items[index].count;
-      //  this.state.items[index].count = newCount; 
-        // this.setState(prevState=>{
-        //     let lala = Object.assign({}, prevState.items[index]);
-        //     lala.count=newCount;
-        //     return{lala}
+        this.props.onAddItem(index);
 
-        // })
-
-        // this.setState({...this.state.items[index], 
-        //     count: newCount })
-
-
-        // this.setState(prevState=>({
-        //     items: prevState.items.map(
-        //         item=>item.key === key ? {...item, count : newCount} : item
-        //     )
-        // })); 
-
-
-        // console.log('lala');
-        // console.log(this.state.items[index].count);
-        // console.log(newCount);
     }
 
     removeItem=(index)=>{
@@ -205,11 +174,11 @@ export class CoffeeShop extends Component {
         
 
         let modalOrSpinner =[];
-        if (this.state.loading || !this.state.items){
+        if (this.state.loading || !this.props.items){
             modalOrSpinner= <Spinner/>
         } else {
             modalOrSpinner=<ShoppingSummary
-            items={this.state.items}
+            items={this.props.items}
             totalPrice={this.state.totalPrice}
             submitOrder={this.submitOrder}
             exitModal={this.showShoppingSummaryModal}
@@ -221,6 +190,9 @@ export class CoffeeShop extends Component {
                 <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
             <div className={classes.shoppingItems}>
              {shoppingItems}
+
+             <button onClick={this.props.onAddCow}> Add cow </button>
+             <button onClick={this.props.onAddAnimal}> Add Animal </button>
 
              <Modal 
                 show={this.state.showShoppingSummary} 
@@ -246,8 +218,11 @@ const mapDispatchToProps=dispatch=>{
     return{
         onTest: ()=>dispatch(actions.testAction('this is test 1')), 
         onFetchItems: ()=>dispatch(actions.fetchItems()), 
-        onAddItem: ()=>dispatch(), 
-        onRemoveItem: ()=>dispatch()
+        onAddItem: (index)=>dispatch(actions.addItem(index)), 
+        onRemoveItem: ()=>dispatch(), 
+        onPostOrder: ()=>dispatch(),
+        onAddAnimal: ()=>dispatch(actions.addAnimal(2)), 
+        onAddCow: ()=>dispatch(actions.addCow())
     }
 }
 
