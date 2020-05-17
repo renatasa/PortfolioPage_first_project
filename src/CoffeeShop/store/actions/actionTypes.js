@@ -9,5 +9,8 @@ export const FETCH_ORDERS_START = 'FETCH_ORDERS_START';
 export const FETCH_ORDERS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
 export const FETCH_ORDERS_FAIL = 'FETCH_ORDERS_FAIL';
 
+//action types for testing
 export const TEST1='TEST1';
+export const ADD_COW='ADD_COW';
+export const ADD_ANIMAL='ADD_ANIMAL';
 

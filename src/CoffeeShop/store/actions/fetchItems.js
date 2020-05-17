@@ -50,3 +50,31 @@ export const fetchItems=()=>{
             })
     }
 }
+
+export const addItem=(index)=>{
+    return{
+        type: actionTypes.ADD_ITEM,
+        index: index
+}
+}
+
+export const removeItem=(index)=>{
+    return{
+        type: actionTypes.REMOVE_ITEM
+        
+    }
+}
+
+export const addAnimal=(index)=>{
+    return{
+        type: actionTypes.ADD_ANIMAL,
+        index: index 
+    }
+}
+
+export const addCow=()=>{
+    return{
+        type: actionTypes.ADD_COW
+        
+    }
+}
