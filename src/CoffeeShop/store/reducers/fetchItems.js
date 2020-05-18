@@ -37,34 +37,84 @@ const testReducer=(state, action)=>{
 const addItem=(state, action)=>{
 
      let newCount = state.items[action.index].count +1 ;
-    //  console.log('this is from add Item', action.index, state.items[action.index]);
-     const updatedItems ={
-         ...state.items
-     }
-     // console.log('updated items ', updatedItems);
-     const updatedItemsElement ={
-         ...updatedItems[action.index]
-     }
-     // console.log('updated items element ', updatedItemsElement);
-     updatedItemsElement.count= newCount;
-    // console.log('updated items element after update ', updatedItemsElement);
-     updatedItems[action.index] = updatedItemsElement;
-    //  console.log('updated items after update ', updatedItems);
+
+
+    //  const todoReducer = (state, action) => {
+    //     switch (action.type) {
+    //       case 'markDone':
+    //        return Object.assign(
+    //          [...state], 
+    //          {[action.index]:
+    //            Object.assign({}, state[action.index], {done: true}))
+      
+    //     }
+    //   }
+
+
+
+    // let updatedItems= Object.assign(
+    //                         [...state.items], 
+    //                         {[action.index]: 
+    //                             Object.assign({}, state.items[action.index], {count: newCount})})
+
+    // console.log('this is updatedItems from addItem reducer ', updatedItems);
+
+    // let newArray = [...state.items];
+    // newArray[action.index] = {...newArray[action.index], count: newCount}
+
+// let array=[...state.items];
+// let item=null;
+//     function updateObjectInArray(array, action) {
+//         return array.map((item, index) => {
+//           if (index !== action.index) {
+//             // This isn't the item we care about - keep it as-is
+//             return item
+//           }
+      
+//           // Otherwise, this is the one we want - return an updated value
+//           return {
+//             ...item,
+//             count:newCount
+//           }
+//         })
+//       }
+
+
+      return Object.assign({}, state, {
+        items: state.items.map((item, index) => {
+          if (index === action.index) {
+            return Object.assign({}, item, {
+              count: state.items[action.index].count +1
+            })
+          }
+          return item
+        })
+      })
      
-     let nextItems= (Object.assign(state.items, updatedItems));
- 
-     console.log('updated item after setState', state.items[action.index]);
+     // {...state, items:[
+    //     ...state.items, 
+    //     [action.index]:{...state.items[action.index], count: newCount}
+    // ]}
+
+    
+    
+//     {...state, 
+//                 items:{
+//                 ...state.items, 
+//                     [action.index] : {
+//                         ...state.items[action.index], 
+//                         count:newCount
+//                     }
+// }}
 
 
-    return {...state, items:nextItems}
-
-
-        // ...state, items:[
-        //     ...state.items, [action.index] : {
-        //         ...state.items[action.index],
-        //         count:nextCount 
-        //     }
-        // ]
+// {  ...state, items:[
+//     ...state.items, [action.index] : {
+//         ...state.items[action.index],
+//         count:nextCount 
+//     }
+// ]
+// }
 
 
         // ...state.items, [action.index]:{
@@ -76,7 +126,16 @@ const addItem=(state, action)=>{
 }
 
 const removeItem=(state, action)=>{
-    return {}  
+    return Object.assign({}, state, {
+        items: state.items.map((item, index) => {
+          if (index === action.index) {
+            return Object.assign({}, item, {
+              count: state.items[action.index].count -1
+            })
+          }
+          return item
+        })
+      })
 }
 
 const addAnimal=(state, action)=>{

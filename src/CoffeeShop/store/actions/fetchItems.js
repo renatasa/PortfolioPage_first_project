@@ -60,7 +60,8 @@ export const addItem=(index)=>{
 
 export const removeItem=(index)=>{
     return{
-        type: actionTypes.REMOVE_ITEM
+        type: actionTypes.REMOVE_ITEM,
+        index: index
         
     }
 }
