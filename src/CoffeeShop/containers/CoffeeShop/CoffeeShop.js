@@ -114,46 +114,49 @@ export class CoffeeShop extends Component {
     }
 
     submitOrder=()=>{
-        if (this.state.totalPrice){
-            this.setState({loading:true});
+        if (this.props.totalPrice){
+        //     this.setState({loading:true});
 
-        let orderedItems=[];
-        orderedItems=this.state.items.filter(item=>item.count>0);
-        console.log('this is orderedItems from submit order ', orderedItems);
+        // let orderedItems=[];
+        // orderedItems=this.state.items.filter(item=>item.count>0);
+        // console.log('this is orderedItems from submit order ', orderedItems);
 
-        const order = {
-            items: orderedItems,
-            totalPrice: this.state.totalPrice
-        }
+        // const order = {
+        //     items: orderedItems,
+        //     totalPrice: this.state.totalPrice
+        // }
 
-        axios.post('/orders.json', order)
-        .then(response=>{
-            this.setState({loading:false})
-        })
-        .catch(error=>{
-            this.setState({loading:false})
-        })
+        // axios.post('/orders.json', order)
+        // .then(response=>{
+        //     this.setState({loading:false})
+        // })
+        // .catch(error=>{
+        //     this.setState({loading:false})
+        // })
 
+        this.props.onSubmitOrder(this.props.items, this.props.totalPrice)
         setTimeout(()=>this.showShoppingSummaryModal(), 250);
 
         }
 
-        let fetchedItems=null;
-        this.setState({loading: true});
-        axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
-            .then(response=>{
-                fetchedItems= response.data.items;
-                for (let i=0; i<fetchedItems.length; i++){
-                    console.log('this is for loop fetchedItems i name ', fetchedItems[i].name);
-                    let item = [...this.state.items];
-                   //let item=[];
-                     item[i] = fetchedItems[i];
-                     console.log(item[i].name);
-                    this.setState({items: item});
-                }
+     //   let fetchedItems=null;
+       // this.setState({loading: true});
+        // axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
+        //     .then(response=>{
+        //         fetchedItems= response.data.items;
+        //         for (let i=0; i<fetchedItems.length; i++){
+        //             console.log('this is for loop fetchedItems i name ', fetchedItems[i].name);
+        //             let item = [...this.state.items];
+        //            //let item=[];
+        //              item[i] = fetchedItems[i];
+        //              console.log(item[i].name);
+        //             this.setState({items: item});
+        //         }
         
-                this.setState({loading: false});
-            })
+        //         this.setState({loading: false});
+        //     })
+
+        this.props.onFetchItems();
     }
 
     render() {
@@ -227,7 +230,7 @@ const mapDispatchToProps=dispatch=>{
         onFetchItems: ()=>dispatch(actions.fetchItems()), 
         onAddItem: (index)=>dispatch(actions.addItem(index)), 
         onRemoveItem: (index)=>dispatch(actions.removeItem(index)),
-        onPostOrder: ()=>dispatch(),
+        onSubmitOrder: (allItems, totalPrice)=>dispatch(actions.submitOrder(allItems, totalPrice)),
         onAddAnimal: ()=>dispatch(actions.addAnimal(2)), 
         onAddCow: ()=>dispatch(actions.addCow())
     }

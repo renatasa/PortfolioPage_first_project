@@ -66,6 +66,52 @@ export const removeItem=(index)=>{
     }
 }
 
+
+export const submitOrderStart=()=>{
+    return{
+        type: actionTypes.SUBMIT_ORDER_START
+}
+}
+
+
+export const submitOrderSuccess=()=>{
+    return{
+        type: actionTypes.SUBMIT_ORDER_SUCCESS
+}
+}
+
+
+export const submitOrderFail=()=>{
+    return{
+        type: actionTypes.SUBMIT_ORDER_FAIL
+}
+}
+
+export const submitOrder=(items, totalPrice)=>{
+    return dispatch=>{
+        dispatch(submitOrderStart());
+
+        let orderedItems=[];
+        orderedItems=items.filter(item=>item.count>0);
+        console.log('this is orderedItems from submit order ', orderedItems);
+
+        const order = {
+            items: orderedItems,
+            totalPrice: totalPrice
+        }
+
+        axios.post('https://shoppingcart-9ee7a.firebaseio.com/orders.json', order)
+        .then(response=>{
+            dispatch(submitOrderSuccess())
+        })
+        .catch(error=>{
+           dispatch(submitOrderFail())
+        })
+
+        
+    }
+}
+
 export const addAnimal=(index)=>{
     return{
         type: actionTypes.ADD_ANIMAL,
