@@ -101,16 +101,16 @@ export class CoffeeShop extends Component {
     }
 }
 
-    countTotalPrice=()=>{
-        let finalPrice=0;
-        this.state.items.map(item=>finalPrice= finalPrice + (item.count*item.price) )
-        this.setState({totalPrice: finalPrice});
+    // countTotalPrice=()=>{
+    //     let finalPrice=0;
+    //     this.state.items.map(item=>finalPrice= finalPrice + (item.count*item.price) )
+    //     this.setState({totalPrice: finalPrice});
         
-    }
+    // }
 
     showShoppingSummaryModal=()=>{
         this.setState({showShoppingSummary: !this.state.showShoppingSummary})
-        this.countTotalPrice();
+      //  this.countTotalPrice();
     }
 
     submitOrder=()=>{
@@ -185,7 +185,7 @@ export class CoffeeShop extends Component {
         } else {
             modalOrSpinner=<ShoppingSummary
             items={this.props.items}
-            totalPrice={this.state.totalPrice}
+            totalPrice={this.props.totalPrice}
             submitOrder={this.submitOrder}
             exitModal={this.showShoppingSummaryModal}
           />
@@ -216,7 +216,8 @@ const mapStateToProps=state=>{
     return{
         testVar: state.test1,
         items: state.items, 
-        loading: state.loading
+        loading: state.loading, 
+        totalPrice: state.totalPrice
     }
 }
 
