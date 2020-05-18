@@ -83,17 +83,21 @@ export class CoffeeShop extends Component {
     }
 
     removeItem=(index)=>{
-        if(this.state.items[index].count>0){
-        let newCount = this.state.items[index].count -1 ;
-        const updatedItems ={
-            ...this.state.items
-        }
-        const updatedItemsElement ={
-            ...updatedItems[index]
-        }
-        updatedItemsElement.count= newCount;
-        updatedItems[index] = updatedItemsElement;
-        this.setState(Object.assign(this.state.items, updatedItems));
+    //     if(this.state.items[index].count>0){
+    //     let newCount = this.state.items[index].count -1 ;
+    //     const updatedItems ={
+    //         ...this.state.items
+    //     }
+    //     const updatedItemsElement ={
+    //         ...updatedItems[index]
+    //     }
+    //     updatedItemsElement.count= newCount;
+    //     updatedItems[index] = updatedItemsElement;
+    //     this.setState(Object.assign(this.state.items, updatedItems));
+    // }
+
+    if(this.props.items[index].count>0){
+            this.props.onRemoveItem(index);
     }
 }
 
@@ -159,6 +163,8 @@ export class CoffeeShop extends Component {
         if (this.props.loading || !this.props.items){
              shoppingItems=<Spinner/>; 
         }else{
+            console.log('this is props items', typeof this.props.items);
+            console.log('this is is Array ? this.props.items  ', Array.isArray(this.props.items) );
             shoppingItems=this.props.items.map((item, index)=>{
                 return(<ShoppingItem
                 key={index}
@@ -219,7 +225,7 @@ const mapDispatchToProps=dispatch=>{
         onTest: ()=>dispatch(actions.testAction('this is test 1')), 
         onFetchItems: ()=>dispatch(actions.fetchItems()), 
         onAddItem: (index)=>dispatch(actions.addItem(index)), 
-        onRemoveItem: ()=>dispatch(), 
+        onRemoveItem: (index)=>dispatch(actions.removeItem(index)),
         onPostOrder: ()=>dispatch(),
         onAddAnimal: ()=>dispatch(actions.addAnimal(2)), 
         onAddCow: ()=>dispatch(actions.addCow())
