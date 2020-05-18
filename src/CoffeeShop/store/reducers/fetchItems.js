@@ -36,7 +36,7 @@ const testReducer=(state, action)=>{
 
 const addItem=(state, action)=>{
 
-     let newCount = state.items[action.index].count +1 ;
+   //  let newCount = state.items[action.index].count +1 ;
 
 
     //  const todoReducer = (state, action) => {
@@ -80,7 +80,7 @@ const addItem=(state, action)=>{
 //       }
 
 
-      return Object.assign({}, state, {
+      return Object.assign({}, state, {totalPrice: (state.totalPrice+state.items[action.index].price)}, {
         items: state.items.map((item, index) => {
           if (index === action.index) {
             return Object.assign({}, item, {
@@ -126,7 +126,7 @@ const addItem=(state, action)=>{
 }
 
 const removeItem=(state, action)=>{
-    return Object.assign({}, state, {
+    return Object.assign({}, state, {totalPrice: (state.totalPrice-state.items[action.index].price)},{
         items: state.items.map((item, index) => {
           if (index === action.index) {
             return Object.assign({}, item, {
@@ -137,6 +137,7 @@ const removeItem=(state, action)=>{
         })
       })
 }
+
 
 const addAnimal=(state, action)=>{
     console.log('this is addAnimal reducer');
