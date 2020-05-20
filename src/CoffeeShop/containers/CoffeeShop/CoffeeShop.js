@@ -217,10 +217,10 @@ export class CoffeeShop extends Component {
 
 const mapStateToProps=state=>{
     return{
-        testVar: state.test1,
-        items: state.items, 
-        loading: state.loading, 
-        totalPrice: state.totalPrice
+        testVar: state.fetchItems.test1,
+        items: state.fetchItems.items, 
+        loading: state.fetchItems.loading, 
+        totalPrice: state.fetchItems.totalPrice
     }
 }
 

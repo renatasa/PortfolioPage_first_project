@@ -8,3 +8,7 @@ export {
     addCow
 
 } from './fetchItems';
+
+export {
+    fetchOrders
+} from './fetchOrders';

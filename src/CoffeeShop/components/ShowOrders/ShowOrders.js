@@ -3,22 +3,23 @@ import ShowOneOrder from '../ShowOneOrder/ShowOneOrder';
 import ShowPrice from '../ShowOneOrder/ShowPrice';
 import classes from './ShowOrders.module.css';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 const showOrders =(props)=> {
     console.log('props from show orders ', props);
-    console.log('items show orders ', props.items);
-    console.log('this is order 0 id', Object.keys(props.items)[0] );
-    let id= Object.keys(props.items)[0] ;
-    console.log('this is object 0 ', props.items[id] );
-    console.log('this is object 0 id2', props.items["-M1C3Ipkxiom05Y8s2ug"])
+    console.log('items show orders ', props.allOrders);
+    console.log('this is order 0 id', Object.keys(props.allOrders)[0] );
+    let id= Object.keys(props.allOrders)[0] ;
+    console.log('this is object 0 ', props.allOrders[id] );
+    console.log('this is object 0 id2', props.allOrders["-M1C3Ipkxiom05Y8s2ug"])
    // let itemIds=Object.keys(props.items) ;
     let totalPrices=[];
     let orderedItemsNames=[];
     let orderedItemsCounts=[];
     let orders=[];
     let orderedItems=[];
-    let allOrders=[];
-    orders=Object.values(Object.values(props.items));
+   // let allOrders=[];
+    orders=Object.values(Object.values(props.allOrders));
     totalPrices= orders.map(order=>order["totalPrice"]);
     orderedItems=orders.map(order=>order["items"]);
     orderedItemsNames=orderedItems.map(items=>items.map(item=>item["name"]));
@@ -53,7 +54,7 @@ const showOrders =(props)=> {
     }
     // let id = Object.keys(props.items)[i];
     // let data =  props.items[id];
-    nameCount.push(<div className={classes.order} key={Object.keys(props.items)[i]}> 
+    nameCount.push(<div className={classes.order} key={Object.keys(props.allOrders)[i]}> 
                         <div className={classes.orderItem}> {sum.slice(9, sum.length)} </div> 
                         <div className={classes.totalPrice}> Total price : {totalPrices[i]} € </div> 
                     </div>)
@@ -131,11 +132,17 @@ const showOrders =(props)=> {
 
   //  Object.keys(Object.values(props.items)).map(key=>console.log('this iskey  ',key));
 
-   console.log('orders from show orders ', orders);
-   console.log('props length ', Object.keys(props.items).length);
+   //console.log('orders from show orders ', orders);
+   //console.log('props length ', Object.keys(props.items).length);
     //console.log('props from show orders ', props);
 
 
 }
+
+// const mapStateToProps=state=>{
+//     return { 
+//         allOrders: state.fetchOrders.orders
+//     }
+// }
 
 export default showOrders;
