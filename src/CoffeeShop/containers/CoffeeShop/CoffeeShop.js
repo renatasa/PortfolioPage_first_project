@@ -10,6 +10,7 @@ import axiosErrorHandling from '../../../hoc/AxiosErrorHandling/AxiosErrorHandli
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Button from '../../components/Button/Button';
+import Header from '../../components/Header/Header';
 
 export class CoffeeShop extends Component {
     state={
@@ -196,7 +197,9 @@ export class CoffeeShop extends Component {
 
         return (
             <div>
+                 <Header/>
                 <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
+               
             <div className={classes.shoppingItems}>
              {shoppingItems}
 
