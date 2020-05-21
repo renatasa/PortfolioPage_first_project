@@ -1,7 +1,21 @@
+@import "../../../sass/typography";
+@import "../../../sass/variables";
+
 .shoppingItems{
-    margin-top: 50px;
-    margin-left: 16%;
-    margin-right: 16%;
+     margin-top: 50px;
+
+    &__allItems{
+        background-color:  $color-sand-3;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: top;
+        border: 1px solid orangered;
+        justify-content: center;
+    
+    }
 }
 
 

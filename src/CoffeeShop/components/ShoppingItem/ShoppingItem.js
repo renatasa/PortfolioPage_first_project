@@ -11,19 +11,23 @@ const shoppingItem=(props)=>{
    // itemLogos.map();
 
 
-        return (
+        return (  
+            <div class="row">
             <div class="Item">
-                   <div class="Logo">
+                   <div class="Item__logo">
                         <ShoppingItemImg name={props.name}/>
                     </div>
-                <h1 class="ItemName"> {props.name} </h1>
-                <div class="ItemDescription">{props.description}</div>
-                <h4 class="ItemPrice">€/kg: {props.price}</h4>
-                <h3 class="ItemPrice">kg: {props.count}</h3>
-                <div class="Buttons">
-                <Button onClick={props.removeItem} className={classes.Button}><RemoveCircleOutlineIcon /></Button>
-                <Button onClick={props.addItem} className={classes.Button} ><AddCircleOutlineIcon className={addButtonClass.AddIcon}/></Button>
+                <h3 class="heading-3"> {props.name} </h3>
+                <div class="Item__itemDescription">{props.description}</div>
+                <div class="Item__priceCount">
+                    <h4 class="heading-4">€/kg: {props.price}</h4>
+                    <h4 class="heading-4">kg: {props.count}</h4>
                 </div>
+                <div class="Buttons">
+                     <Button onClick={props.removeItem} className={classes.Button}><RemoveCircleOutlineIcon /></Button>
+                     <Button onClick={props.addItem} className={classes.Button} ><AddCircleOutlineIcon className={addButtonClass.AddIcon}/></Button>
+                </div>
+            </div>     
             </div>
         )
     }
