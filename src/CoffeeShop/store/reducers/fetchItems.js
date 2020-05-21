@@ -138,6 +138,19 @@ const removeItem=(state, action)=>{
       })
 }
 
+const submitOrderStart=(state, action)=>{
+  return{...state, loading: true}
+}
+
+
+const submitOrderSuccess=(state, action)=>{
+  return{...state, loading: false}
+}
+
+const submitOrderFail=(state, action)=>{
+  return{}
+}
+
 
 const addAnimal=(state, action)=>{
     console.log('this is addAnimal reducer');
@@ -177,6 +190,10 @@ const reducer=(state=initialState, action)=>{
 
         case actionTypes.ADD_ITEM: return addItem(state, action);
         case actionTypes.REMOVE_ITEM: return removeItem(state, action);
+        case actionTypes.SUBMIT_ORDER_START: return submitOrderStart(state, action);
+        case actionTypes.SUBMIT_ORDER_SUCCESS: return submitOrderSuccess(state, action);
+        case actionTypes.SUBMIT_ORDER_FAIL: return submitOrderFail(state, action);
+
         case actionTypes.TEST1: return testReducer(state, action);
         case actionTypes.ADD_ANIMAL: return addAnimal(state, action);
         case actionTypes.ADD_COW: return addCow(state, action);

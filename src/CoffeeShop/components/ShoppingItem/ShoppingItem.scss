@@ -1,0 +1,68 @@
+.Item{
+    border: 1px solid #e7c1b3;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 15px;
+    margin: 10px;
+    background: #374f2f; 
+}
+
+.ItemName{
+    font-size: 1.2rem;
+    color: 	#decbbc;
+    margin: center;
+    text-align: center;
+}
+
+.ItemPrice{
+    color: 	#decbbc;
+    display: inline;
+    padding: 0.8rem;
+    margin-left: 1.4rem;
+}
+
+.ItemDescription{
+    width: 14rem;
+    font-size: 0.9rem;
+    color: #c98d57;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.Buttons{
+    display: block;
+    margin-top: 4px;
+    text-align: center;
+}
+
+
+
+.Logo{
+    background-color: white;
+    padding: 8px;
+    height: 6.25rem;
+    text-align: center;
+}
+
+.Logo img{
+    height: 100%
+}
+
+@media(max-width: 1200px){
+    .Item{
+        display: inline-block;
+        width: 27%;
+    }
+
+    .ItemDescription{
+        width: 222px;
+    }
+}
+
+@media(max-width: 840px){
+    .Item{
+        display: block;
+        margin: auto ;
+        width: 230px;
+    }
+}
