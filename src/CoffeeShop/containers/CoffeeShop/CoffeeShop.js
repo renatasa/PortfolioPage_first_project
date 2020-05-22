@@ -199,29 +199,33 @@ export class CoffeeShop extends Component {
         }
 
         return (
-            <div>
-                <Header/>
+            
+        <div>
+            <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
                 
-                <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
-               
+                
+            <Header/>
+                   
             <div class="shoppingItems">
+
                 <h2 class="heading-2">Explore our products</h2>
                 <div class="shoppingItems__allItems">
                       {shoppingItems}
                 </div>
 
-             <button onClick={this.props.onAddCow}> Add cow </button>
-             <button onClick={this.props.onAddAnimal}> Add Animal </button>
+                <button onClick={this.props.onAddCow}> Add cow </button>
+                <button onClick={this.props.onAddAnimal}> Add Animal </button>
 
-             <Modal 
-                show={this.state.showShoppingSummary} 
-                exitModal={this.showShoppingSummaryModal}>
-                {modalOrSpinner}
-            </Modal>
-
-            </div>
+                <Modal 
+                    show={this.state.showShoppingSummary} 
+                    exitModal={this.showShoppingSummaryModal}>
+                    {modalOrSpinner}
+                </Modal>
 
             </div>
+        </div>
+
+            
         )
     }
 }

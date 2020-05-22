@@ -29,14 +29,15 @@ $gutter-vertical: 8rem;
 $gutter-horizontal: 6rem;
 
 .header {
-    height: 95vh;
+    height: 90vh;
     color: $color-white;
+    border: 1px orangered;
     background-image: linear-gradient(to right bottom, 
     rgba($color-brown-medium, 0.2), 
     rgba($color-brown-dark, 0.6)), 
     url(../../assets/img/coffee-beans-header.jpg);
     background-size: cover;
-    background-position: top;
+    //background-position: top ;
     position: relative;
   //  clip-path: polygon(0 0, 100% 0, 100% 500px, 0% 100%); 
   

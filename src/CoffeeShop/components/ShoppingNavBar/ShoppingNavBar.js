@@ -6,6 +6,8 @@ import {Route, Switch, NavLink} from 'react-router-dom';
 //import Button from '../Button/Button';
 import classes from './ShoppingNavBar.module.css' ;
 import MyOrders from '../../containers/MyOrders/MyOrders'
+import { responsiveFontSizes } from '@material-ui/core';
+import { sizing } from '@material-ui/system';
 
 const shoppingNavBar =(props)=> {
         return (
@@ -19,16 +21,16 @@ const shoppingNavBar =(props)=> {
           </Route>
         </Switch>
 
-                <div className={classes.CartButton}>
-                <IconButton onClick={props.clicked} >
-                    <ShoppingCartIcon className={classes.Cart}/>
+                
+                <IconButton onClick={props.clicked} height="100px" >
+                    <ShoppingCartIcon />
                 </IconButton>
                 <NavLink to="/shoppingCart/myOrders">
-                    <IconButton>
+                    <IconButton height="100px" color="secondary" size="large">
                         <ViewList/>    
                     </IconButton>    
                 </NavLink>
-                </div>
+                
         </div>
 
         )
