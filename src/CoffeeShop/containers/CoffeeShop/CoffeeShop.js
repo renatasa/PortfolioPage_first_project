@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ShoppingItem from '../../components/ShoppingItem/ShoppingItem';
 import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
-import classes from './CoffeeShop.module.css';
+import classes from './CoffeeShop.scss';
+//import classes from '../../../sass/layout/typography';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import axios from 'axios';
 import Modal from '../../components/Modal/Modal';
@@ -170,7 +171,9 @@ export class CoffeeShop extends Component {
             console.log('this is props items', typeof this.props.items);
             console.log('this is is Array ? this.props.items  ', Array.isArray(this.props.items) );
             shoppingItems=this.props.items.map((item, index)=>{
-                return(<ShoppingItem
+                return(
+                
+                <ShoppingItem
                 key={index}
                 name={item.name}
                 count={item.count}
@@ -196,24 +199,33 @@ export class CoffeeShop extends Component {
         }
 
         return (
-            <div>
-                 <Header/>
-                <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
-               
-            <div className={classes.shoppingItems}>
-             {shoppingItems}
+            
+        <div>
+            <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
+                
+                
+            <Header/>
+                   
+            <div class="shoppingItems">
 
-             <button onClick={this.props.onAddCow}> Add cow </button>
-             <button onClick={this.props.onAddAnimal}> Add Animal </button>
+                <h2 class="heading-2">Explore our products</h2>
+                <div class="shoppingItems__allItems">
+                      {shoppingItems}
+                </div>
 
-             <Modal 
-                show={this.state.showShoppingSummary} 
-                exitModal={this.showShoppingSummaryModal}>
-                {modalOrSpinner}
-            </Modal>
+                <button onClick={this.props.onAddCow}> Add cow </button>
+                <button onClick={this.props.onAddAnimal}> Add Animal </button>
+
+                <Modal 
+                    show={this.state.showShoppingSummary} 
+                    exitModal={this.showShoppingSummaryModal}>
+                    {modalOrSpinner}
+                </Modal>
+
             </div>
+        </div>
 
-            </div>
+            
         )
     }
 }

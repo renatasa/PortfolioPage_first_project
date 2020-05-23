@@ -17,7 +17,7 @@ import Home from './CoffeeShop/components/Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div>
 
 <Switch>
           <Route path="/shoppingCart/myOrders">

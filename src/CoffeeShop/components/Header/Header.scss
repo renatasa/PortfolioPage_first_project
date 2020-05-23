@@ -1,4 +1,5 @@
 @import "../../../sass/variables";
+@import "../../../sass/typography";
 
 $color-primary : #55c57a;
 $color-primary-light: #7ed56f;
@@ -28,14 +29,15 @@ $gutter-vertical: 8rem;
 $gutter-horizontal: 6rem;
 
 .header {
-    height: 95vh;
+    height: 90vh;
     color: $color-white;
+    border: 1px orangered;
     background-image: linear-gradient(to right bottom, 
     rgba($color-brown-medium, 0.2), 
     rgba($color-brown-dark, 0.6)), 
     url(../../assets/img/coffee-beans-header.jpg);
     background-size: cover;
-    background-position: top;
+    //background-position: top ;
     position: relative;
   //  clip-path: polygon(0 0, 100% 0, 100% 500px, 0% 100%); 
   
@@ -59,61 +61,6 @@ $gutter-horizontal: 6rem;
 
   }
 
-  .heading-primary{
-      color: #fff;
-      text-transform: uppercase;
-      backface-visibility: hidden;
-  }
+  
 
-  .heading-primary--main{
-      display: block;
-      font-size: 4rem;
-      font-weight: 400;
-      letter-spacing: 3.5rem;
-
-      animation-name: moveInLeft;
-      animation-duration: 1s;
-  }
-
-  .heading-primary--sub{
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 17.4px;
-      animation-name: moveInRight;
-      animation-duration: 1s;
-  }
-
-  @keyframes moveInLeft{
-    0% {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-
-    80% {
-      transform: translateX(20px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-
-
-  @keyframes moveInRight{
-    0%{
-      opacity: 0;
-      transform: translateX(100px);
-    }
-
-    80% {
-      transform: translateX(-20px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
+  

@@ -5,7 +5,7 @@ import coffeeHouseLogo from '../../assets/img/coffee-house-logo-png.png';
 const header=()=>{
     
         return (
-            <div>
+        
 
         <header class="header">
             <div class="header__logo-box">
@@ -22,7 +22,7 @@ const header=()=>{
 
         </header>
 
-            </div>
+            
         )
     
 }
