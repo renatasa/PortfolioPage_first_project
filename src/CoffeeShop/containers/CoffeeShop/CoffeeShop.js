@@ -54,10 +54,8 @@ export class CoffeeShop extends Component {
     render() {
       console.log('this is shopping items ',this.props.items)
         let shoppingItems=[]; 
-        
-        if (this.props.loading || !this.props.items){
-             shoppingItems=<Spinner/>; 
-        }else{
+
+        if (!this.props.loading && this.props.items){
             console.log('this is props items', typeof this.props.items);
             shoppingItems=this.props.items.map((item, index)=>{
                 return(
@@ -71,9 +69,8 @@ export class CoffeeShop extends Component {
                 addItem={()=>this.addItem(index)}
                 removeItem={()=>this.removeItem(index)}
                 />)
-            })
+            })     
         }
-        
 
         let modalOrSpinner =[];
         if (this.state.loading || !this.props.items){
@@ -87,32 +84,41 @@ export class CoffeeShop extends Component {
           />
         }
 
-        return (
-            
-        <div>
-            <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
-                
-                
-            <Header/>
-                   
-            <div class="shoppingItems">
 
-                <h2 class="heading-2">Explore our products</h2>
-                <div class="shoppingItems__allItems">
-                      {shoppingItems}
+        let allCoffeeShop =null;
+
+        if (this.props.loading || !this.props.items){
+            allCoffeeShop=   <Spinner/>  ; 
+       }else{
+            allCoffeeShop=(
+                <div>
+                <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
+                
+                
+                <Header/>
+                       
+                <div class="shoppingItems">
+    
+                    <h2 class="heading-2">Explore our products</h2>
+                    <div class="shoppingItems__allItems">
+                          {shoppingItems}
+                    </div>
+    
+                    <Modal 
+                        show={this.state.showShoppingSummary} 
+                        exitModal={this.showShoppingSummaryModal}>
+                        {modalOrSpinner}
+                    </Modal>
+    
                 </div>
-
-                <Modal 
-                    show={this.state.showShoppingSummary} 
-                    exitModal={this.showShoppingSummaryModal}>
-                    {modalOrSpinner}
-                </Modal>
-
             </div>
-        </div>
 
-            
-        )
+            )
+       }
+
+
+       
+        return allCoffeeShop ;
     }
 }
 
