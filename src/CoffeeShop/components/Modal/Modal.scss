@@ -14,18 +14,20 @@
 }
 
 
+@media(max-width: 1200px){
+    .Modal{
+        top: 25%;
+    }
+} 
+
 
 @media(max-width: 840px){
     .Modal{
-        left: 28%;
+       // left: 28%;
+        top: 25%;
     }
 } 
 
-@media(max-width: 800px){
-    .Modal{
-        left: 28%;
-    }
-} 
 
 @media(max-width: 750px){
     .Modal{
