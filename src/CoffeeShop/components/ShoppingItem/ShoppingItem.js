@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import classes from './ShoppingItem.scss';
-import addButtonClass from './ShoppingItemButton.module.css';
+import iconButtonClass from './ShoppingItemButton.module.css';
 import ShoppingItemImg from '../ShoppingItemImg/ShoppingItemImg';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
@@ -24,8 +24,8 @@ const shoppingItem=(props)=>{
                     <h4 class="heading-4">kg: {props.count}</h4>
                 </div>
                 <div class="Buttons">
-                     <Button onClick={props.removeItem} className={classes.Button}><RemoveCircleOutlineIcon /></Button>
-                     <Button onClick={props.addItem} className={classes.Button} ><AddCircleOutlineIcon className={addButtonClass.AddIcon}/></Button>
+                     <Button onClick={props.removeItem}><RemoveCircleOutlineIcon className={iconButtonClass.RemoveIcon}/></Button>
+                     <Button onClick={props.addItem} ><AddCircleOutlineIcon className={iconButtonClass.AddIcon}/></Button>
                 </div>
             </div>     
             </div>

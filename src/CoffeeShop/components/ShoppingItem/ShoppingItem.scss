@@ -61,29 +61,8 @@
 
 
 .Buttons{
-  //  display: block;
-    margin-top: 4px;
+    margin-top: .4rem;
     text-align: center;
 }
 
 
-
-
-@media(max-width: 1200px){
-    .Item{
-        display: inline-block;
-        width: 27%;
-    }
-
-    .ItemDescription{
-        width: 222px;
-    }
-}
-
-@media(max-width: 840px){
-    .Item{
-        display: block;
-        margin: auto ;
-        width: 230px;
-    }
-}

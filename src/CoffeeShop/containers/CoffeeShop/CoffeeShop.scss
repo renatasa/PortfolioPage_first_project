@@ -1,9 +1,7 @@
 @import "../../../sass/typography";
 @import "../../../sass/variables";
 
-.coffeeShop{
-    top: 100px;
-}
+
 
 .shoppingItems{
      margin-top: 50px;
@@ -14,38 +12,8 @@
         flex-wrap: wrap;
         height: 100%;
         width: 100%;
-        background-size: cover;
-        background-position: top;
-        border: 1px solid orangered;
         justify-content: center;
     
     }
 }
 
-
-@media(max-width: 1200px){
-    .shoppingItems{
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
-
-@media(max-width: 1035px){
-    .shoppingItems{
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-}
-
-@media(max-width: 935px){
-    .shoppingItems{
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-}
-
-/* @media(max-width: 840px){
-    .shoppingItems{
-        text-align:center;
-    }
-} */

@@ -10,9 +10,23 @@ import { responsiveFontSizes } from '@material-ui/core';
 import { sizing } from '@material-ui/system';
 
 const shoppingNavBar =(props)=> {
-        return (
-    
 
+    const styles = theme => ({
+        smallButton: {
+          padding: 6
+        },
+        largeButton: {
+          padding: 24
+        },
+        largeIcon: {
+          fontSize: "3em"
+        },
+        input: {
+          display: "none"
+        }
+      });    
+
+        return (
         <div className={classes.navBar}>
 
         <Switch>
@@ -21,15 +35,16 @@ const shoppingNavBar =(props)=> {
           </Route>
         </Switch>
 
-                
-                <IconButton onClick={props.clicked} height="100px" >
-                    <ShoppingCartIcon />
+                <div className={classes.Buttons}>
+                <IconButton onClick={props.clicked} className={classes.iconButton}  >
+                    <ShoppingCartIcon className={classes.Cart}/>
                 </IconButton>
                 <NavLink to="/shoppingCart/myOrders">
-                    <IconButton height="100px" color="secondary" size="large">
-                        <ViewList/>    
+                    <IconButton className={classes.iconButton}>
+                        <ViewList className={classes.ViewList}/>    
                     </IconButton>    
                 </NavLink>
+                </div>
                 
         </div>
 
