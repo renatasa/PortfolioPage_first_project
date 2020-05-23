@@ -1,31 +1,43 @@
 .navBar{
     position: fixed;
     width: 100%;
-    height: 50px;
-    margin-right: 0px;
+    height: 5rem;
+    
     top: 0px;
-  
     background: #fff;
     box-sizing: border-box;
-
+    z-index: 1;
 }
 
-.CartButton{
+/* .CartButton{
     display: inline;
     margin-left: 70%;
     position: fixed;
     vertical-align: auto;
     
+} */
+
+.iconButton{
+    transform: scale(1.2);
+}
+
+.Buttons{
+    position: relative;
+    left: 85%;
+    top: 25%;
 }
 
 .Cart{
-    color: #374f2f;
-    font-size: 70%;
-    height: 3rem;
-    width: 3rem;
-    size: medium;
+    color: #3C3A1E;
+    transform: scale(1.5);
     
 }
+
+.ViewList{
+    color: #3C3A1E;
+    transform: scale(1.5);
+}
+
 
 @media(max-width: 960px){
     .CartButton{

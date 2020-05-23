@@ -1,0 +1,61 @@
+@import "../../../sass/variables";
+
+.Buttons{
+    text-align: center;
+}
+
+.Button{
+    border-radius: 12px;
+    border: 1px solid white;
+    padding: 10px ;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    background-color: $color-brown-dark;
+    color: $color-brown-light;
+    width: 16rem;
+}
+
+.Button:hover{
+opacity: 1;
+cursor: pointer;
+}
+
+.DisplayNoButton{
+    display: none;
+}
+
+.TotalPrice{
+    font-size: 18px;
+    font-weight: bold;
+    color: $color-green-medium;
+    margin: 8px 8px 8px 40px;
+    
+}
+
+.ListItemsInCart{
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-brown-dark;
+    margin: 8px 8px 8px 40px;
+}
+
+.ItemsAmount{
+    color: $color-green-medium;
+}
+
+@media(max-width: 1200px){
+
+}
+
+@media(max-width: 1035px){
+
+
+}
+
+@media(max-width: 935px){
+
+
+}
