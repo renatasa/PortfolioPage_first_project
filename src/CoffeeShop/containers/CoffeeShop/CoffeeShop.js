@@ -91,7 +91,7 @@ export class CoffeeShop extends Component {
        }else{
             allCoffeeShop=(
                 <div>
-                <ShoppingNavBar clicked={this.showShoppingSummaryModal}/>
+                <ShoppingNavBar clicked={this.showShoppingSummaryModal} />
                 
                 
                 <Header/>
@@ -123,7 +123,7 @@ export class CoffeeShop extends Component {
 
 const mapStateToProps=state=>{
     return{
-        testVar: state.fetchItems.test1,
+      //  testVar: state.fetchItems.test1,
         items: state.fetchItems.items, 
         loading: state.fetchItems.loading, 
         totalPrice: state.fetchItems.totalPrice

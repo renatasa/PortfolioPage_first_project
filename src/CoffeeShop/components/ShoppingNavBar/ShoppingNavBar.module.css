@@ -10,25 +10,72 @@
 }
 
 
+/* iconButton Class enlarges material UI icon box shadow on hover and Icon itself together with shoppingCartIcon and viewListIcon classes */
+
 .iconButton{
     transform: scale(1.2);
+   
 }
 
 .Buttons{
     position: relative;
-    left: 85%;
+    left: 75%;
     top: 25%;
+    width: 200px;
 }
 
-.Cart{
+.shoppingCart{
+    /* margin-right: 3rem; */
+    display: inline-block;
+    position: relative;
+    right: -2rem;
+}
+
+
+.howManyItemsInCart{
+    display: inline-block;
+    top: -1rem;
+    border-radius: 50%;
+    width: 2.8rem;
+    text-align: center;
+    right: 1.5rem;
+    position: relative;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: rgb(147, 0, 0);
+}
+
+.howManyItemsInCartHidden{
+    display: inline-block;
+    visibility: hidden;
+    top: -1rem;
+    border-radius: 50%;
+    width: 2.8rem;
+    text-align: center;
+    right: 1.5rem;
+    position: relative;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: rgb(147, 0, 0);
+}
+
+.viewOrders{
+    display: inline-block;
+}
+
+ /* classes change color and size of Material UI icons */
+.shoppingCartIcon{
     color: #3C3A1E;
     transform: scale(1.5);
     
 }
 
-.ViewList{
+.ViewListIcon{
     color: #3C3A1E;
     transform: scale(1.5);
+    
 }
 
 
@@ -42,7 +89,7 @@
 
 @media(max-width: 420px){
     .Buttons{
-        left: 72%;
+        left: 64%;
     }
 }
 
