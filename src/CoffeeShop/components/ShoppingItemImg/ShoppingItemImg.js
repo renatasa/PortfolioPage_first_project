@@ -1,10 +1,10 @@
 import React from 'react';
-import salvadorDark from '../../assets/img/Salvador Dark.jpg';
-import organicFrench from '../../assets/img/Organic French.jpg';
-import arabicMocha from '../../assets/img/Arabic Mocha.jpg';
-import brazilianCacoa from '../../assets/img/Brazilian Cacoa.jpg';
-import brazilianCacoaButter from '../../assets/img/Brazilian Cacoa Butter.jpg';
-import coffeeSpiceMix from '../../assets/img/Coffee Spice Mix.jpg';
+import salvadorDark from '../../assets/img/imgSmall/Salvador Dark1200.jpg';
+import organicFrench from '../../assets/img/imgSmall/Organic French1200.jpg';
+import arabicMocha from '../../assets/img/imgSmall/Arabic Mocha1200.jpg';
+import brazilianCacoa from '../../assets/img/imgSmall/Brazilian Cacoa1200.jpg';
+import brazilianCacoaButter from '../../assets/img/imgSmall/Brazilian Cacoa Butter600.jpg';
+import coffeeSpiceMix from '../../assets/img/imgSmall/Coffee Spice Mix1200.jpg';
 import classes from './ShoppingItemImg.scss';
 
 const shoppingItemImg =(props)=> {
