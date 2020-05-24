@@ -7,9 +7,9 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/fetchOrders';
 
 export class MyOrders extends Component {
-    state={
-        items:null
-    };
+    // state={
+    //     items:null
+    // };
     
     componentDidMount(){
         // axios.get('https://shoppingcart-9ee7a.firebaseio.com/orders.json')
