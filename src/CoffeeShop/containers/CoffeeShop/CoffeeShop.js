@@ -20,7 +20,6 @@ export class CoffeeShop extends Component {
         console.log('this is componentDidMount');
         this.props.onFetchItems();
         console.log(this.props.items);
-      //  let fetchedItems=null;
     }
 
     addItem=(index)=>{
