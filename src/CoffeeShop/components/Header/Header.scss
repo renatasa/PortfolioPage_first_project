@@ -5,11 +5,10 @@
 .header {
     height: 90vh;
     color: $color-white;
-    border: 1px orangered;
     background-image: linear-gradient(to right bottom, 
-    rgba($color-brown-medium, 0.2), 
-    rgba($color-brown-dark, 0.6)), 
-    url(../../assets/img/coffee-beans-header.jpg);
+    rgba($color-brown-medium, 0.3), 
+    rgba($color-brown-dark, 0.3)), 
+    url(../../assets/img/imgSmall/coffee-beans-header1800.jpg);
     background-size: cover;
     position: relative;
  
@@ -33,6 +32,42 @@
     }
 
   }
+
+  @media(min-width:1800px){
+      .header{
+        background-image: linear-gradient(to right bottom, 
+        rgba($color-brown-medium, 0.3), 
+        rgba($color-brown-dark, 0.3)), 
+        url(../../assets/img/imgSmall/coffee-beans-header2400.jpg);
+      }
+   
+} 
+
+
+
+
+@media(min-resolution: 192dpi) and (max-width: 600px) {
+  .header{
+    background-image: linear-gradient(to right bottom, 
+             rgba($color-brown-medium, 0.3), 
+             rgba($color-brown-dark, 0.3)), url(../../assets/img/imgSmall/coffee-beans-header2400.jpg);
+    background-position: right 0px bottom 0px ;
+  }
+
+} 
+
+@media(max-width:900px){
+  .header{
+    background-image: linear-gradient(to right bottom, 
+    rgba($color-brown-medium, 0.3), 
+    rgba($color-brown-dark, 0.3)), 
+    url(../../assets/img/imgSmall/coffee-beans-header1800.jpg);
+    background-position: right 0px bottom 0px ;
+  }
+
+} 
+
+
 
   
 
