@@ -36,7 +36,7 @@
     font-weight: 700;
     //display: inline-block;
     text-align: center;
-    background-color: $color-sand-3;
+   // background-color: $color-sand-3;
     letter-spacing: .2rem;
     
   }
@@ -64,63 +64,7 @@
     //margin-left: 1.4rem;
   }
 
-
-  @media(max-width: 1200px){
-    .heading-primary--main{
-
-
-    }
-
-    .heading-primary--sub{
-
-
-    }
-
-    .heading-2{
-
-    }
-
-    .heading-3{
-
-    }
-
-    .heading-4{
-      
-    }
-
-} 
-
-
-@media(max-width: 840px){
-  
-
-} 
-
-
-@media(max-width: 750px){
-
-} 
-
-@media(max-width: 700px){
-
-} 
-
-@media(max-width: 650px){
-
-
-  .heading-2{
-
-  }
-
-  .heading-3{
-
-  }
-
-  .heading-4{
-    
-  }
-
-} 
+ 
 
 @media(max-width: 600px){
   .heading-primary--main{
@@ -142,30 +86,3 @@
 
 } 
 
-@media(max-width: 550px){
-
-} 
-
-@media(max-width: 500px){
-
-} 
-
-@media(max-width: 450px){
-
-} 
-
-@media(max-width: 425px){
-
-} 
-
-@media(max-width: 400px){
-
-} 
-
-@media(max-width: 350px){
-
-} 
-
-@media(max-width: 350px){
-
-} 
