@@ -1,7 +1,7 @@
 import React from 'react';
 import ShowOneOrder from '../ShowOneOrder/ShowOneOrder';
 import ShowPrice from '../ShowOneOrder/ShowPrice';
-import classes from './ShowOrders.module.css';
+import classes from './ShowOrders.scss';
 import axios from 'axios';
 import {connect} from 'react-redux';
 
@@ -45,8 +45,11 @@ const showOrders =(props)=> {
 
 //}
 
+    //loops through all orders
    for(let i=0; i<orderedItems.length; i++){
       let sum ; 
+
+      //loops through individual order
     for(let k=0; k<orderedItems[i].length; k++){
       sum+= `${orderedItems[i][k].name} : ${orderedItems[i][k].count} kg `
       console.log ('this is sum ', sum) ;
@@ -54,9 +57,9 @@ const showOrders =(props)=> {
     }
     // let id = Object.keys(props.items)[i];
     // let data =  props.items[id];
-    nameCount.push(<div className={classes.order} key={Object.keys(props.allOrders)[i]}> 
-                        <div className={classes.orderItem}> {sum.slice(9, sum.length)} </div> 
-                        <div className={classes.totalPrice}> Total price : {totalPrices[i]} € </div> 
+    nameCount.push(<div class="allOrders__individualOrder" key={Object.keys(props.allOrders)[i]}> 
+                        <div class="allOrders__individualOrder-items"> {sum.slice(9, sum.length)} </div> 
+                        <div class="allOrders__individualOrder-price"> Total price : {totalPrices[i]} € </div> 
                     </div>)
    }
 
@@ -124,7 +127,8 @@ const showOrders =(props)=> {
      
 
     return (
-        <div>
+        <div class="allOrders">
+            
             {nameCount}
         </div>
     )

@@ -14,12 +14,13 @@ import IconButton from '@material-ui/core/IconButton';
 import ListAlt from '@material-ui/icons/ListAlt';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Home from './CoffeeShop/components/Home/Home';
+import Test from './CoffeeShop/components/test/test';
 
 function App() {
   return (
     <div>
 
-<Switch>
+       <Switch>
           <Route path="/shoppingCart/myOrders">
             <MyOrders />
           </Route>
@@ -30,7 +31,7 @@ function App() {
             <Home/>
           </Route>
 
-        </Switch>
+        </Switch> 
         
     </div>
   );
