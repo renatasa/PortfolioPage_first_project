@@ -3,11 +3,8 @@ import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ViewList from '@material-ui/icons/ViewList';
 import {Route, Switch, NavLink} from 'react-router-dom';
-//import Button from '../Button/Button';
 import classes from './ShoppingNavBar.module.css' ;
 import MyOrders from '../../containers/MyOrders/MyOrders'
-import { responsiveFontSizes } from '@material-ui/core';
-import { sizing } from '@material-ui/system';
 import {connect} from 'react-redux';
 
 const shoppingNavBar =(props)=> {

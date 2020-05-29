@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from '../../components/Spinner/Spinner';
 import ShowOrders from '../../components/ShowOrders/ShowOrders';
-import ShoppingCartButton from './ShoppingCartButton';
+import {Route, Switch, NavLink} from 'react-router-dom';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import CoffeeShop from '../CoffeeShop/CoffeeShop';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/fetchOrders';
+import classes from './MyOrders.scss';
+import classesForButton from '../../components/ShoppingNavBar/ShoppingNavBar.module.css';
 
 export class MyOrders extends Component {
     // state={
@@ -36,8 +41,21 @@ export class MyOrders extends Component {
         console.log('state from render ', this.props.allOrders);
         
         return (
-            <div>
-                <ShoppingCartButton/>
+            <div class="totalOrders">
+                
+                <Switch>
+                    <Route path="/coffeeShop/">
+                         <CoffeeShop />
+                    </Route>
+                </Switch>
+
+                <NavLink to="/coffeeShop/">      
+                      <IconButton className={classesForButton.iconButton}>
+                          <ShoppingCartIcon className={classesForButton.shoppingCartIcon}/>    
+                      </IconButton>    
+                    
+                </NavLink>
+
                 {totalOrders}
             </div>
         )

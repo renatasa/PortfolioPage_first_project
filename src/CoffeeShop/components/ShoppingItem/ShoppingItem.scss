@@ -4,44 +4,31 @@
 
 .row{
     flex-basis: 30%;
-    //justify-content: space-evenly;
-    //border: 1px
     margin-bottom: 2rem;
-}
 
-.Item{
-   // border: 1px solid $color-sand-1;
+
+ &__Item{
     border-radius: 8px;
     width: 30rem;
     height: 35rem;
-    display: inline-block;
+  //  display: inline-block;
     padding: 1.5rem;
     margin:  1rem ;
-   // background: $color-green-very-light; 
-    
 
     &__logo{
         background-color: white;
-      
-        //padding: 8px;
         height: 20rem;
         width: 20rem;
         margin: 0 auto;
         overflow: hidden;
         border-radius: 4rem;
-       // text-align: center;
     }
 
     &__logo img{
         height: 100%;
-       // border-radius: 4rem;
-       
-      //  width: 100%;  
-       // transform: scale(2);  
     }
 
     &__itemDescription{
-        //width: 14rem;
         font-size: $default-font-size-3;
         color: $color-sand-2;
         text-align: justify;
@@ -51,6 +38,7 @@
     &__priceCount{
         text-align: center;
     }
+  }
 }
 
 
