@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ShoppingItem from '../../components/ShoppingItem/ShoppingItem';
 import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
 import classes from './CoffeeShop.scss';
+import {Route, Switch, Link, NavLink} from 'react-router-dom';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import axios from 'axios';
 import Modal from '../../components/Modal/Modal';
@@ -10,6 +11,9 @@ import axiosErrorHandling from '../../../hoc/AxiosErrorHandling/AxiosErrorHandli
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import MyOrders from '../MyOrders/MyOrders';
+
 
 export class CoffeeShop extends Component {
     state={
@@ -50,8 +54,13 @@ export class CoffeeShop extends Component {
         this.props.onFetchItems();
     }
 
+    // changeHistory=()=>{
+    //     this.history.push('/coffeeShop/MyOrders');
+    // }
+
     render() {
       console.log('this is shopping items ',this.props.items)
+      console.log('this is props from coffeeshop ', this.props)
         let shoppingItems=[]; 
 
         if (!this.props.loading && this.props.items){
@@ -91,9 +100,11 @@ export class CoffeeShop extends Component {
        }else{
             allCoffeeShop=(
                 <div>
-                <ShoppingNavBar clicked={this.showShoppingSummaryModal} />
-                
-                
+                <ShoppingNavBar 
+                        clicked={this.showShoppingSummaryModal} 
+                        // match={this.props.match}
+                        // changeHistory={this.changeHistory}
+                        />
                 <Header/>
                        
                 <div class="shoppingItems">
@@ -110,6 +121,9 @@ export class CoffeeShop extends Component {
                     </Modal>
     
                 </div>
+
+                <Footer/>
+                
             </div>
 
             )
