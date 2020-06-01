@@ -17,16 +17,35 @@ import Home from './CoffeeShop/components/Home/Home';
 import Test from './CoffeeShop/components/test/test';
 
 function App() {
+  
   return (
     <div>
 
-       <Switch>
+{/* <Switch>
+          <Route path="/todo">
+            <TodoList/>
+          </Route>
           <Route path="/shoppingCart/myOrders">
             <MyOrders />
           </Route>
+          <Route path="/shoppingCart">
+            <ShoppingCart />
+          </Route>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+
+        </Switch> */}
+
+       <Switch>
+          <Route path="/coffeeShop/myOrders">
+            <MyOrders />
+          </Route>
+
           <Route path="/coffeeShop">
             <CoffeeShop/>
           </Route>
+          
           <Route exact path="/">
             <Home/>
           </Route>

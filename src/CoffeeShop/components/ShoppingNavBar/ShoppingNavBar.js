@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ViewList from '@material-ui/icons/ViewList';
 import {Route, Switch, NavLink} from 'react-router-dom';
 import classes from './ShoppingNavBar.module.css' ;
-import MyOrders from '../../containers/MyOrders/MyOrders'
+import MyOrders from '../../containers/MyOrders/MyOrders';
 import {connect} from 'react-redux';
 
 const shoppingNavBar =(props)=> {
@@ -14,14 +14,9 @@ const shoppingNavBar =(props)=> {
               if(props.items[i].count>0){ itemsInCart=itemsInCart +1 } 
         }
 
+
         return (
         <div className={classes.navBar}>
-
-        <Switch>
-        <Route path="/shoppingCart/myOrders">
-            <MyOrders />
-        </Route>
-        </Switch>
 
                 <div className={classes.Buttons}>
                 
@@ -32,13 +27,13 @@ const shoppingNavBar =(props)=> {
                { itemsInCart>0? <div className={classes.howManyItemsInCart}>{itemsInCart}</div> : <div className={classes.howManyItemsInCartHidden}>{itemsInCart}</div> }
                 </div>
                
-                <NavLink to="/shoppingCart/myOrders">
+                 <NavLink to="/coffeeShop/myOrders/"> 
                     <div className={classes.viewOrders}>
-                      <IconButton className={classes.iconButton}>
+                      <IconButton className={classes.iconButton}  onClick={props.changeHistory}>
                           <ViewList className={classes.ViewListIcon}/>    
                       </IconButton>    
                     </div>
-                </NavLink>
+                 </NavLink> 
 
                 </div>
                 

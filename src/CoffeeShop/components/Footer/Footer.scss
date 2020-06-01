@@ -1,0 +1,94 @@
+@import '../../../sass/variables';
+
+.Footer{
+    font-size: $default-font-size-3;
+    background-color: $color-brown-dark;
+    padding: 2.5rem;
+    margin-top: 4rem;
+
+    &__info{
+        display: inline-block;
+        color: $color-white;
+        border: 2px solid red;
+        width: 70%;
+    }
+
+    &__nav{
+        display: inline-block;
+        border: 2px solid blue;
+        width: 30%;
+        vertical-align: top;
+       // height: 100%;
+      //  position: relative;
+       // top: -30px;
+        margin: 0 auto;
+
+        & li{
+            color: $color-brown-dark;
+            font-weight: 700;
+            width: 40%;
+           // border-radius: .2rem;
+            cursor: pointer;
+            background-color: $color-white;
+            margin-bottom: 1rem;
+            text-align: center;
+            margin: 0 auto 1.5rem auto;
+            transition: transform .5s;
+            text-decoration: none;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+
+            &:link{
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    &__copyright{
+        color: $color-white;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+
+    &__summary{
+        width: 40%;
+        margin-bottom: 2rem;
+    }
+
+    &__contact{
+        list-style: none;
+    }
+
+    & ul{
+        list-style: none;
+    }
+
+    
+}
+
+// @media(max-width: 1200px){
+//    .Footer{
+//        &__info{
+//         display: block;
+//        }
+
+//        &__nav{
+//            display: block;
+//        }
+       
+//    }
+// } 
+
+
+// @media(max-width: 840px){
+
+// } 
+
+
+// @media(max-width: 750px){
+    
+// } 

@@ -43,11 +43,7 @@ export class MyOrders extends Component {
         return (
             <div class="totalOrders">
                 
-                <Switch>
-                    <Route path="/coffeeShop/">
-                         <CoffeeShop />
-                    </Route>
-                </Switch>
+    
 
                 <NavLink to="/coffeeShop/">      
                       <IconButton className={classesForButton.iconButton}>
