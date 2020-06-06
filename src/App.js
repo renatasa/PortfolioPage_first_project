@@ -38,6 +38,7 @@ function App() {
         </Switch> */}
 
        <Switch>
+         
           <Route path="/coffeeShop/myOrders">
             <MyOrders />
           </Route>
@@ -45,7 +46,7 @@ function App() {
           <Route path="/coffeeShop">
             <CoffeeShop/>
           </Route>
-          
+
           <Route exact path="/">
             <Home/>
           </Route>

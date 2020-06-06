@@ -5,6 +5,10 @@ import arabicMocha from '../../assets/img/imgSmall/Arabic Mocha1200.jpg';
 import brazilianCacoa from '../../assets/img/imgSmall/Brazilian Cacoa1200.jpg';
 import brazilianCacoaButter from '../../assets/img/imgSmall/Brazilian Cacoa Butter600.jpg';
 import coffeeSpiceMix from '../../assets/img/imgSmall/Coffee Spice Mix1200.jpg';
+import sandwitch from '../../assets/img/sandwitch.jpg';
+import cake from '../../assets/img/cheescake.jpg';
+import coffee from '../../assets/img/capucino3.jpg';
+
 import classes from './ShoppingItemImg.scss';
 
 const shoppingItemImg =(props)=> {
@@ -36,8 +40,24 @@ const shoppingItemImg =(props)=> {
                                 )
         case 'Coffee Spice Mix':
                     return (
-                            <img src={coffeeSpiceMix} alt={props.name} class="u-margin-left-small"/>
+                            <img src={coffeeSpiceMix} alt={props.name} class="u-margin-left-1"/>
                                 )
+
+        case 'Sandwitch':
+                    return (
+                             <img src={sandwitch} alt={props.name} class="u-margin-left-3" />
+                                )
+
+        case 'Cake':
+                   return (
+                              <img src={cake} alt={props.name} class="u-margin-left-4"/>
+                                             )
+
+        case 'Coffee':
+                    return (
+                               <img src={coffee} alt={props.name} class="u-margin-left-2" />
+                                              )
+
             default: 
             return 'nothing to return';
             
