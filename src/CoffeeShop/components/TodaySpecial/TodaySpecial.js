@@ -1,10 +1,6 @@
 import React from 'react';
 import ShoppingItemImg from '../ShoppingItemImg/ShoppingItemImg';
 import classes from './TodaySpecial.scss';
-//import classesPlusIcon from './TodaySpecial.module.css';
-//import AddIcon from '@material-ui/icons/Add';
-//import classes from '../ShoppingItem/ShoppingItem.scss';
-
 
 const TodaysSpecial =()=> {
     
@@ -17,7 +13,6 @@ const TodaysSpecial =()=> {
                     </div>
                 </div>
 
-                {/* <AddIcon className={classesPlusIcon.plusIcon}/> */}
                 <p class="TodaySpecial__item-plus">+</p>
 
                 <div class="TodaySpecial__item">
@@ -29,8 +24,6 @@ const TodaysSpecial =()=> {
                 </div>
 
                 <p class="TodaySpecial__item-plus">+</p>
-
-                {/* <AddIcon className={classesPlusIcon.plusIcon}/> */}
 
                 <div class="TodaySpecial__item">
                     <div class="TodaySpecial__item__logo">

@@ -80,13 +80,30 @@
         &:hover &-free{
             visibility: hidden;
         }
-    }
-    
-
-
-
+    } 
 }
 
-// .TodaySpecial__item:hover .TodaySpecial__item-title{
-//     color: orange;
-// }
+@media(max-width: 960px){
+    .allOrders{
+       
+    }
+}
+
+
+
+@media(max-width: 420px){
+    .TodaySpecial{
+        flex-direction: column;
+
+        &__item{
+           width: 100%;
+           margin: 0 auto;
+
+           &-plus{
+            margin: 0 auto;
+            }
+        }
+
+    }
+}
+
