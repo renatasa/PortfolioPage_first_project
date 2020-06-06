@@ -13,6 +13,7 @@ import * as actions from '../../store/actions/index';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import MyOrders from '../MyOrders/MyOrders';
+import TodaySpecial from '../../components/TodaySpecial/TodaySpecial';
 
 
 export class CoffeeShop extends Component {
@@ -113,6 +114,9 @@ export class CoffeeShop extends Component {
                     <div class="shoppingItems__allItems">
                           {shoppingItems}
                     </div>
+
+                    <h2 class="heading-2">Today's special offer</h2>
+                    <TodaySpecial/>
     
                     <Modal 
                         show={this.state.showShoppingSummary} 
