@@ -1,20 +1,20 @@
 @import '../../../sass/variables';
 
-.test{
-    color: orangered;
-    font-weight: 900;
-    font-size: 30px;
-}
+// .test{
+//     color: orangered;
+//     font-weight: 900;
+//     font-size: 30px;
+// }
 
 .TodaySpecial{
     
-    border: 2px solid blue;
+   // border: 2px solid blue;
     display: flex;
     justify-content: center;
 
 
     &__item{
-        border: 3px solid red;
+      //  border: 3px solid red;
       // display: inline-block;
         vertical-align: top;
         height: 42rem;
@@ -71,6 +71,7 @@
             border-radius: .4rem;
             padding: 0 .4rem 0 .4rem ;
             z-index: 1;
+            transition: transform .5s;
         }
 
         &:hover &-title{
@@ -78,20 +79,41 @@
         }
 
         &:hover &-free{
-            visibility: hidden;
+           // visibility: hidden;
+           transform: rotate(0deg);
+           position: absolute;
+           top: 10rem;
         }
     } 
 }
 
 @media(max-width: 960px){
-    .allOrders{
-       
+    .TodaySpecial{
+        width: 100%;
+        justify-content: space-around;
+        &__item{
+           height: 35rem;
+           width: 20rem;
+           margin: 0;
+
+           &-plus{
+                margin-top: 14rem ;
+            }
+
+            
+            &__logo{
+                height: 35rem;
+                width: 20rem;
+                border-radius: 2rem;
+            }
+        }
+
     }
 }
 
 
 
-@media(max-width: 420px){
+@media(max-width: 750px){
     .TodaySpecial{
         flex-direction: column;
 
@@ -99,10 +121,16 @@
            width: 100%;
            margin: 0 auto;
 
+
            &-plus{
             margin: 0 auto;
             }
+
         }
+
+        
+
+        
 
     }
 }

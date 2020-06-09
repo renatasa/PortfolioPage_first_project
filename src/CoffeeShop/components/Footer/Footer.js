@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Footer.scss';
-import {Route, Switch, NavLink} from 'react-router-dom';
+import {Route, Switch, NavLink, Link} from 'react-router-dom';
 
 
  const Footer =()=>  {
@@ -21,10 +21,10 @@ import {Route, Switch, NavLink} from 'react-router-dom';
 
                 <div class="Footer__nav">
                     <ul >
-                    <NavLink to="/coffeeShop">    <li class="Footer__nav__listItem">Home</li> </NavLink>
-                    <NavLink to="/coffeeShop">    <li class="Footer__nav__listItem">About us</li>  </NavLink>
-                    <NavLink to="/coffeeShop">    <li class="Footer__nav__listItem">Purchase now</li>  </NavLink>
-                    <NavLink to="/">    <li class="Footer__nav__listItem">Todays special</li>  </NavLink>
+                    <NavLink to="/" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Home</li> </NavLink>
+                    <NavLink to="/coffeeShop/MyOrders" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Orders</li>  </NavLink>
+                    <NavLink to="/coffeeShop" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Purchase now</li>  </NavLink>
+                    <NavLink to="/" style={{textDecoration: 'none'}}> <li class="Footer__nav__listItem">Todays special</li>  </NavLink>
                     </ul>
                 
                 </div>   
