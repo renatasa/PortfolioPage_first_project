@@ -44,13 +44,13 @@ export class MyOrders extends Component {
             <div class="totalOrders">
                 
     
-
+                <div class="totalOrders__button">
                 <NavLink to="/coffeeShop/">      
                       <IconButton className={classesForButton.iconButton}>
                           <ShoppingCartIcon className={classesForButton.shoppingCartIcon}/>    
                       </IconButton>    
-                    
                 </NavLink>
+                </div>
 
                 {totalOrders}
             </div>

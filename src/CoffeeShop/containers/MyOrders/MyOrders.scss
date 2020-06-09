@@ -1,5 +1,10 @@
 .totalOrders{
     width: 90vw;
-    border: 1px solid red;
+  //  border: 1px solid red;
     margin: auto 0 ;
+
+    &__button{
+        margin-left: 85%;
+        margin-bottom: 1rem;
+    }
 }
