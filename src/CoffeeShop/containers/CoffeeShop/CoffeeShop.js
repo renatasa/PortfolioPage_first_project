@@ -103,19 +103,18 @@ export class CoffeeShop extends Component {
                 <div>
                 <ShoppingNavBar 
                         clicked={this.showShoppingSummaryModal} 
-                        // match={this.props.match}
-                        // changeHistory={this.changeHistory}
                         />
                 <Header/>
-                       
+            
                 <div class="shoppingItems">
     
                     <h2 class="heading-2">Explore our products</h2>
                     <div class="shoppingItems__allItems">
                           {shoppingItems}
-                    </div>
+                </div>
 
-                    <h2 class="heading-2">Today's special offer</h2>
+                <h2 class="heading-2">Today's special offer</h2>
+                    
                     <TodaySpecial/>
     
                     <Modal 
