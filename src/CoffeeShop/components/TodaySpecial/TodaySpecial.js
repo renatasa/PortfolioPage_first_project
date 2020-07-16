@@ -2,7 +2,7 @@ import React from 'react';
 import ShoppingItemImg from '../ShoppingItemImg/ShoppingItemImg';
 import classes from './TodaySpecial.scss';
 
-const TodaysSpecial =()=> {
+const TodaysSpecial =(props)=> {
     
         return (
             <div class="TodaySpecial">

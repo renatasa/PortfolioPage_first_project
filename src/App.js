@@ -1,16 +1,14 @@
 import React from 'react';
-import {Route, Switch, Link, NavLink} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import CoffeeShop from './CoffeeShop/containers/CoffeeShop/CoffeeShop';
 import MyOrders from './CoffeeShop/containers/MyOrders/MyOrders';
-
+import TodaySpecial from './CoffeeShop/components/TodaySpecial/TodaySpecial';
 import Home from './CoffeeShop/components/Home/Home';
-import Test from './Test/Test';
 
 function App() {
   
   return (
     <div>
-      <Test/>
        <Switch>
          
           <Route path="/coffeeShop/myOrders">
@@ -19,6 +17,10 @@ function App() {
 
           <Route path="/coffeeShop">
             <CoffeeShop/>
+          </Route>
+
+          <Route exact path="/coffeeShop/todaysSpecial">
+            <TodaySpecial/>
           </Route>
 
           <Route exact path="/">
