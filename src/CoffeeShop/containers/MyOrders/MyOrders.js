@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/fetchOrders';
 import classes from './MyOrders.scss';
 import classesForButton from '../../components/ShoppingNavBar/ShoppingNavBar.module.css';
+import Error from '../../components/Error/Error';
 
 export class MyOrders extends Component {
     // state={
@@ -25,16 +26,20 @@ export class MyOrders extends Component {
         //     .catch( (error)=> {
         //      console.log(error);
         //  });
-        console.log('my orders componentdid mount')
         this.props.getOrders();
     }
 
 
     render() {
         let totalOrders=[];
-        console.log('this is this.props.allOrders from MyOrders.js ', this.props.allOrders)
+        
         if (this.props.allOrders===null || this.props.allOrders===undefined){
-            totalOrders=<Spinner/>
+            if (this.props.fetchOrdersError ){
+               totalOrders= <Error errorMessage={this.props.fetchOrdersError}/>
+            } else {
+                totalOrders=<Spinner/>
+            }
+            
         } else if (this.props.allOrders !== null ) {
             totalOrders=<ShowOrders allOrders={this.props.allOrders} />;
         }
@@ -60,7 +65,8 @@ export class MyOrders extends Component {
 
 const mapStateToProps=state=>{
     return{
-        allOrders: state.fetchOrders.orders
+        allOrders: state.fetchOrders.orders, 
+        fetchOrdersError: state.fetchOrders.fetchOrdersError
     }
 }
 

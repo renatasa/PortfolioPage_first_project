@@ -32,7 +32,7 @@ export const fetchOrders=()=>{
                  })
                 .catch( (error)=> {
                    dispatch(fetchOrdersFail(error.message))
-                   console.log('this is error from fetch orders', error)
+                   console.log('this is error from fetch orders actions', error)
              });
     
         

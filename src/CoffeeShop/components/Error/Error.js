@@ -4,16 +4,24 @@ import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import classes from './Error.module.css';
 
 const error = (props) => {
+ //  let errorComponent=null;
+
+    // if (props.showError){
+    //     errorComponent=(
+    //             <div class="Error">
+    //                   <ErrorOutlineIcon className={classes.errorIcon}/>
+    //                 {props.errorMessage} This is error
+    //             </div>
+    //     )
+    // }
    
-
 return (
-
-        <div className="Error">
-            <ErrorOutlineIcon className={classes.errorIcon}/>
-            {props.error} This is error
-        </div>
-            
-            )
-    };
+    <div class="Error">
+        <ErrorOutlineIcon className={classes.errorIcon}/>
+        {props.errorMessage} This is error
+    </div>
+    ) 
+    
+};
 
 export default error;

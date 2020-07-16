@@ -112,7 +112,7 @@ export class CoffeeShop extends Component {
                 <ShoppingNavBar 
                         clicked={this.showShoppingSummaryModal} 
                         />
-                <Error/>
+                <Error showError={true}/>
                <div ref={this.coffeeHomeRef}> <Header/> </div>
             
                 <div class="shoppingItems" ref={this.exploreOurProductsRef}>
@@ -154,7 +154,9 @@ const mapStateToProps=state=>{
     return{
         items: state.fetchItems.items, 
         loading: state.fetchItems.loading, 
-        totalPrice: state.fetchItems.totalPrice
+        totalPrice: state.fetchItems.totalPrice,
+        fetchItemsError: state.fetchItems.fetchItemsError,
+        submitOrderError: state.fetchItems.submitOrderError
     }
 }
 
