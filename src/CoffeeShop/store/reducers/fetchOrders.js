@@ -1,14 +1,13 @@
 import * as actionTypes from '../actions/actionTypes';
 
 let initialState={
-    orders:null
+    orders:null, 
+    fetchOrdersError: null
 }
 
 export const fetchOrdersStart=(state, action)=>{
     console.log('fetchOrdersStart')
-    return{ 
-
-    }
+    return{...state, fetchOrdersError: null}
 }
 
 export const fetchOrdersSuccess=(state, action)=>{
@@ -19,9 +18,7 @@ export const fetchOrdersSuccess=(state, action)=>{
 
 export const fetchOrdersFail=(state, action)=>{
     console.log('fetchOrdersFail')
-    return{
-        
-    }
+    return{...state, fetchOrdersError: action.error}
 }
 
 const fetchOrdersReducer=(state=initialState, action)=>{

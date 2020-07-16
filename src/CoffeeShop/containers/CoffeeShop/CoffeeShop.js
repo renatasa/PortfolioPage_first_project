@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ShoppingItem from '../../components/ShoppingItem/ShoppingItem';
 import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
 import classes from './CoffeeShop.scss';
-import {Route, Switch, Link, NavLink} from 'react-router-dom';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import axios from 'axios';
 import Modal from '../../components/Modal/Modal';
@@ -12,8 +11,8 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import MyOrders from '../MyOrders/MyOrders';
 import TodaySpecial from '../../components/TodaySpecial/TodaySpecial';
+import Error from '../../components/Error/Error.js';
 
 
 export class CoffeeShop extends Component {
@@ -113,7 +112,7 @@ export class CoffeeShop extends Component {
                 <ShoppingNavBar 
                         clicked={this.showShoppingSummaryModal} 
                         />
-
+                <Error showError={true}/>
                <div ref={this.coffeeHomeRef}> <Header/> </div>
             
                 <div class="shoppingItems" ref={this.exploreOurProductsRef}>
@@ -134,7 +133,7 @@ export class CoffeeShop extends Component {
                     </Modal>
     
                 </div>
-
+<button>click</button>
                 <Footer 
                     scrollToCoffeeHome={this.scrollTocoffeeHomeRef}
                     scrollToExploreOurProducts={this. scrollToexploreOurProductsRef}
@@ -153,16 +152,16 @@ export class CoffeeShop extends Component {
 
 const mapStateToProps=state=>{
     return{
-      //  testVar: state.fetchItems.test1,
         items: state.fetchItems.items, 
         loading: state.fetchItems.loading, 
-        totalPrice: state.fetchItems.totalPrice
+        totalPrice: state.fetchItems.totalPrice,
+        fetchItemsError: state.fetchItems.fetchItemsError,
+        submitOrderError: state.fetchItems.submitOrderError
     }
 }
 
 const mapDispatchToProps=dispatch=>{
     return{
-       // onTest: ()=>dispatch(actions.testAction('this is test 1')), 
         onFetchItems: ()=>dispatch(actions.fetchItems()), 
         onAddItem: (index)=>dispatch(actions.addItem(index)), 
         onRemoveItem: (index)=>dispatch(actions.removeItem(index)),

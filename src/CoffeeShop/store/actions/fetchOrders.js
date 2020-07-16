@@ -15,9 +15,10 @@ export const fetchOrdersSuccess=(orders)=>{
     }
 }
 
-export const fetchOrdersFail=()=>{
+export const fetchOrdersFail=(error)=>{
     return{
-        type: actionTypes.FETCH_ORDERS_FAIL
+        type: actionTypes.FETCH_ORDERS_FAIL, 
+        error: error
     }
 }
 
@@ -30,8 +31,8 @@ export const fetchOrders=()=>{
                     dispatch(fetchOrdersSuccess(response.data))
                  })
                 .catch( (error)=> {
-                   dispatch(fetchOrdersFail(error))
-                   console.log('this is error from fetch orders', error)
+                   dispatch(fetchOrdersFail(error.message))
+                   console.log('this is error from fetch orders actions', error)
              });
     
         

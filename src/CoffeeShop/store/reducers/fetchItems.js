@@ -4,6 +4,8 @@ let initialState = {
     items: [],
     showShoppingSummary: false,
     loading: false,
+    fetchItemsError: null,
+    submitOrderError: null,
     totalPrice: 0
     // test1: 'test lala', 
     // test2:[
@@ -16,7 +18,7 @@ let initialState = {
 }
 
 const fetchItemsStart=(state, action)=>{
-    return {...state, loading: true}
+    return {...state, loading: true, fetchItemsError: false}
 }
 
 const fetchItemsSuccess=(state, action)=>{
@@ -24,15 +26,13 @@ const fetchItemsSuccess=(state, action)=>{
 }
 
 
-const fetchItemsFail=()=>{
-    return{
-        
-    }
+const fetchItemsFail=(state, action)=>{
+    return{...state, loading: false, fetchItemsError: action.error}
 }
 
-const testReducer=(state, action)=>{
-    return {...state, test1:action.test}  
-}
+// const testReducer=(state, action)=>{
+//     return {...state, test1:action.test}  
+// }
 
 const addItem=(state, action)=>{
 
@@ -63,7 +63,7 @@ const removeItem=(state, action)=>{
 }
 
 const submitOrderStart=(state, action)=>{
-  return{...state, loading: true}
+  return{...state, loading: true, submitOrderError: false}
 }
 
 
@@ -72,7 +72,7 @@ const submitOrderSuccess=(state, action)=>{
 }
 
 const submitOrderFail=(state, action)=>{
-  return{}
+  return{...state, loading: false, submitOrderError: action.error}
 }
 
 
