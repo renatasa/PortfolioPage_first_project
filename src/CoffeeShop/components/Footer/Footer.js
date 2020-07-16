@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Footer.scss';
-import {Route, Switch, NavLink, Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
- const Footer =()=>  {
-    
+ const Footer =(props)=>  {
+    console.log('ref from footer', props.firstref);
         return (
             <div class="Footer">
                 
@@ -21,15 +21,15 @@ import {Route, Switch, NavLink, Link} from 'react-router-dom';
 
                 <div class="Footer__nav">
                     <ul >
-                    <NavLink to="/" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Home</li> </NavLink>
+                    <li class="Footer__nav__listItem" onClick={props.scrollToCoffeeHome}>Home</li> 
                     <NavLink to="/coffeeShop/MyOrders" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Orders</li>  </NavLink>
-                    <NavLink to="/coffeeShop" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Purchase now</li>  </NavLink>
-                    <NavLink to="/" style={{textDecoration: 'none'}}> <li class="Footer__nav__listItem">Todays special</li>  </NavLink>
+                    <li class="Footer__nav__listItem" onClick={props.scrollToExploreOurProducts}>Purchase now</li> 
+                    <li class="Footer__nav__listItem" onClick={props.scrollToTodaySpecial}>Today's special</li>  
                     </ul>
                 
                 </div>   
 
-                <div class="Footer__copyright">&#9400;  Renata Salkevic</div>   
+                <div class="Footer__copyright">&#9400;  Renata Šalkevič</div>   
             </div>
         )
     }

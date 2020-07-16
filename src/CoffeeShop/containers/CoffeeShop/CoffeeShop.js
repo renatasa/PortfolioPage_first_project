@@ -17,6 +17,13 @@ import TodaySpecial from '../../components/TodaySpecial/TodaySpecial';
 
 
 export class CoffeeShop extends Component {
+    constructor(props) {
+        super(props);
+        this.exploreOurProductsRef = React.createRef();
+        this.todaySpecialRef = React.createRef();
+        this.coffeeHomeRef = React.createRef();
+      }
+
     state={
         showShoppingSummary: false
     }
@@ -54,14 +61,16 @@ export class CoffeeShop extends Component {
 
         this.props.onFetchItems();
     }
-
-    // changeHistory=()=>{
-    //     this.history.push('/coffeeShop/MyOrders');
-    // }
+ 
+      scrollTocoffeeHomeRef = () => window.scrollTo(0, this.coffeeHomeRef.current.offsetTop) 
+      scrollToexploreOurProductsRef = () => window.scrollTo(0, this.exploreOurProductsRef.current.offsetTop)   
+      scrollTotodaySpecialRef = () => window.scrollTo(0, this.todaySpecialRef.current.offsetTop)   
 
     render() {
       console.log('this is shopping items ',this.props.items)
       console.log('this is props from coffeeshop ', this.props)
+      console.log('input ref ', this.inputref);
+  
         let shoppingItems=[]; 
 
         if (!this.props.loading && this.props.items){
@@ -104,9 +113,10 @@ export class CoffeeShop extends Component {
                 <ShoppingNavBar 
                         clicked={this.showShoppingSummaryModal} 
                         />
-                <Header/>
+
+               <div ref={this.coffeeHomeRef}> <Header/> </div>
             
-                <div class="shoppingItems">
+                <div class="shoppingItems" ref={this.exploreOurProductsRef}>
     
                     <h2 class="heading-2">Explore our products</h2>
                     <div class="shoppingItems__allItems">
@@ -115,8 +125,8 @@ export class CoffeeShop extends Component {
 
                 <h2 class="heading-2">Today's special offer</h2>
                     
-                    <TodaySpecial/>
-    
+                <div ref={this.todaySpecialRef}> <TodaySpecial/> </div> 
+   
                     <Modal 
                         show={this.state.showShoppingSummary} 
                         exitModal={this.showShoppingSummaryModal}>
@@ -125,7 +135,10 @@ export class CoffeeShop extends Component {
     
                 </div>
 
-                <Footer/>
+                <Footer 
+                    scrollToCoffeeHome={this.scrollTocoffeeHomeRef}
+                    scrollToExploreOurProducts={this. scrollToexploreOurProductsRef}
+                    scrollToTodaySpecial={this.scrollTotodaySpecialRef}/>
                 
             </div>
 
