@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Spinner from '../../components/Spinner/Spinner';
 import ShowOrders from '../../components/ShowOrders/ShowOrders';
-import {Route, Switch, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import CoffeeShop from '../CoffeeShop/CoffeeShop';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/fetchOrders';
 import classes from './MyOrders.scss';

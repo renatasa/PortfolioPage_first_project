@@ -69,10 +69,11 @@ export class CoffeeShop extends Component {
       console.log('this is shopping items ',this.props.items)
       console.log('this is props from coffeeshop ', this.props)
       console.log('input ref ', this.inputref);
+      console.log('this is fetchItems error from coffee shop ', this.props.fetchItemsError)
   
         let shoppingItems=[]; 
 
-        if (!this.props.loading && this.props.items){
+        if (!this.props.loading && this.props.items.length>0){
             console.log('this is props items', typeof this.props.items);
             shoppingItems=this.props.items.map((item, index)=>{
                 return(
@@ -87,6 +88,8 @@ export class CoffeeShop extends Component {
                 removeItem={()=>this.removeItem(index)}
                 />)
             })     
+        } else if (!this.props.loading && this.props.fetchItemsError){
+            shoppingItems=<Error errorMessage={this.props.fetchItemsError}/>
         }
 
         let modalOrSpinner =[];
@@ -112,7 +115,7 @@ export class CoffeeShop extends Component {
                 <ShoppingNavBar 
                         clicked={this.showShoppingSummaryModal} 
                         />
-                <Error showError={true}/>
+          
                <div ref={this.coffeeHomeRef}> <Header/> </div>
             
                 <div class="shoppingItems" ref={this.exploreOurProductsRef}>
@@ -133,7 +136,7 @@ export class CoffeeShop extends Component {
                     </Modal>
     
                 </div>
-<button>click</button>
+
                 <Footer 
                     scrollToCoffeeHome={this.scrollTocoffeeHomeRef}
                     scrollToExploreOurProducts={this. scrollToexploreOurProductsRef}

@@ -18,7 +18,7 @@ const error = (props) => {
 return (
     <div class="Error">
         <ErrorOutlineIcon className={classes.errorIcon}/>
-        {props.errorMessage} This is error
+        {props.errorMessage} 
     </div>
     ) 
     
