@@ -1,7 +1,8 @@
 import * as actionTypes from '../actions/actionTypes';
 
 let initialState={
-    orders:null
+    orders:null, 
+    fetchOrdersError: null
 }
 
 export const fetchOrdersStart=(state, action)=>{

@@ -15,9 +15,10 @@ export const fetchItemsSuccess=(items)=>{
     }
 }
 
-export const fetchItemsFail=()=>{
+export const fetchItemsFail=(error)=>{
     return{
-        type:actionTypes.FETCH_ITEMS_FAIL
+        type:actionTypes.FETCH_ITEMS_FAIL, 
+        error: error
 
     }
 }
@@ -38,6 +39,10 @@ export const fetchItems=()=>{
             .then(response=>{
                 dispatch(fetchItemsSuccess(response.data.items));
             })
+            .catch( (error)=> {
+                console.log('this is error from fetch items', error.message)
+                dispatch(fetchItemsFail(error.message))
+          })
     }
 }
 
@@ -96,7 +101,8 @@ export const submitOrder=(items, totalPrice)=>{
             dispatch(submitOrderSuccess())
         })
         .catch(error=>{
-           dispatch(submitOrderFail(error))
+            console.log(' error in submit order ', error.message);
+           dispatch(submitOrderFail(error.message))
         })
 
         
