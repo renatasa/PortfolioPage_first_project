@@ -23,14 +23,15 @@ export class CoffeeShop extends Component {
       }
 
     componentDidMount(){
-        console.log('this is componentDidMount');
+     //   console.log('this is componentDidMount');
+     setTimeout(()=>{console.log('set timeout from comp did mount ') }, 3000);
         this.props.onFetchItems();
-        console.log(this.props.items);
-        console.log('submit order error from coffe shop component did mount ', this.props.submitOrderError);
+     //   console.log(this.props.items);
+     //   console.log('submit order error from coffe shop component did mount ', this.props.submitOrderError);
     }
 
     addItem=(index)=>{
-         console.log('this is from add Item', index, this.props.items[index]);
+       //  console.log('this is from add Item', index, this.props.items[index]);
         this.props.onAddItem(index);
 
     }
@@ -77,6 +78,7 @@ export class CoffeeShop extends Component {
             shoppingItems=<Error errorMessage={this.props.fetchItemsError}/>
         }
 
+        //checking of weather to display modal component and what component to display inside modal component
         let modalOrSpinner =[];
         if (this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
             modalOrSpinner= <Spinner/>
@@ -97,12 +99,14 @@ export class CoffeeShop extends Component {
            //{()=> this.showShoppingSummaryModal()}
            // console.log('third option')
           modalOrSpinner= <Success/>
+          // setTimeout(()=>{this.props.closeShoppingSummaryModalAction }, 3000);
         }
 
       //  console.log('render loading error success ', this.props.loading , this.props.submitOrderError , this.props.submitOrderSuccess)
 
         let allCoffeeShop =null;
 
+        //checking weather items (coffe, cacoa, spices )  are loaded
         if (this.props.loading || !this.props.items){
             allCoffeeShop=   <Spinner/>  ; 
        }else{
@@ -142,8 +146,6 @@ export class CoffeeShop extends Component {
 
             )
        }
-
-
        
         return allCoffeeShop ;
     }

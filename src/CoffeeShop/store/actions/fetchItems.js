@@ -112,6 +112,7 @@ export const submitOrder=(items, totalPrice)=>{
         .then(response=>{
             console.log('this is submit order success ', response)
             dispatch(submitOrderSuccess())
+            setTimeout(()=>{dispatch(closeShoppingSummaryModalAction())}, 1800)
         })
         .catch(error=>{
             console.log(' error in submit order ', error);
