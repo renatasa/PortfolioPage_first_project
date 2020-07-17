@@ -2,7 +2,10 @@ import React from 'react';
 import classes from './Modal.scss';
 import Backdrop from '../Backdrop/Backdrop';
 
+
+
 const modal =(props)=>(
+    
     <div>
     <Backdrop show={props.show} exitModal={props.exitModal}/>
     <div

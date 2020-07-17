@@ -1,6 +1,5 @@
 import React from 'react';
 //import Button from '../Button/Button';
-import { Button } from '@material-ui/core';
 import classes from './ShoppingSummary.scss';
 //import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
@@ -16,7 +15,7 @@ const shoppingSummary=(props)=> {
 let submitButton = (<button onClick={props.submitOrder} class="Button"> SUBMIT ORDER</button>) ;
 
 if(props.totalPrice==0){
-    submitButton = ( <button onClick={props.submitOrder} class="DisplayNoButton"> lala</button>)
+    submitButton = ( <button onClick={props.submitOrder} class="DisplayNoButton"> submit</button>)
 }
   
         return (

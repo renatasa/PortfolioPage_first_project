@@ -83,6 +83,18 @@ export const submitOrderFail=(error)=>{
 }
 }
 
+export const showShoppingSummaryModalAction=()=>{
+    return{
+        type: actionTypes.SHOW_SHOPPING_SUMMARY_MODAL_ACTION
+}
+}
+
+export const closeShoppingSummaryModalAction=()=>{
+    return{
+        type: actionTypes.CLOSE_SHOPPING_SUMMARY_MODAL_ACTION
+}
+}
+
 export const submitOrder=(items, totalPrice)=>{
     return dispatch=>{
         dispatch(submitOrderStart());
@@ -98,10 +110,12 @@ export const submitOrder=(items, totalPrice)=>{
 
         axios.post('https://shoppingcart-9ee7a.firebaseio.com/orders.json', order)
         .then(response=>{
+            console.log('this is submit order success ', response)
             dispatch(submitOrderSuccess())
+            setTimeout(()=>{dispatch(closeShoppingSummaryModalAction())}, 1800)
         })
         .catch(error=>{
-            console.log(' error in submit order ', error.message);
+            console.log(' error in submit order ', error);
            dispatch(submitOrderFail(error.message))
         })
 

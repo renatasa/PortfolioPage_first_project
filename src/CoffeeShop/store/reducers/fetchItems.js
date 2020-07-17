@@ -4,8 +4,10 @@ let initialState = {
     items: [],
     showShoppingSummary: false,
     loading: false,
-    fetchItemsError: null,
-    submitOrderError: null,
+    fetchItemsError: false,
+    submitOrderError: false,
+    submitOrderSuccess:false,
+    showShoppingSummaryModal: false,
     totalPrice: 0
     // test1: 'test lala', 
     // test2:[
@@ -63,18 +65,25 @@ const removeItem=(state, action)=>{
 }
 
 const submitOrderStart=(state, action)=>{
-  return{...state, loading: true, submitOrderError: false}
+  return{...state, loading: true, submitOrderSuccess: false, submitOrderError: false, showShoppingSummaryModal: true}
 }
 
 
 const submitOrderSuccess=(state, action)=>{
-  return{...state, loading: false}
+  return{...state, loading: false, submitOrderSuccess: true, submitOrderError: false}
 }
 
 const submitOrderFail=(state, action)=>{
-  return{...state, loading: false, submitOrderError: action.error}
+  return{...state, loading: false, submitOrderSuccess: false, submitOrderError: action.error, showShoppingSummaryModal: true}
 }
 
+const showShoppingSummaryModalReducer=(state, action)=>{
+  return{ ...state, showShoppingSummaryModal: true}
+}
+
+const closeShoppingSummaryModalReducer=(state, action)=>{
+  return{ ...state, showShoppingSummaryModal: false}
+}
 
 const reducer=(state=initialState, action)=>{
     switch(action.type){
@@ -87,6 +96,8 @@ const reducer=(state=initialState, action)=>{
         case actionTypes.SUBMIT_ORDER_START: return submitOrderStart(state, action);
         case actionTypes.SUBMIT_ORDER_SUCCESS: return submitOrderSuccess(state, action);
         case actionTypes.SUBMIT_ORDER_FAIL: return submitOrderFail(state, action);
+        case actionTypes.SHOW_SHOPPING_SUMMARY_MODAL_ACTION : return showShoppingSummaryModalReducer(state, action);
+        case actionTypes.CLOSE_SHOPPING_SUMMARY_MODAL_ACTION : return closeShoppingSummaryModalReducer(state, action);
 
     //    case actionTypes.TEST1: return testReducer(state, action);
 
