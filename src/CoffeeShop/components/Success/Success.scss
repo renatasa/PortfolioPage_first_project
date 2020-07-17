@@ -1,7 +1,7 @@
 @import '../../../sass/variables';
 
-.Error{
-    background-color: $color-red-error;
+.Success{
+    background-color: $color-green-medium;
     color: $color-white;
     font-size: $default-font-size;
     width: 100%;
@@ -11,4 +11,3 @@
     padding-top: 0.2rem;
     margin-bottom: 0.75rem;
 }
-

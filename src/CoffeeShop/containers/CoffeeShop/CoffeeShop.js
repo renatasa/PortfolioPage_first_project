@@ -3,16 +3,15 @@ import ShoppingItem from '../../components/ShoppingItem/ShoppingItem';
 import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
 import classes from './CoffeeShop.scss';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
-import axios from 'axios';
 import Modal from '../../components/Modal/Modal';
 import Spinner from '../../components/Spinner/Spinner'
-import axiosErrorHandling from '../../../hoc/AxiosErrorHandling/AxiosErrorHandling';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import TodaySpecial from '../../components/TodaySpecial/TodaySpecial';
 import Error from '../../components/Error/Error.js';
+import Success from '../../components/Success/Success';
 
 
 export class CoffeeShop extends Component {
@@ -23,14 +22,11 @@ export class CoffeeShop extends Component {
         this.coffeeHomeRef = React.createRef();
       }
 
-    state={
-        showShoppingSummary: false
-    }
-
     componentDidMount(){
         console.log('this is componentDidMount');
         this.props.onFetchItems();
         console.log(this.props.items);
+        console.log('submit order error from coffe shop component did mount ', this.props.submitOrderError);
     }
 
     addItem=(index)=>{
@@ -46,18 +42,10 @@ export class CoffeeShop extends Component {
     }
 }
 
-
-    showShoppingSummaryModal=()=>{
-        this.setState({showShoppingSummary: !this.state.showShoppingSummary})
-    }
-
     submitOrder=()=>{
         if (this.props.totalPrice){
-
-        this.props.onSubmitOrder(this.props.items, this.props.totalPrice)
-        setTimeout(()=>this.showShoppingSummaryModal(), 250);
+            this.props.onSubmitOrder(this.props.items, this.props.totalPrice)
         }
-
         this.props.onFetchItems();
     }
  
@@ -66,11 +54,8 @@ export class CoffeeShop extends Component {
       scrollTotodaySpecialRef = () => window.scrollTo(0, this.todaySpecialRef.current.offsetTop)   
 
     render() {
-      console.log('this is shopping items ',this.props.items)
-      console.log('this is props from coffeeshop ', this.props)
-      console.log('input ref ', this.inputref);
-      console.log('this is fetchItems error from coffee shop ', this.props.fetchItemsError)
-  
+
+    //checking if online shop items (coffee, cacao butter, spices) are already loaded
         let shoppingItems=[]; 
 
         if (!this.props.loading && this.props.items.length>0){
@@ -93,17 +78,28 @@ export class CoffeeShop extends Component {
         }
 
         let modalOrSpinner =[];
-        if (this.state.loading || !this.props.items){
+        if (this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
             modalOrSpinner= <Spinner/>
-        } else {
+            console.log('first option')
+        }else if(!this.props.loading  && this.props.submitOrderError  && !this.props.submitOrderSuccess){
+            modalOrSpinner=<Error errorMessage={this.props.submitOrderError}/>
+            console.log('error option')
+        } else if(!this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
             modalOrSpinner=<ShoppingSummary
             items={this.props.items}
             totalPrice={this.props.totalPrice}
             submitOrder={this.submitOrder}
-            exitModal={this.showShoppingSummaryModal}
+            exitModal={this.props.closeShoppingSummaryModalAction}
           />
+          console.log('second option')
+        } else if(!this.props.loading  && !this.props.submitOrderError && this.props.submitOrderSuccess){
+          // this.props.closeShoppingSummaryModalAction()
+           //{()=> this.showShoppingSummaryModal()}
+           // console.log('third option')
+          modalOrSpinner= <Success/>
         }
 
+      //  console.log('render loading error success ', this.props.loading , this.props.submitOrderError , this.props.submitOrderSuccess)
 
         let allCoffeeShop =null;
 
@@ -113,7 +109,7 @@ export class CoffeeShop extends Component {
             allCoffeeShop=(
                 <div>
                 <ShoppingNavBar 
-                        clicked={this.showShoppingSummaryModal} 
+                        clicked={this.props.showShoppingSummaryModalAction} 
                         />
           
                <div ref={this.coffeeHomeRef}> <Header/> </div>
@@ -130,8 +126,8 @@ export class CoffeeShop extends Component {
                 <div ref={this.todaySpecialRef}> <TodaySpecial/> </div> 
    
                     <Modal 
-                        show={this.state.showShoppingSummary} 
-                        exitModal={this.showShoppingSummaryModal}>
+                        show={this.props.showShoppingSummaryModal} 
+                        exitModal={this.props.closeShoppingSummaryModalAction}>
                         {modalOrSpinner}
                     </Modal>
     
@@ -139,7 +135,7 @@ export class CoffeeShop extends Component {
 
                 <Footer 
                     scrollToCoffeeHome={this.scrollTocoffeeHomeRef}
-                    scrollToExploreOurProducts={this. scrollToexploreOurProductsRef}
+                    scrollToExploreOurProducts={this.scrollToexploreOurProductsRef}
                     scrollToTodaySpecial={this.scrollTotodaySpecialRef}/>
                 
             </div>
@@ -159,7 +155,10 @@ const mapStateToProps=state=>{
         loading: state.fetchItems.loading, 
         totalPrice: state.fetchItems.totalPrice,
         fetchItemsError: state.fetchItems.fetchItemsError,
-        submitOrderError: state.fetchItems.submitOrderError
+        submitOrderError: state.fetchItems.submitOrderError,
+        submitOrderSuccess: state.fetchItems.submitOrderSuccess,
+        showShoppingSummaryModal: state.fetchItems.showShoppingSummaryModal
+      
     }
 }
 
@@ -169,7 +168,9 @@ const mapDispatchToProps=dispatch=>{
         onAddItem: (index)=>dispatch(actions.addItem(index)), 
         onRemoveItem: (index)=>dispatch(actions.removeItem(index)),
         onSubmitOrder: (allItems, totalPrice)=>dispatch(actions.submitOrder(allItems, totalPrice)),
+        showShoppingSummaryModalAction: ()=>dispatch(actions.showShoppingSummaryModalAction()), 
+        closeShoppingSummaryModalAction: ()=>dispatch(actions.closeShoppingSummaryModalAction())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(axiosErrorHandling(CoffeeShop, axios));
+export default connect(mapStateToProps, mapDispatchToProps)(CoffeeShop);

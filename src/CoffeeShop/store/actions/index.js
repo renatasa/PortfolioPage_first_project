@@ -3,6 +3,8 @@ export {
     addItem, 
     removeItem,
     submitOrder,
+    showShoppingSummaryModalAction,
+    closeShoppingSummaryModalAction,
     testAction,
     addAnimal, 
     addCow
