@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Header.scss';
+import './Header.scss';
 import coffeeHouseLogo from '../../assets/img/coffee-house-logo-png.png';
 
 const header=()=>{

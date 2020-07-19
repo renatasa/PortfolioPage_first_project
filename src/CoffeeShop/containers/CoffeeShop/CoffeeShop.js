@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ShoppingItem from '../../components/ShoppingItem/ShoppingItem';
 import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
-import classes from './CoffeeShop.scss';
+import './CoffeeShop.scss';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import Modal from '../../components/Modal/Modal';
 import Spinner from '../../components/Spinner/Spinner'
@@ -24,7 +24,7 @@ export class CoffeeShop extends Component {
 
     componentDidMount(){
      //   console.log('this is componentDidMount');
-     setTimeout(()=>{console.log('set timeout from comp did mount ') }, 3000);
+  //   setTimeout(()=>{console.log('set timeout from comp did mount ') }, 3000);
         this.props.onFetchItems();
      //   console.log(this.props.items);
      //   console.log('submit order error from coffe shop component did mount ', this.props.submitOrderError);
@@ -78,7 +78,7 @@ export class CoffeeShop extends Component {
             shoppingItems=<Error errorMessage={this.props.fetchItemsError}/>
         }
 
-        //checking of weather to display modal component and what component to display inside modal component
+        //checking weather to display modal component and what component to display inside modal component
         let modalOrSpinner =[];
         if (this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
             modalOrSpinner= <Spinner/>

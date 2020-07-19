@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Footer.scss';
+import  './Footer.scss';
 import {NavLink} from 'react-router-dom';
 
 
@@ -21,10 +21,10 @@ import {NavLink} from 'react-router-dom';
 
                 <div class="Footer__nav">
                     <ul >
-                    <li class="Footer__nav__listItem" onClick={props.scrollToCoffeeHome}>Home</li> 
-                    <NavLink to="/coffeeShop/MyOrders" style={{textDecoration: 'none'}}>    <li class="Footer__nav__listItem">Orders</li>  </NavLink>
-                    <li class="Footer__nav__listItem" onClick={props.scrollToExploreOurProducts}>Purchase now</li> 
-                    <li class="Footer__nav__listItem" onClick={props.scrollToTodaySpecial}>Today's special</li>  
+                    <li  onClick={props.scrollToCoffeeHome}>Home</li> 
+                    <NavLink to="/coffeeShop/MyOrders" style={{textDecoration: 'none'}}>    <li >Orders</li>  </NavLink>
+                    <li  onClick={props.scrollToExploreOurProducts}>Purchase now</li> 
+                    <li  onClick={props.scrollToTodaySpecial}>Today's special</li>  
                     </ul>
                 
                 </div>   
