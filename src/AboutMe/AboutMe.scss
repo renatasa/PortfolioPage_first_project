@@ -2,7 +2,7 @@
 
 .aboutMe{
   //  border: 1px solid red;
-    width: 95vw;
+    width: 98vw;
    font-size: 1.5rem;
    font-weight: 50;
    font-family: "europa", sans-serif;
@@ -55,16 +55,18 @@
                 backface-visibility: hidden;
 
                 &-git{
-                    width: 20rem;
+                    width: 17rem;
                     border: 0;
                     height: 4rem;
                     font-size: 2rem;
-                    margin-left: 0rem;
+                    margin-left: .5rem;
+                    backface-visibility: hidden;
                 }
 
                 &-git:hover{
                     color: #63707e;
                     background-color: white;
+                    
                 }
             }
 
@@ -74,9 +76,32 @@
                 transform: scale(1.05);
    
             }
+
+            &-item{
+                &-git:hover{
+                   
+                    background-color: white;
+              
+                }
+            }
+        
         }
     }
 
+
+    &__contact{
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 2rem;;
+        justify-content: center;
+        &-logo{
+            width: 3rem;
+        }
+
+        p{
+            margin-left: 1rem;
+        }
+    }
 
     
     &__logos{
@@ -176,7 +201,7 @@
                         margin: .4rem 1rem;
 
                         &-git{
-                            margin: 2rem 2rem 2rem 1rem;
+                         width: 12rem;
                         }
                     }
         
