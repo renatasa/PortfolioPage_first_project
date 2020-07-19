@@ -7,7 +7,7 @@
  margin: 1rem;
  color: $text-color-secondary;
  display: inline-block;
- //border: 1px solid pink;
+ border: 1px solid pink;
 
     &-row{
 
@@ -46,6 +46,14 @@
     }
 
 }
+
+@media(max-width: 620px){
+    .Country_data_table{
+      display: block;
+    }
+
+  
+} 
 
 
 
