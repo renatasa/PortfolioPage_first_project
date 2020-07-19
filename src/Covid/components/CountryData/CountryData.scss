@@ -1,0 +1,48 @@
+@import '../../scss/variables';
+
+
+.Country_data_table{
+
+ margin: 1rem;
+ color: $text-color-secondary;
+
+    &-row{
+
+        display: flex;
+
+        &-top{
+            display: inline-flex;
+            border-top: .2rem solid $text-color-primary;
+            padding: 0rem;
+        }
+
+        &-bottom{
+            display: inline-flex;
+            border-bottom: .2rem solid $text-color-primary;
+            padding: 0rem;
+        }
+    }
+
+    &-cell{
+        border-top: .1rem solid $text-color-primary;
+        border-bottom: .0rem solid $text-color-primary;
+        width: 7rem;
+        padding: .4rem;
+    }
+
+    &-propertyCell{
+        border-right: .0rem solid $text-color-primary;
+        border-left: .2rem solid $text-color-primary;
+        font-weight: $font-weight-bold-1;
+    }
+
+    &-valueCell{
+        border-right: .2rem solid $text-color-primary;
+        border-left: .1rem solid $text-color-primary;
+        text-align: center;
+    }
+
+}
+
+
+

@@ -4,6 +4,7 @@ import CoffeeShop from './CoffeeShop/containers/CoffeeShop/CoffeeShop';
 import MyOrders from './CoffeeShop/containers/MyOrders/MyOrders';
 import TodaySpecial from './CoffeeShop/components/TodaySpecial/TodaySpecial';
 import AboutMe from './AboutMe/AboutMe.js';
+import Covid from './Covid/Covid.js';
 
 function App() {
   
@@ -16,6 +17,10 @@ function App() {
 
           <Route path="/coffeeShop">
             <CoffeeShop/>
+          </Route>
+
+          <Route path="/covid">
+              <Covid/>
           </Route>
 
           <Route exact path="/coffeeShop/todaysSpecial">
