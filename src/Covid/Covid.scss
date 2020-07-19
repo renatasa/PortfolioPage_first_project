@@ -1,0 +1,46 @@
+
+.Covid{
+
+    &-countryTables{
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+          //  align-content: center;
+    }
+
+    &_dropdownCalendar{
+        display: inline-flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+
+        &_item{
+            margin: 1rem;
+        }
+    
+    }
+
+    &-charts{
+        margin-left: 20%;
+        width: 60%;
+    }
+
+}
+
+@media(max-width: 750px){
+    .Covid{
+        &-charts{
+            width: 100%;
+            margin-left: 0%;
+        }
+    
+    }
+} 
+
+@media(max-width: 620px){
+    .Covid_dropdownCalendar{
+         flex-direction: column;
+         align-items: center;
+    
+    }
+} 
