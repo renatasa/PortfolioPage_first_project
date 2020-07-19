@@ -2,9 +2,12 @@
 
 
 .Country_data_table{
-
+ font-size: $default-font-size-2;
+ color: $color-grey-dark-3;
  margin: 1rem;
  color: $text-color-secondary;
+ display: inline-block;
+ //border: 1px solid pink;
 
     &-row{
 
@@ -12,7 +15,7 @@
 
         &-top{
             display: inline-flex;
-            border-top: .2rem solid $text-color-primary;
+            border-top: .1rem solid $text-color-primary;
             padding: 0rem;
         }
 
@@ -26,14 +29,14 @@
     &-cell{
         border-top: .1rem solid $text-color-primary;
         border-bottom: .0rem solid $text-color-primary;
-        width: 7rem;
+        width: 12rem;
         padding: .4rem;
     }
 
     &-propertyCell{
         border-right: .0rem solid $text-color-primary;
         border-left: .2rem solid $text-color-primary;
-        font-weight: $font-weight-bold-1;
+        font-weight: 700;
     }
 
     &-valueCell{

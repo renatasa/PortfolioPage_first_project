@@ -1,18 +1,24 @@
+@import './scss/variables';
 
 .Covid{
-
+    width: 94vw;
+    
     &-countryTables{
             width: 100%;
-            display: inline-flex;
+            display: flex;
             justify-content: center;
+          //  border: 1px solid blue;
           //  align-content: center;
     }
 
     &_dropdownCalendar{
-        display: inline-flex;
+        display: flex;
         justify-content: center;
-        align-content: center;
-        width: 100%;
+        font-size: $default-font-size;
+        color: $color-grey-dark-3;
+     //   align-content: center;
+      //  width: 100%;
+      //  border: 1px solid red;
 
         &_item{
             margin: 1rem;

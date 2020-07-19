@@ -4,7 +4,7 @@ import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
 import './CoffeeShop.scss';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import Modal from '../../components/Modal/Modal';
-import Spinner from '../../components/Spinner/Spinner'
+import CoffeeSpinner from '../../components/CoffeeSpinner/CoffeeSpinner'
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Header from '../../components/Header/Header';
@@ -81,7 +81,7 @@ export class CoffeeShop extends Component {
         //checking weather to display modal component and what component to display inside modal component
         let modalOrSpinner =[];
         if (this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
-            modalOrSpinner= <Spinner/>
+            modalOrSpinner= <CoffeeSpinner/>
             console.log('first option')
         }else if(!this.props.loading  && this.props.submitOrderError  && !this.props.submitOrderSuccess){
             modalOrSpinner=<Error errorMessage={this.props.submitOrderError}/>
@@ -108,7 +108,7 @@ export class CoffeeShop extends Component {
 
         //checking weather items (coffe, cacoa, spices )  are loaded
         if (this.props.loading || !this.props.items){
-            allCoffeeShop=   <Spinner/>  ; 
+            allCoffeeShop=   <CoffeeSpinner/>  ; 
        }else{
             allCoffeeShop=(
                 <div>

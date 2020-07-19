@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line} from 'react-chartjs-2';
 import {connect} from 'react-redux';
-import Spinner from '../Spinner/Spinner';
+import CovidSpinner from '../CovidSpinner/CovidSpinner';
 
 const deathToCaseRatioChart=(props)=>{
   let defaultProps={
@@ -10,7 +10,7 @@ const deathToCaseRatioChart=(props)=>{
     legendPosition: 'right'    
 }
 
-      let lineChart=<Spinner/>
+      let lineChart=<CovidSpinner/>
 
       if(props.deathToCase){
           lineChart=(

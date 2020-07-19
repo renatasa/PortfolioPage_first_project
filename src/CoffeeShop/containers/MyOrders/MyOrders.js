@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Spinner from '../../components/Spinner/Spinner';
+import CoffeeSpinner from '../../components/CoffeeSpinner/CoffeeSpinner';
 import ShowOrders from '../../components/ShowOrders/ShowOrders';
 import {NavLink} from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
@@ -35,7 +35,7 @@ export class MyOrders extends Component {
             if (this.props.fetchOrdersError ){
                totalOrders= <Error errorMessage={this.props.fetchOrdersError}/>
             } else {
-                totalOrders=<Spinner/>
+                totalOrders=<CoffeeSpinner/>
             }
             
         } else if (this.props.allOrders !== null ) {

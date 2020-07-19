@@ -16,6 +16,7 @@ a{
     display: inline-block;
     background-color: $color-white;
     cursor: pointer;
+    width: 20rem;
     
     &-content{
       // display: none;
@@ -47,9 +48,4 @@ a{
 
   }
 
-  
-  // .dropdown:hover .dropdown-content {
-  //   display: block;
-   
-  // }
 
