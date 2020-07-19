@@ -1,12 +1,8 @@
 @import '../sass/variables';
 
 .aboutMe{
-    //position: relative;
-  // position: relative;
-  // display: block;
-    border: 1px solid red;
+  //  border: 1px solid red;
     width: 95vw;
-   // height: 30%;
    font-size: 1.5rem;
    font-weight: 50;
    font-family: "europa", sans-serif;
@@ -22,24 +18,13 @@
         font-weight: 100;
     }
 
-    li{
-        list-style: none;
-    }
 
-    &__logos{
-       // width: 10rem;
-       display: flex;
-       justify-content: center;
-       border: 2px solid blue;
 
-        &-item{
-          width: 10rem;
-          margin: 1rem;
-         
-          &-css{
-              width: 8rem;
-          }
-        }
+    &__github{
+        display: flex;
+        justify-content: center;
+    //    border: 1px solid seagreen;
+        margin: 1rem;
     }
 
 
@@ -47,7 +32,7 @@
         h2{
             width: 100%;
           //  height: 10rem;
-            border: 1px solid pink;
+        //    border: 1px solid pink;
             text-align: center;
         }
 
@@ -68,15 +53,135 @@
                 margin: 2rem;
                 transition: transform .2s;
                 backface-visibility: hidden;
+
+                &-git{
+                    width: 20rem;
+                    border: 0;
+                    height: 4rem;
+                    font-size: 2rem;
+                    margin-left: 0rem;
+                }
+
+                &-git:hover{
+                    color: #63707e;
+                    background-color: white;
+                }
             }
 
             &-item:hover{
                 color: $color-white;
                 background-color:  #63707e;
                 transform: scale(1.05);
+   
             }
         }
     }
 
+
+    
+    &__logos{
+        // width: 10rem;
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+      //  border: 2px solid blue;
+ 
+         &-item{
+           width: 10rem;
+           margin: 1rem;
+          
+           &-css{
+               width: 8rem;
+           }
+ 
+           &-git{
+             width: 5rem;
+             margin: 0;
+         }
+         }
+     }
+
     
 }
+
+
+@media(max-width: 800px){
+    .aboutMe{
+        &__logos{
+            flex-wrap: wrap;
+
+            &-item{
+                width: 5rem;
+                
+            }
+        }
+
+
+        &__github{
+            margin: 1rem;
+        }
+    
+
+            &__projects{
+        
+                &__buttons{
+                    flex-wrap: wrap;
+        
+                    &-item{
+                        font-size: 2rem;
+                        width: 20rem;
+                        height: 4rem;
+                    }
+        
+                }
+     }
+    }
+
+} 
+
+@media(max-width: 520px){
+    .aboutMe{
+
+        h2 {
+            line-height: 2.8rem;
+        }
+    
+        h3{
+            text-align: center;
+            font-weight: 100;
+        }
+
+
+        &__logos{
+            flex-wrap: wrap;
+
+            &-item{
+                width: 5rem;
+
+                &-git{
+                    width: 4rem;
+                }
+            }
+        }
+
+            &__projects{
+        
+                &__buttons{
+                    flex-wrap: wrap;
+        
+                    &-item{
+                        font-size: 2rem;
+                        width: 20rem;
+                        height: 4rem;
+                        margin: .4rem 1rem;
+
+                        &-git{
+                            margin: 2rem 2rem 2rem 1rem;
+                        }
+                    }
+        
+                }
+     }
+    }
+
+} 
