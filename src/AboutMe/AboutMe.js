@@ -8,6 +8,7 @@ import javascriptSVG from './logos/javascriptSVG.svg';
 import sassSVG from './logos/sassSVG.svg';
 import gitSVG from './logos/gitSVG.svg';
 import githubSVG from './logos/githubSVG.svg';
+import emailSVG from './logos/emailSVG.svg'
 
  const AboutMe =(props)=>  {
 
@@ -34,6 +35,12 @@ import githubSVG from './logos/githubSVG.svg';
                     <div class="aboutMe__projects__buttons-item">COVID statistics</div>
                 </div>
             </div>   
+
+
+            <div class="aboutMe__contact"> 
+                <img src={emailSVG} alt={'emailSVG'} class="aboutMe__contact-logo"/> 
+                <p> r.salkevic@gmail.com </p>
+            </div>
 
 
             <div class="aboutMe__logos" >

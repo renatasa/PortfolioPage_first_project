@@ -2,7 +2,7 @@
 
 .aboutMe{
   //  border: 1px solid red;
-    width: 95vw;
+    width: 98vw;
    font-size: 1.5rem;
    font-weight: 50;
    font-family: "europa", sans-serif;
@@ -88,6 +88,20 @@
         }
     }
 
+
+    &__contact{
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 2rem;;
+        justify-content: center;
+        &-logo{
+            width: 3rem;
+        }
+
+        p{
+            margin-left: 1rem;
+        }
+    }
 
     
     &__logos{
