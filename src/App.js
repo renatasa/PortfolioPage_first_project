@@ -3,14 +3,13 @@ import {Route, Switch} from 'react-router-dom';
 import CoffeeShop from './CoffeeShop/containers/CoffeeShop/CoffeeShop';
 import MyOrders from './CoffeeShop/containers/MyOrders/MyOrders';
 import TodaySpecial from './CoffeeShop/components/TodaySpecial/TodaySpecial';
-import Home from './CoffeeShop/components/Home/Home';
+import AboutMe from './AboutMe/AboutMe.js';
 
 function App() {
   
   return (
-    <div>
+    <div class="App">
        <Switch>
-         
           <Route path="/coffeeShop/myOrders">
             <MyOrders />
           </Route>
@@ -24,7 +23,7 @@ function App() {
           </Route>
 
           <Route exact path="/">
-            <Home/>
+            <AboutMe/>
           </Route>
 
         </Switch> 
