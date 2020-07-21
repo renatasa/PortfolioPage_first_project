@@ -7,8 +7,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            border: 1px solid blue;
-          //  align-content: center;
+          //  border: 1px solid blue;
     }
 
     &_dropdownCalendar{
@@ -16,9 +15,6 @@
         justify-content: center;
         font-size: $default-font-size;
         color: $color-grey-dark-3;
-     //   align-content: center;
-      //  width: 100%;
-      //  border: 1px solid red;
 
         &_item{
             margin: 1rem;
@@ -49,13 +45,6 @@
             flex-direction: column;
             align-items: center;
        }
-
-       &-countryTables{
-        flex-direction: column;
-        align-items: center;
-      //  padding-left: 20%;
-        border: 2px solid green;
-    }
 
     }
 

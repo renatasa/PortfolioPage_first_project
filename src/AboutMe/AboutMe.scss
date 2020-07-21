@@ -60,14 +60,10 @@
                     height: 4rem;
                     font-size: 2rem;
                     margin-left: .5rem;
+                    color: #63707e;
                     backface-visibility: hidden;
                 }
 
-                &-git:hover{
-                    color: #63707e;
-                    background-color: white;
-                    
-                }
             }
 
             &-item:hover{
@@ -79,7 +75,6 @@
 
             &-item{
                 &-git:hover{
-                   
                     background-color: white;
               
                 }
