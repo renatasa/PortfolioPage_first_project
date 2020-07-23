@@ -11,19 +11,7 @@ import classesForButton from '../../components/ShoppingNavBar/ShoppingNavBar.mod
 import Error from '../../components/Error/Error';
 
 export class MyOrders extends Component {
-    // state={
-    //     items:null
-    // };
-    
     componentDidMount(){
-        // axios.get('https://shoppingcart-9ee7a.firebaseio.com/orders.json')
-        //     .then((response)=> {
-        //      this.setState({items: response.data});
-        //      console.log('this is state2 ', this.state);
-        //      })
-        //     .catch( (error)=> {
-        //      console.log(error);
-        //  });
         this.props.getOrders();
     }
 

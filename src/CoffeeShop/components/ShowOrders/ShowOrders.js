@@ -1,9 +1,5 @@
 import React from 'react';
-// import ShowOneOrder from '../ShowOneOrder/ShowOneOrder';
-// import ShowPrice from '../ShowOneOrder/ShowPrice';
-// import classes from './ShowOrders.scss';
-// import axios from 'axios';
-// import {connect} from 'react-redux';
+import  './ShowOrders.scss';
 
 const showOrders =(props)=> {
     // console.log('props from show orders ', props);
