@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import React from 'react';
+import { Line} from 'react-chartjs-2';
 import {connect} from 'react-redux';
-import Spinner from '../Spinner/Spinner';
+import CovidSpinner from '../../components/CovidSpinner/CovidSpinner';
 
 const casesForSelectedTimeInterval=(props)=>{
   let defaultProps={
@@ -10,7 +10,7 @@ const casesForSelectedTimeInterval=(props)=>{
     legendPosition: 'right'    
 }
 
-      let lineChart=<Spinner/>
+      let lineChart=<CovidSpinner/>
 
       if(props.confirmed && props.recovered && props.death && props.active){
           lineChart=(

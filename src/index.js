@@ -9,10 +9,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import fetchItemsReducer from './CoffeeShop/store/reducers/fetchItems';
 import fetchOrdersReducer from './CoffeeShop/store/reducers/fetchOrders';
+import reducer from './Covid/store/reducer/reducer';
+import allCountriesData from './Covid/store/reducer/allCountriesData';
 
 const rootReducer = combineReducers({
     fetchItems: fetchItemsReducer,
-    fetchOrders: fetchOrdersReducer
+    fetchOrders: fetchOrdersReducer, 
+    countriesReducer: reducer, 
+      allCountriesDataReducer: allCountriesData
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

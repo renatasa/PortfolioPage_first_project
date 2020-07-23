@@ -9,7 +9,7 @@ import CountryData from './components/CountryData/CountryData.js';
 import ConfirmedRecoveredDeathChart from './components/Charts/ConfirmedRecoveredDeathChart';
 import CasesForSelectedTimeInterval from './components/Charts/CasesForSelectedTimeInterval.js';
 import DeathToCaseRatioChart from './components/Charts/DeathToCaseRatioChart.js';
-import Spinner from './components/Spinner/Spinner.js';
+import CovidSpinner from './components/CovidSpinner/CovidSpinner.js';
 import Error from './components/Error/Error.js';
 
 export class Covid extends Component {
@@ -31,8 +31,8 @@ export class Covid extends Component {
 
     //axios ERROR handling
     let dropdownAndCalendars= null;
-    if ( this.props.allCountriesData.length==0  && this.props.loadingAllData ){
-        dropdownAndCalendars = <Spinner/>
+    if ( this.props.allCountriesData.length===0  && this.props.loadingAllData ){
+        dropdownAndCalendars = <CovidSpinner/>
     }  else if(this.props.allCountriesData.length>0 && this.props.error==null && !this.props.loadingAllData ){
         dropdownAndCalendars= <div class="Covid_dropdownCalendar"> 
                                    <div class="Covid_dropdownCalendar_item"> <Dropdown/> </div>
@@ -40,7 +40,7 @@ export class Covid extends Component {
                                    { calendarForEndDate}
                               </div>
         
-    } else if(this.props.error!==null &&  !this.props.loadingAllData && this.props.allCountriesData.length==0 ){
+    } else if(this.props.error!==null &&  !this.props.loadingAllData && this.props.allCountriesData.length===0 ){
         dropdownAndCalendars=<Error errorMessage={this.props.errorMsg}/>
     }
     
@@ -97,7 +97,7 @@ export class Covid extends Component {
 
  
         return (
-            <div>
+            <div class="Covid">
                 {dropdownAndCalendars}
                 <div class="Covid-countryTables"><CountryData/></div>
                 <div class="Covid-charts">

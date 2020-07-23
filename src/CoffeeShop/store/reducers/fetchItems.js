@@ -1,7 +1,18 @@
 import * as actionTypes from '../actions/actionTypes';
 
 let initialState = {
-    items: [],
+    items: [
+// {count: 0, description: "Mus mauris vitae ultricies leo integer malesuada n… accumsan lacus vel facilisis volutpat est velit.", name: "Salvador Dark", price: 1},
+// {count: 0, description: "Mollis nunc sed id semper risus in hendrerit gravi…n tellus orci ac auctor augue mauris augue neque.", name: "Organic French", price: 2},
+// {count: 0, description: "Augue lacus viverra vitae congue eu consequat ac f…m volutpat commodo sed egestas egestas fringilla.", name: "Arabic Mocha", price: 3},
+// {count: 0, description: "Quam viverra orci sagittis eu volutpat odio facili…e tortor condimentum lacinia quis vel eros donec.", name: "Brazilian Cacoa", price: 2.5},
+// {count: 0, description: "Integer eget aliquet nibh praesent tristique magna…t turpis cursus in hac habitasse platea dictumst.", name: "Brazilian Cacoa Butter", price: 3.5},
+// {count: 0, description: "In fermentum et sollicitudin ac orci phasellus ege… eu tincidunt tortor aliquam nulla facilisi cras.", name: "Coffee Spice Mix", price: 2},
+
+    ],
+
+  //  order:[],
+
     showShoppingSummary: false,
     loading: false,
     fetchItemsError: false,

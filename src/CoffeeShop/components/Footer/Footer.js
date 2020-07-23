@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 
 
  const Footer =(props)=>  {
-    console.log('ref from footer', props.firstref);
         return (
             <div class="Footer">
                 

@@ -18,9 +18,6 @@ import emailSVG from './logos/emailSVG.svg'
             <div >
                 <h2>Frontend developer with main interest in React</h2>
                 <h3>Thank you for visiting my website!</h3>
-                {/* <div>
-                    CSS SASS Javascript React Redux Git
-                </div> */}
             </div>    
 
             <div class="aboutMe__github">
@@ -29,7 +26,7 @@ import emailSVG from './logos/emailSVG.svg'
             </div>
 
             <div class="aboutMe__projects">
-                <h2 aboutMe__projects-header>Check out my projects</h2>
+                <h2>Check out my projects</h2>
                 <div class="aboutMe__projects__buttons">
                     <NavLink to="/coffeeShop/"> <div class="aboutMe__projects__buttons-item">Coffee Shop</div></NavLink>
                     <NavLink to="/covid"><div class="aboutMe__projects__buttons-item">COVID statistics</div></NavLink>

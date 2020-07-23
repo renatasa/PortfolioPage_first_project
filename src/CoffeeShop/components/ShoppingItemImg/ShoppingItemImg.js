@@ -9,7 +9,7 @@ import sandwitch from '../../assets/img/sandwitch.jpg';
 import cake from '../../assets/img/cheescake.jpg';
 import coffee from '../../assets/img/capucino3.jpg';
 
-import classes from './ShoppingItemImg.scss';
+import './ShoppingItemImg.scss';
 
 const shoppingItemImg =(props)=> {
     switch(props.name){

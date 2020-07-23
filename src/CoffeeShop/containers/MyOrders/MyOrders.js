@@ -1,29 +1,17 @@
 import React, { Component } from 'react';
-import Spinner from '../../components/Spinner/Spinner';
+import CoffeeSpinner from '../../components/CoffeeSpinner/CoffeeSpinner';
 import ShowOrders from '../../components/ShowOrders/ShowOrders';
 import {NavLink} from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/fetchOrders';
-import classes from './MyOrders.scss';
+import  './MyOrders.scss';
 import classesForButton from '../../components/ShoppingNavBar/ShoppingNavBar.module.css';
 import Error from '../../components/Error/Error';
 
 export class MyOrders extends Component {
-    // state={
-    //     items:null
-    // };
-    
     componentDidMount(){
-        // axios.get('https://shoppingcart-9ee7a.firebaseio.com/orders.json')
-        //     .then((response)=> {
-        //      this.setState({items: response.data});
-        //      console.log('this is state2 ', this.state);
-        //      })
-        //     .catch( (error)=> {
-        //      console.log(error);
-        //  });
         this.props.getOrders();
     }
 
@@ -35,7 +23,7 @@ export class MyOrders extends Component {
             if (this.props.fetchOrdersError ){
                totalOrders= <Error errorMessage={this.props.fetchOrdersError}/>
             } else {
-                totalOrders=<Spinner/>
+                totalOrders=<CoffeeSpinner/>
             }
             
         } else if (this.props.allOrders !== null ) {

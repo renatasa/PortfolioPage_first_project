@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './Spinner.scss';
+import './CoffeeSpinner.scss';
 
-const spinner=()=>(
+const coffeeSpinner=()=>(
     <div class="spinner">
         <div class="loader">Loading...</div>
     </div>
 
 )
 
-export default spinner;
+export default coffeeSpinner;

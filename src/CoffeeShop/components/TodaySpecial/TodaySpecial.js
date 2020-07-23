@@ -1,6 +1,6 @@
 import React from 'react';
 import ShoppingItemImg from '../ShoppingItemImg/ShoppingItemImg';
-import classes from './TodaySpecial.scss';
+import  './TodaySpecial.scss';
 
 const TodaysSpecial =(props)=> {
     

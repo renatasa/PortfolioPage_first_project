@@ -9,10 +9,6 @@ import * as actions from '../../store/actions/index.js';
 function Calendar (props){
 
     const [startDate, setSelectedDate] = useState(null);
-    let year= props.startDate.slice(1,4);
-    let month=props.startDate.slice(6,7);
-    let day = props.startDate.slice(9,10);
-    let wholeDate=`'''+${year}+'/'+${month}+'/'+${day}+'''`;
     let x=props.startDate.slice(0,11)+'"';
 
 //add 2 days to start date

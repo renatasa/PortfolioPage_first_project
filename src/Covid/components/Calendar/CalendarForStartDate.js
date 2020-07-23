@@ -2,7 +2,6 @@ import React, {useState}  from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import {connect} from 'react-redux';
-import { selectStartDate } from '../../store/actions';
 import * as actions from '../../store/actions/index.js';
 
 
@@ -14,7 +13,7 @@ function Calendar (props){
     // console.log('set selected date ', startDate);
 
     return (
-      <DatePicker 
+      <DatePicker
         selected={startDate} 
         onChange={(date) => {props.onselectStartDate(JSON.stringify(date));   setSelectedDate(date) }} 
         dateFormat='yyyy-MM-dd'

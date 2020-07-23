@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import classes from './ShoppingItem.scss';
+import  './ShoppingItem.scss';
 import iconButtonClass from './ShoppingItemButton.module.css';
 import ShoppingItemImg from '../ShoppingItemImg/ShoppingItemImg';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';

@@ -26,7 +26,7 @@ export const fetchOrders=()=>{
     return dispatch=>{
         dispatch(fetchOrdersStart());
         
-            axios.get('https://shoppingcart-9ee7a.firebaseio.com/orders.json')
+            axios.get(process.env.REACT_APP_API_GET_ORDERS)
                 .then((response)=> {
                     dispatch(fetchOrdersSuccess(response.data))
                  })

@@ -4,7 +4,6 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ViewList from '@material-ui/icons/ViewList';
 import { NavLink} from 'react-router-dom';
 import classes from './ShoppingNavBar.module.css' ;
-//import MyOrders from '../../containers/MyOrders/MyOrders';
 import {connect} from 'react-redux';
 
 const shoppingNavBar =(props)=> {

@@ -1,8 +1,8 @@
 import React from 'react';
-import './Spinner.scss';
+import './CovidSpinner.scss';
 
 
-const spinner =(props)=> {
+const covidSpinner =(props)=> {
     
         return (
             <div className="loader">
@@ -13,4 +13,4 @@ const spinner =(props)=> {
 }
 
 
-export default spinner ;
+export default covidSpinner ;

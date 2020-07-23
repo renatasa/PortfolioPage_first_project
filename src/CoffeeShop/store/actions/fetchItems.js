@@ -33,9 +33,8 @@ export const testAction=(test)=>{
 
 export const fetchItems=()=>{
     return dispatch=>{
-        let fetchedItems=null;
        dispatch(fetchItemsStart());
-        axios.get('https://shoppingcart-9ee7a.firebaseio.com/initialItems.json')
+        axios.get(process.env.REACT_APP_API_GET_ITEMS)
             .then(response=>{
                 dispatch(fetchItemsSuccess(response.data.items));
             })
@@ -108,7 +107,7 @@ export const submitOrder=(items, totalPrice)=>{
             totalPrice: totalPrice
         }
 
-        axios.post('https://shoppingcart-9ee7a.firebaseio.com/orders.json', order)
+        axios.post(process.env.REACT_APP_API_POST_ORDERS, order)
         .then(response=>{
             console.log('this is submit order success ', response)
             dispatch(submitOrderSuccess())
