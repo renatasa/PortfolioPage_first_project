@@ -6,10 +6,6 @@ import TodaySpecial from './CoffeeShop/components/TodaySpecial/TodaySpecial';
 import AboutMe from './AboutMe/AboutMe.js';
 import Covid from './Covid/Covid.js';
 
-// https://shoppingcart-9ee7a.firebaseio.com/initialItems.json
-// https://shoppingcart-9ee7a.firebaseio.com/orders.json
-//https://shoppingcart-9ee7a.firebaseio.com/orders.json
-
 function App() {
   
   return (

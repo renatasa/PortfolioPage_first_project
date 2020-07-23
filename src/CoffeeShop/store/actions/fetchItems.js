@@ -32,9 +32,7 @@ export const testAction=(test)=>{
 }
 
 export const fetchItems=()=>{
-    console.log('dummy ', process.env.REACT_APP_DUMMY);
     return dispatch=>{
-        let fetchedItems=null;
        dispatch(fetchItemsStart());
         axios.get(process.env.REACT_APP_API_GET_ITEMS)
             .then(response=>{

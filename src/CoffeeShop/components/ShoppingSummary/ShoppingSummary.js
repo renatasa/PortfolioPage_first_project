@@ -1,20 +1,17 @@
 import React from 'react';
-//import Button from '../Button/Button';
-import classes from './ShoppingSummary.scss';
-//import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
+import  './ShoppingSummary.scss';
 
 const shoppingSummary=(props)=> {
    let itemsInCart=props.items.filter(item=>item.count>0);
-   //let cancel=()=>{console.log('this is shoping summary button')}
    let listItemsInCart=itemsInCart.map(item=>
    <div key={item.name}>
        {item.name} : <span class="ItemsAmount">{item.count} kg</span>
    </div>)
-//    <button className={classes.testButton}>test button</button>
+
 
 let submitButton = (<button onClick={props.submitOrder} class="Button"> SUBMIT ORDER</button>) ;
 
-if(props.totalPrice==0){
+if(props.totalPrice===0){
     submitButton = ( <button onClick={props.submitOrder} class="DisplayNoButton"> submit</button>)
 }
   

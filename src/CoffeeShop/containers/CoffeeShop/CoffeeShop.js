@@ -22,16 +22,16 @@ export class CoffeeShop extends Component {
         this.coffeeHomeRef = React.createRef();
       }
 
+      state={
+          token: null
+      }
+
     componentDidMount(){
-     //   console.log('this is componentDidMount');
-  //   setTimeout(()=>{console.log('set timeout from comp did mount ') }, 3000);
+
         this.props.onFetchItems();
-     //   console.log(this.props.items);
-     //   console.log('submit order error from coffe shop component did mount ', this.props.submitOrderError);
     }
 
     addItem=(index)=>{
-       //  console.log('this is from add Item', index, this.props.items[index]);
         this.props.onAddItem(index);
 
     }
@@ -55,8 +55,6 @@ export class CoffeeShop extends Component {
       scrollTotodaySpecialRef = () => window.scrollTo(0, this.todaySpecialRef.current.offsetTop)   
 
     render() {
-
-    //checking if online shop items (coffee, cacao butter, spices) are already loaded
         let shoppingItems=[]; 
 
         if (!this.props.loading && this.props.items.length>0){
@@ -80,33 +78,24 @@ export class CoffeeShop extends Component {
 
         //checking weather to display modal component and what component to display inside modal component
         let modalOrSpinner =[];
-        if (this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
+        if (this.props.loading  && this.props.submitOrderError ===false  && this.props.submitOrderSuccess===false){
             modalOrSpinner= <CoffeeSpinner/>
-            console.log('first option')
         }else if(!this.props.loading  && this.props.submitOrderError  && !this.props.submitOrderSuccess){
             modalOrSpinner=<Error errorMessage={this.props.submitOrderError}/>
             console.log('error option')
-        } else if(!this.props.loading  && this.props.submitOrderError ==false  && this.props.submitOrderSuccess==false){
+        } else if(!this.props.loading  && this.props.submitOrderError ===false  && this.props.submitOrderSuccess===false){
             modalOrSpinner=<ShoppingSummary
             items={this.props.items}
             totalPrice={this.props.totalPrice}
             submitOrder={this.submitOrder}
             exitModal={this.props.closeShoppingSummaryModalAction}
           />
-          console.log('second option')
         } else if(!this.props.loading  && !this.props.submitOrderError && this.props.submitOrderSuccess){
-          // this.props.closeShoppingSummaryModalAction()
-           //{()=> this.showShoppingSummaryModal()}
-           // console.log('third option')
           modalOrSpinner= <Success/>
-          // setTimeout(()=>{this.props.closeShoppingSummaryModalAction }, 3000);
+
         }
 
-      //  console.log('render loading error success ', this.props.loading , this.props.submitOrderError , this.props.submitOrderSuccess)
-
         let allCoffeeShop =null;
-
-        //checking weather items (coffe, cacoa, spices )  are loaded
         if (this.props.loading || !this.props.items){
             allCoffeeShop=   <CoffeeSpinner/>  ; 
        }else{

@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/fetchOrders';
-import classes from './MyOrders.scss';
+import  './MyOrders.scss';
 import classesForButton from '../../components/ShoppingNavBar/ShoppingNavBar.module.css';
 import Error from '../../components/Error/Error';
 

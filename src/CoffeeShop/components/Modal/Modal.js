@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Modal.scss';
+import  './Modal.scss';
 import Backdrop from '../Backdrop/Backdrop';
 
 

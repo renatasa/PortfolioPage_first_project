@@ -31,7 +31,7 @@ export class Covid extends Component {
 
     //axios ERROR handling
     let dropdownAndCalendars= null;
-    if ( this.props.allCountriesData.length==0  && this.props.loadingAllData ){
+    if ( this.props.allCountriesData.length===0  && this.props.loadingAllData ){
         dropdownAndCalendars = <CovidSpinner/>
     }  else if(this.props.allCountriesData.length>0 && this.props.error==null && !this.props.loadingAllData ){
         dropdownAndCalendars= <div class="Covid_dropdownCalendar"> 
@@ -40,7 +40,7 @@ export class Covid extends Component {
                                    { calendarForEndDate}
                               </div>
         
-    } else if(this.props.error!==null &&  !this.props.loadingAllData && this.props.allCountriesData.length==0 ){
+    } else if(this.props.error!==null &&  !this.props.loadingAllData && this.props.allCountriesData.length===0 ){
         dropdownAndCalendars=<Error errorMessage={this.props.errorMsg}/>
     }
     
