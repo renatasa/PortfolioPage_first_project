@@ -4,7 +4,8 @@ import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
 import './CoffeeShop.scss';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import Modal from '../../components/Modal/Modal';
-import CoffeeSpinner from '../../components/CoffeeSpinner/CoffeeSpinner'
+import CoffeeSpinner from '../../components/CoffeeSpinner/CoffeeSpinner';
+import Loader from '../../components/Loader/Loader';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Header from '../../components/Header/Header';
@@ -22,9 +23,9 @@ export class CoffeeShop extends Component {
         this.coffeeHomeRef = React.createRef();
       }
 
-      state={
-          token: null
-      }
+    //   state={
+    //       token: null
+    //   }
 
     componentDidMount(){
 
@@ -79,9 +80,9 @@ export class CoffeeShop extends Component {
         //checking weather to display modal component and what component to display inside modal component
         let modalOrSpinner =[];
         if (this.props.loading  && this.props.submitOrderError ===false  && this.props.submitOrderSuccess===false){
-            modalOrSpinner= <CoffeeSpinner/>
+            modalOrSpinner= <Loader/>
         }else if(!this.props.loading  && this.props.submitOrderError  && !this.props.submitOrderSuccess){
-            modalOrSpinner=<Error errorMessage={this.props.submitOrderError}/>
+            modalOrSpinner=<Error errorMessage={`Posting orders is disabled for this demo application. ${this.props.submitOrderError}`}/>
             console.log('error option')
         } else if(!this.props.loading  && this.props.submitOrderError ===false  && this.props.submitOrderSuccess===false){
             modalOrSpinner=<ShoppingSummary
@@ -97,7 +98,7 @@ export class CoffeeShop extends Component {
 
         let allCoffeeShop =null;
         if (this.props.loading || !this.props.items){
-            allCoffeeShop=   <CoffeeSpinner/>  ; 
+            allCoffeeShop=   <Loader/>  ; 
        }else{
             allCoffeeShop=(
                 <div>

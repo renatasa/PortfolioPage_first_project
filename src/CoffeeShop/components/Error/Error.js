@@ -6,8 +6,8 @@ import classes from './Error.module.css';
 const error = (props) => {
    
 return (
-    <div class="Error">
-        <ErrorOutlineIcon className={classes.errorIcon}/>
+    <div class="ErrorCoffee">
+         <ErrorOutlineIcon className={classes.errorIcon}/> 
         {props.errorMessage} 
     </div>
     ) 
