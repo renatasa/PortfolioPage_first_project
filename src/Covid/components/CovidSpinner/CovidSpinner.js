@@ -5,7 +5,7 @@ import './CovidSpinner.scss';
 const covidSpinner =(props)=> {
     
         return (
-            <div className="loader">
+            <div class="loaderCovid">
                 Loading...
             </div>
         )
