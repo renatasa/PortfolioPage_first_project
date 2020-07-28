@@ -2,6 +2,7 @@ import React from 'react' ;
 import './Success.scss';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import classes from './Success.module.css';
+import {connect} from 'react-redux';
 
 const success = () => {
    
@@ -13,5 +14,7 @@ return (
     ) 
     
 };
+
+
 
 export default success;

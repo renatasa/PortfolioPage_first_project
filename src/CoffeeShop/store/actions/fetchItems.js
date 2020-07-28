@@ -82,6 +82,13 @@ export const submitOrderFail=(error)=>{
 }
 }
 
+export const submitOrderSuccessFalse=()=>{
+    return{
+        type: actionTypes.SUBMIT_ORDER_SUCCESS_FALSE
+}
+}
+
+
 export const showShoppingSummaryModalAction=()=>{
     return{
         type: actionTypes.SHOW_SHOPPING_SUMMARY_MODAL_ACTION
@@ -112,6 +119,7 @@ export const submitOrder=(items, totalPrice)=>{
             console.log('this is submit order success ', response)
             dispatch(submitOrderSuccess())
             setTimeout(()=>{dispatch(closeShoppingSummaryModalAction())}, 1800)
+            setTimeout(()=>{dispatch(submitOrderSuccessFalse())}, 1800)
         })
         .catch(error=>{
             console.log(' error in submit order ', error);

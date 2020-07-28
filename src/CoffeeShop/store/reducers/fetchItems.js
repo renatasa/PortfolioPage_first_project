@@ -1,18 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 
 let initialState = {
-    items: [
-// {count: 0, description: "Mus mauris vitae ultricies leo integer malesuada n… accumsan lacus vel facilisis volutpat est velit.", name: "Salvador Dark", price: 1},
-// {count: 0, description: "Mollis nunc sed id semper risus in hendrerit gravi…n tellus orci ac auctor augue mauris augue neque.", name: "Organic French", price: 2},
-// {count: 0, description: "Augue lacus viverra vitae congue eu consequat ac f…m volutpat commodo sed egestas egestas fringilla.", name: "Arabic Mocha", price: 3},
-// {count: 0, description: "Quam viverra orci sagittis eu volutpat odio facili…e tortor condimentum lacinia quis vel eros donec.", name: "Brazilian Cacoa", price: 2.5},
-// {count: 0, description: "Integer eget aliquet nibh praesent tristique magna…t turpis cursus in hac habitasse platea dictumst.", name: "Brazilian Cacoa Butter", price: 3.5},
-// {count: 0, description: "In fermentum et sollicitudin ac orci phasellus ege… eu tincidunt tortor aliquam nulla facilisi cras.", name: "Coffee Spice Mix", price: 2},
-
-    ],
-
-  //  order:[],
-
+    items: [ ],
     showShoppingSummary: false,
     loading: false,
     fetchItemsError: false,
@@ -20,13 +9,6 @@ let initialState = {
     submitOrderSuccess:false,
     showShoppingSummaryModal: false,
     totalPrice: 0
-    // test1: 'test lala', 
-    // test2:[
-    //     {name:'horse', count: 0}, 
-    //     {name:'cow', count:0}, 
-    //     {name:'sheep', count:0}, 
-    //     {name:'donkey', count:0}
-    // ]
 
 }
 
@@ -84,6 +66,10 @@ const submitOrderSuccess=(state, action)=>{
   return{...state, loading: false, submitOrderSuccess: true, submitOrderError: false}
 }
 
+const submitOrderSuccessFalse=(state, action)=>{
+  return{...state, submitOrderSuccess: false}
+}
+
 const submitOrderFail=(state, action)=>{
   return{...state, loading: false, submitOrderSuccess: false, submitOrderError: action.error, showShoppingSummaryModal: true}
 }
@@ -106,6 +92,7 @@ const reducer=(state=initialState, action)=>{
         case actionTypes.REMOVE_ITEM: return removeItem(state, action);
         case actionTypes.SUBMIT_ORDER_START: return submitOrderStart(state, action);
         case actionTypes.SUBMIT_ORDER_SUCCESS: return submitOrderSuccess(state, action);
+        case actionTypes.SUBMIT_ORDER_SUCCESS_FALSE: return submitOrderSuccessFalse(state, action);
         case actionTypes.SUBMIT_ORDER_FAIL: return submitOrderFail(state, action);
         case actionTypes.SHOW_SHOPPING_SUMMARY_MODAL_ACTION : return showShoppingSummaryModalReducer(state, action);
         case actionTypes.CLOSE_SHOPPING_SUMMARY_MODAL_ACTION : return closeShoppingSummaryModalReducer(state, action);
