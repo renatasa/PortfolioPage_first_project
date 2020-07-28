@@ -4,7 +4,6 @@ import ShoppingNavBar from '../../components/ShoppingNavBar/ShoppingNavBar';
 import './CoffeeShop.scss';
 import ShoppingSummary from '../../components/ShoppingSummary/ShoppingSummary';
 import Modal from '../../components/Modal/Modal';
-import CoffeeSpinner from '../../components/CoffeeSpinner/CoffeeSpinner';
 import Loader from '../../components/Loader/Loader';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
@@ -13,6 +12,7 @@ import Footer from '../../components/Footer/Footer';
 import TodaySpecial from '../../components/TodaySpecial/TodaySpecial';
 import Error from '../../components/Error/Error.js';
 import Success from '../../components/Success/Success';
+import axios from 'axios';
 
 
 export class CoffeeShop extends Component {
@@ -22,10 +22,6 @@ export class CoffeeShop extends Component {
         this.todaySpecialRef = React.createRef();
         this.coffeeHomeRef = React.createRef();
       }
-
-    //   state={
-    //       token: null
-    //   }
 
     componentDidMount(){
 
@@ -93,7 +89,6 @@ export class CoffeeShop extends Component {
           />
         } else if(!this.props.loading  && !this.props.submitOrderError && this.props.submitOrderSuccess){
           modalOrSpinner= <Success/>
-
         }
 
         let allCoffeeShop =null;
