@@ -14,7 +14,6 @@ import Error from '../../components/Error/Error.js';
 import Success from '../../components/Success/Success';
 import axios from 'axios';
 
-
 export class CoffeeShop extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +23,6 @@ export class CoffeeShop extends Component {
       }
 
     componentDidMount(){
-
         this.props.onFetchItems();
     }
 
@@ -78,7 +76,7 @@ export class CoffeeShop extends Component {
         if (this.props.loading  && this.props.submitOrderError ===false  && this.props.submitOrderSuccess===false){
             modalOrSpinner= <Loader/>
         }else if(!this.props.loading  && this.props.submitOrderError  && !this.props.submitOrderSuccess){
-            modalOrSpinner=<Error errorMessage={`Posting orders is disabled for this demo application. ${this.props.submitOrderError}`}/>
+            modalOrSpinner=<Error errorMessage={`Posting order requests is disabled for this demo application. ${this.props.submitOrderError}`}/>
             console.log('error option')
         } else if(!this.props.loading  && this.props.submitOrderError ===false  && this.props.submitOrderSuccess===false){
             modalOrSpinner=<ShoppingSummary

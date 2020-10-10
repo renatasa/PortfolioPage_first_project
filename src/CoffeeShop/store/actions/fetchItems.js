@@ -47,7 +47,7 @@ export const fetchItems=()=>{
 
 export const addItem=(index)=>{
     return{
-        type: actionTypes.ADD_ITEM,
+        type: actionTypes.ADD_ITEM, 
         index: index
 }
 }

@@ -19,7 +19,7 @@ function App() {
             <CoffeeShop/>
           </Route>
 
-          <Route path="/covid">
+          <Route path="/stats">
               <Covid/>
           </Route>
 

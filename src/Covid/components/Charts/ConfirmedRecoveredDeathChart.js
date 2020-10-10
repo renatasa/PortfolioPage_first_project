@@ -3,20 +3,28 @@ import { Bar } from 'react-chartjs-2';
 import {connect} from 'react-redux';
 import CovidSpinner from '../CovidSpinner/CovidSpinner';
 
-const confirmedRecoveredDeactChart=(props)=> {
+const confirmedRecoveredDeathChart=(props)=> {
   let defaultProps={
     displayTitle: true, 
     displayLegend: false, 
    // legendPosition: 'right'    
 }
+
+console.log('confirmedrecoveredDeathChart');
+console.log('confirmedrecovereddeathchart ',  props.allCountriesData[props.selectedCountryKey])
+console.log('confirmedrecovereddeathchart active ',  props.allCountriesData[props.selectedCountryKey].Active)
+console.log('confirmedrecovereddeathchart recovered ',  props.allCountriesData[props.selectedCountryKey].Recovered)
+console.log('confirmedrecovereddeathchart confirmed ',  props.allCountriesData[props.selectedCountryKey].Confirmed)
+console.log('confirmedrecovereddeathchart deaths ',  props.allCountriesData[props.selectedCountryKey].Deaths)
       let barChart=<CovidSpinner/>;
 
       if (
-            props.allCountriesData[props.selectedCountryKey].Active &&
-            props.allCountriesData[props.selectedCountryKey].Recovered &&
-            props.allCountriesData[props.selectedCountryKey].Confirmed &&
-            props.allCountriesData[props.selectedCountryKey].Deaths 
+            props.allCountriesData[props.selectedCountryKey].Active>=0 &&
+            props.allCountriesData[props.selectedCountryKey].Recovered>=0 &&
+            props.allCountriesData[props.selectedCountryKey].Confirmed>=0 &&
+            props.allCountriesData[props.selectedCountryKey].Deaths>=0 
             ){
+              console.log('lala');
         barChart= (
           <Bar
               data={ {
@@ -76,4 +84,4 @@ const mapStateToProps=state=>{
     }
 }
 
-export default connect(mapStateToProps)(confirmedRecoveredDeactChart) 
+export default connect(mapStateToProps)(confirmedRecoveredDeathChart) 

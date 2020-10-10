@@ -17,12 +17,17 @@ export class Covid extends Component {
     componentDidMount(){
     //   this.props.onFetchItems();
        this.props.onLoadAllCountriesData();
+       console.log('allcountries data ',this.props.allCountriesData);
 
 }
 
  
     render() {
-
+        console.log('allcountries data render',this.props.allCountriesData);
+        console.log('this.props.selectedcountrykey ', this.props.selectedCountryKey);
+        console.log('this.props.selectedcountry ', this.props.selectedCountry);
+        console.log('this.props.startdate ', this.props.startDate)
+        console.log('all countries data[selectedcoutnry key] ', this.props.allCountriesData[this.props.selectedCountryKey])
     let calendarForEndDate=null;
     if (this.props.startDate){
         calendarForEndDate= <CalendarForEndDate/>
@@ -71,6 +76,7 @@ export class Covid extends Component {
 
        let a=this.props.selectedCountryKey;
         for (let i=a; i<b; i++){
+         //   console.log('this.props.allCountriesData[i].Active ', this.props.allCountriesData[i].Active);
             sum=sum+1;
             recovered.push(this.props.allCountriesData[i].Recovered);
             active.push(this.props.allCountriesData[i].Active);

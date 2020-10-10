@@ -9,8 +9,21 @@ const countrydata =(props)=> {
     //searching for selected country and startDate object key
     if (props.selectedCountry && props.selectedStartDate && props.allCountriesData.length>0){
         let selectedDateSliced= props.selectedStartDate.slice(1, 11);
+        console.log('selected country date ', props.selectedStartDate);
+        console.log('selected date sliced ', selectedDateSliced);
+        console.log('selected country ', props.selectedCountry);
+        console.log(' ');
         let slicedDateToRegExp = new RegExp(selectedDateSliced, "i") ;
+        console.log('slicedDateToRegexp ', slicedDateToRegExp);
     for(let key in props.allCountriesData){
+        console.log('key countryData ', key);
+        console.log(props.allCountriesData[key].Country);
+        console.log('selectedCountry ',props.selectedCountry);
+        console.log('slicedDateToRegExp ',slicedDateToRegExp);
+        console.log('props.allCountriesData[key].Date ',props.allCountriesData[key].Date);
+        console.log( slicedDateToRegExp.test(props.allCountriesData[key].Date));
+        console.log(props.selectedCountry===props.allCountriesData[key].Country);
+        
         if(props.selectedCountry===props.allCountriesData[key].Country && slicedDateToRegExp.test(props.allCountriesData[key].Date) ){
             console.log('testing all countries found match country and date ', props.allCountriesData[key].Country, key);
           //  selectedCountryKey=key;

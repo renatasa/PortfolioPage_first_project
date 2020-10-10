@@ -29,7 +29,7 @@ let  addDays=(date, days)=>{
         onChange={(date) => {props.onselectEndDate(JSON.stringify(date));   setSelectedDate(date) }} 
         dateFormat='yyyy-MM-dd'
         minDate={modifiedStartDate}
-        maxDate={new Date()}
+        maxDate={new Date("2020/10/07")}
         placeholderText="Click to select a end date"
         />
         </div>
