@@ -25,8 +25,9 @@ export const loadingDataFail=(error)=>{
 export const loadAllData=()=>{
     return dispatch=>{
         dispatch(loadingDataStart());
-    axios.get('https://api.covid19api.com/all')
+    axios.get(process.env.REACT_APP_API_GET_STATISTICS)
     .then(response=>{
+        console.log('coviddemo ', response.data)
         const fetchedItems=[];
         let countryIndexArr=[];
         countryIndexArr[0]=`${response.data[0].Country}-start` ;
@@ -35,7 +36,7 @@ export const loadAllData=()=>{
         let counter=0;
 
         for (let key in response.data){
-            
+            console.log('response data key ', response.data[key]);
             if(response.data[key].Country !=="United States of America" && response.data[key].Country !=="United Kingdom") {
                 counter= counter+1;
                 if(response.data[key].Deaths>0){
@@ -56,7 +57,7 @@ export const loadAllData=()=>{
 
             } 
         }
-
+        console.log('fetcheditems ', fetchedItems)
         dispatch(loadingDataSuccess(fetchedItems));
     })
     .catch(error=>{
@@ -68,7 +69,7 @@ export const loadAllData=()=>{
 }
 
 export const selectCountryKey=(key)=>{
- //   console.log('selectCountryKey action');
+ console.log('selectCountryKey action key', key);
     return {
         type: actionTypes.SELECT_COUNTRY_KEY, 
         key:key

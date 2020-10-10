@@ -29,7 +29,7 @@ import emailSVG from './logos/emailSVG.svg'
                 <h2>Check out my demo projects</h2>
                 <div class="aboutMe__projects__buttons">
                     <NavLink to="/coffeeShop/"> <div class="aboutMe__projects__buttons-item">Coffee Shop</div></NavLink>
-                    <NavLink to="/covid"><div class="aboutMe__projects__buttons-item">COVID statistics</div></NavLink>
+                    <NavLink to="/stats"><div class="aboutMe__projects__buttons-item">Statistics</div></NavLink>
                 </div>
             </div>   
 

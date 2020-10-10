@@ -8,7 +8,7 @@ import * as actions from '../../store/actions/index.js';
 function Calendar (props){
 
     const [startDate, setSelectedDate] = useState(null);
-    let min=new Date("2020/01/23");
+    let min=new Date("2020/10/01");
     // console.log('set selected date ', setSelectedDate);
     // console.log('set selected date ', startDate);
 
@@ -18,7 +18,7 @@ function Calendar (props){
         onChange={(date) => {props.onselectStartDate(JSON.stringify(date));   setSelectedDate(date) }} 
         dateFormat='yyyy-MM-dd'
         minDate={min}
-        maxDate={new Date()}
+        maxDate={new Date("2020/10/06")}
         placeholderText="Click to select a start date"
         />
     );

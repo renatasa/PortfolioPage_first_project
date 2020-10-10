@@ -59,6 +59,7 @@ import * as actionTypes from './actionTypes';
 
 
 export const selectStartDate=(date)=>{
+    console.log('selectstartdate ', date);
     return {
         type: actionTypes.SELECT_START_DATE, 
         date: date
