@@ -1,74 +1,68 @@
 @import "../../../sass/variables";
 @import "../../../sass/typography";
 
-
 .header {
-    height: 90vh;
-    color: $color-white;
-    background-image: linear-gradient(to right bottom, 
-    rgba($color-brown-medium, 0.3), 
-    rgba($color-brown-dark, 0.3)), 
+  height: 90vh;
+  color: $color-white;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-brown-medium, 0.3),
+      rgba($color-brown-dark, 0.3)
+    ),
     url(../../assets/img/imgSmall/coffee-beans-header1800.jpg);
-    background-size: cover;
-    position: relative;
- 
-  
-    &__logo-box {
-      position: absolute;
-      top: 4rem;
-      left: 4rem; 
-    }
+  background-size: cover;
+  position: relative;
 
-    &__logo {
-      height: 5rem; 
-    }
-    
-    &__text-box {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center; 
-    }
-
+  &__logo {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
   }
 
-  @media(min-width:1800px){
-      .header{
-        background-image: linear-gradient(to right bottom, 
-        rgba($color-brown-medium, 0.3), 
-        rgba($color-brown-dark, 0.3)), 
-        url(../../assets/img/imgSmall/coffee-beans-header2400.jpg);
-      }
-   
-} 
-
-
-
-
-@media(min-resolution: 192dpi) and (max-width: 600px) {
-  .header{
-    background-image: linear-gradient(to right bottom, 
-             rgba($color-brown-medium, 0.3), 
-             rgba($color-brown-dark, 0.3)), url(../../assets/img/imgSmall/coffee-beans-header2400.jpg);
-    background-position: right 0px bottom 0px ;
+  &__logo-box {
+    height: 5rem;
   }
 
-} 
-
-@media(max-width:900px){
-  .header{
-    background-image: linear-gradient(to right bottom, 
-    rgba($color-brown-medium, 0.3), 
-    rgba($color-brown-dark, 0.3)), 
-    url(../../assets/img/imgSmall/coffee-beans-header1800.jpg);
-    background-position: right 0px bottom 0px ;
+  &__text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
+}
 
-} 
+@media (min-width: 1800px) {
+  .header {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-medium, 0.3),
+        rgba($color-brown-dark, 0.3)
+      ),
+      url(../../assets/img/imgSmall/coffee-beans-header2400.jpg);
+  }
+}
 
+@media (min-resolution: 192dpi) and (min-width: 600px) {
+  .header {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-medium, 0.3),
+        rgba($color-brown-dark, 0.3)
+      ),
+      url(../../assets/img/imgSmall/coffee-beans-header2400.jpg);
+    background-position: right 0px bottom 0px;
+  }
+}
 
-
-  
-
-  
+@media (max-width: 900px) {
+  .header {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-medium, 0.3),
+        rgba($color-brown-dark, 0.3)
+      ),
+      url(../../assets/img/imgSmall/coffee-beans-header1200.jpg);
+    background-position: right 0px bottom 0px;
+  }
+}

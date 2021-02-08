@@ -4,10 +4,7 @@ export {
     removeItem,
     submitOrder,
     showShoppingSummaryModalAction,
-    closeShoppingSummaryModalAction,
-    testAction,
-    addAnimal, 
-    addCow
+    closeShoppingSummaryModalAction
 
 } from './fetchItems';
 

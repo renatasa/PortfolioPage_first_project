@@ -1,0 +1,81 @@
+.navBar {
+  position: fixed;
+  width: 100%;
+  height: 6rem;
+
+  top: 0px;
+  background: #fff;
+  box-sizing: border-box;
+  z-index: 2;
+
+  &__buttons {
+    position: relative;
+    left: 75%;
+    top: 25%;
+    width: 200px;
+
+    &__shoppingCart {
+      display: inline-block;
+      position: relative;
+      right: -2rem;
+    }
+
+    &__viewOrders {
+      display: inline-block;
+    }
+
+    /* iconButton Class enlarges material UI icon box shadow and Icon itself on hover works with both icons in navbar */
+    &-iconButton {
+      transform: scale(1.2);
+    }
+    &-btn {
+      color: #3c3a1e;
+      transform: scale(1.5);
+    }
+  }
+}
+
+.howManyItemsInCart {
+  display: inline-block;
+  top: -1rem;
+  border-radius: 50%;
+  width: 2.8rem;
+  text-align: center;
+  right: 1.5rem;
+  position: relative;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: rgb(147, 0, 0);
+}
+
+.howManyItemsInCartHidden {
+  display: inline-block;
+  visibility: hidden;
+  top: -1rem;
+  border-radius: 50%;
+  width: 2.8rem;
+  text-align: center;
+  right: 1.5rem;
+  position: relative;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: rgb(147, 0, 0);
+}
+
+@media (max-width: 960px) {
+  .navBar {
+    &__buttons {
+      left: 78%;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .navBar {
+    &__buttons {
+      left: 64%;
+    }
+  }
+}

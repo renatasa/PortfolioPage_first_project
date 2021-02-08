@@ -1,61 +1,46 @@
 @import "../../../sass/variables";
 
-.Buttons{
-    text-align: center;
-}
+.shoppingSummary {
+  font-size: 16px;
+  font-weight: bold;
+  color: $color-brown-dark;
+  margin: 0.8rem 0.8rem 0.8rem 4rem;
 
-.Button{
-    border-radius: 12px;
-    border: 1px solid white;
-    padding: 10px ;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    background-color: $color-brown-dark;
-    color: $color-brown-light;
-    width: 16rem;
-}
-
-.Button:hover{
-opacity: 1;
-cursor: pointer;
-}
-
-.DisplayNoButton{
-    display: none;
-}
-
-.TotalPrice{
-    font-size: 18px;
-    font-weight: bold;
+  &-items {
     color: $color-green-medium;
-    margin: .8rem .8rem .8rem 4rem;
-    
+  }
 }
 
-.ListItemsInCart{
-    font-size: 16px;
-    font-weight: bold;
-    color: $color-brown-dark;
-    margin: .8rem .8rem .8rem 4rem;
-}
+.shoppingSummaryPrice {
+  font-size: 18px;
+  font-weight: bold;
+  color: $color-green-medium;
+  margin: 0.8rem 0.8rem 0.8rem 4rem;
 
-.ItemsAmount{
-    color: $color-green-medium;
-}
+  &__buttons {
+    text-align: center;
 
-@media(max-width: 1200px){
+    &-button {
+      border-radius: 12px;
+      border: 1px solid white;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      background-color: $color-brown-dark;
+      color: $color-brown-light;
+      width: 16rem;
+    }
 
-}
+    &-button:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
 
-@media(max-width: 1035px){
-
-
-}
-
-@media(max-width: 935px){
-
-
+    &-noButton {
+      display: none;
+    }
+  }
 }

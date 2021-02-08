@@ -20,7 +20,7 @@ let  addDays=(date, days)=>{
 
     let selectedStartDate=new Date(x);
 
-    let modifiedStartDate=addDays(selectedStartDate, 2)
+    let modifiedStartDate=addDays(selectedStartDate, 3)
 
     return (
         <div class="Covid_dropdownCalendar_item">

@@ -15,7 +15,6 @@ import Error from './components/Error/Error.js';
 export class Covid extends Component {
 
     componentDidMount(){
-    //   this.props.onFetchItems();
        this.props.onLoadAllCountriesData();
        console.log('allcountries data ',this.props.allCountriesData);
 

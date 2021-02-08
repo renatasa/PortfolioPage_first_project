@@ -1,11 +1,10 @@
-import React from 'react';
-import classes from  './Loader.module.css';
+import React from "react";
+import "./Loader.scss";
 
-const loader=()=>(
-    <div className={classes.loaderSpinner}>
-        <div className={classes.loaderCoffee}>Loading...</div>
-    </div>
-
-)
+const loader = () => (
+  <div className="loaderSpinner">
+    <div className="loaderCoffee">Loading...</div>
+  </div>
+);
 
 export default loader;

@@ -3,7 +3,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ViewList from '@material-ui/icons/ViewList';
 import { NavLink} from 'react-router-dom';
-import classes from './ShoppingNavBar.module.css' ;
+import './ShoppingNavBar.scss' ;
 import {connect} from 'react-redux';
 
 const shoppingNavBar =(props)=> {
@@ -15,21 +15,21 @@ const shoppingNavBar =(props)=> {
 
 
         return (
-        <div className={classes.navBar}>
+        <div className="navBar">
 
-                <div className={classes.Buttons}>
+                <div className="navBar__buttons">
                 
-                <div className={classes.shoppingCart}>
-                  <IconButton onClick={props.clicked} className={classes.iconButton}  >
-                      <ShoppingCartIcon className={classes.shoppingCartIcon}/>
+                <div className="navBar__buttons__shoppingCart">
+                  <IconButton onClick={props.clicked} className="navBar__buttons-iconButton"  >
+                      <ShoppingCartIcon className="navBar__buttons-btn"/>
                   </IconButton>
-               { itemsInCart>0? <div className={classes.howManyItemsInCart}>{itemsInCart}</div> : <div className={classes.howManyItemsInCartHidden}>{itemsInCart}</div> }
+               { itemsInCart>0? <div className="howManyItemsInCart">{itemsInCart}</div> : <div className="howManyItemsInCartHidden">{itemsInCart}</div> }
                 </div>
                
                  <NavLink to="/coffeeShop/myOrders/"> 
-                    <div className={classes.viewOrders}>
-                      <IconButton className={classes.iconButton}  onClick={props.changeHistory}>
-                          <ViewList className={classes.ViewListIcon}/>    
+                    <div className="navBar__buttons__viewOrders">
+                      <IconButton className="navBar__buttons-iconButton"  onClick={props.changeHistory}>
+                          <ViewList className="navBar__buttons-btn"/>    
                       </IconButton>    
                     </div>
                  </NavLink> 
