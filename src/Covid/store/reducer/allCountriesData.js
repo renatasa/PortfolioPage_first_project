@@ -10,6 +10,7 @@ let initialState = {
 
 
 const loadingDataStart=(state, action)=>{
+    console.log('allcountriesdata reducer ', state.allCountriesData);
     return {...state,  loadingAllData: true}
 }
 
@@ -23,6 +24,7 @@ const loadingDataFail=(state, action)=>{
 }
 
 const selectCountryKey=(state, action)=>{
+    console.log('allcountriesdata reducer ', state.allCountriesData);
     return {...state, selectedCountryKey: action.key}
 }
 

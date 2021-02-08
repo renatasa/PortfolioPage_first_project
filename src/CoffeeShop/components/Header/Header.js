@@ -7,15 +7,15 @@ const header=()=>{
         return (
         
 
-        <header class="header">
-            <div class="header__logo-box">
-                <img src={coffeeHouseLogo} alt="Logo" class="header__logo"/>
+        <header className="header">
+            <div className="header__logo">
+                <img src={coffeeHouseLogo} alt="Logo" className="header__logo-box"/>
             </div>
 
-            <div class="header__text-box">
-            <h1 class="heading-primary">
-                <span class="heading-primary--main">Coffee House</span>
-                <span class="heading-primary--sub">discover sip of coffee</span>
+            <div className="header__text">
+            <h1 className="heading-primary">
+                <span className="heading-primary--main">Coffee House</span>
+                <span className="heading-primary--sub">discover sip of coffee</span>
             </h1>
            
             </div>

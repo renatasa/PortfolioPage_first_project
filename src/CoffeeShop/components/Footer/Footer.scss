@@ -1,121 +1,113 @@
-@import '../../../sass/variables';
+@import "../../../sass/variables";
 
-.Footer{
-    font-size: $default-font-size-3;
-  //  background-color: $color-brown-dark;
-  background-image: linear-gradient(to right bottom, 
-        rgba($color-brown-medium, 0.8), 
-        rgba($color-brown-dark, 0.7));
-    padding: 2.5rem;
-    margin-top: 4rem;
-    border-radius: .6rem;
- 
-    &__info{
-        display: inline-block;
-        color: $color-white;
-        width: 60%;
+.Footer {
+  font-size: $default-font-size-3;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-brown-medium, 0.8),
+    rgba($color-brown-dark, 0.7)
+  );
+  padding: 2.5rem;
+  margin-top: 4rem;
+  border-radius: 0.6rem;
+
+  &__info {
+    display: inline-block;
+    color: $color-white;
+    width: 60%;
+  }
+
+  &__nav {
+    display: inline-flex;
+    justify-content: center;
+    width: 40%;
+    vertical-align: top;
+
+    & li {
+      color: $color-brown-dark;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+      background-color: $color-white;
+      text-align: center;
+      margin: 1.5rem 0.5rem 1.5rem 5rem;
+      transition: transform 0.5s;
+      text-decoration: none;
+      border-radius: 0.2rem;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:link {
+        text-decoration: none;
+      }
     }
+  }
 
-    &__nav{
-        display: inline-flex;
-        justify-content: center;
-        width: 40%;
-        vertical-align: top;
+  &__copyright {
+    color: $color-white;
+    text-align: center;
+    margin-top: 1rem;
+  }
 
-        & li{
-            color: $color-brown-dark;
-            font-weight: 700;
-            width: 100%;
-            cursor: pointer;
-            background-color: $color-white;
-            text-align: center;
-            margin: 1.5rem .5rem 1.5rem 5rem;
-            transition: transform .5s;
-            text-decoration: none;
-            border-radius: .2rem;
+  &__summary {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 
-            &:hover{
-                transform: scale(1.1);
-            }
+  &__contact {
+    list-style: none;
+  }
 
-            &:link{
-                text-decoration: none;
-            }
-        }
-
-    }
-
-    &__copyright{
-        color: $color-white;
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-
-    &__summary{
-        width: 100%;
-        margin-bottom: 2rem;
-    }
-
-    &__contact{
-        list-style: none;
-    }
-
-    & ul{
-        list-style: none;
-    }   
+  & ul {
+    list-style: none;
+  }
 }
 
-
-
-@media(max-width: 960px){
-    .Footer{
-    &__info{
-        display: block;
-         width: 100%;
-         text-align: center;
+@media (max-width: 960px) {
+  .Footer {
+    &__info {
+      display: block;
+      width: 100%;
+      text-align: center;
     }
 
-    &__nav{
-        width: 100%;
-        height: 3rem;
-        margin: 0 auto;  
-        text-align: center;
-       // display: inline-block;
+    &__nav {
+      width: 100%;
+      height: 3rem;
+      margin: 0 auto;
+      text-align: center;
 
-        & li{
-            display: inline;
-            margin: 1.5rem .5rem 1.5rem auto;
-            padding: 0rem 1rem 0rem 1rem ;
-            font-size: $default-font-size;
-            border-radius: .1rem;
-        }
+      & li {
+        display: inline;
+        margin: 1.5rem 0.5rem 1.5rem auto;
+        padding: 0rem 1rem 0rem 1rem;
+        font-size: $default-font-size;
+        border-radius: 0.1rem;
+      }
     }
- }
-} 
+  }
+}
 
-@media(max-width: 500px){
-    .Footer{
-    &__nav{
-
-        & li{
-            padding: 0 .4rem 0 .4rem ;
-            font-size: $default-font-size-2;
-        }
+@media (max-width: 500px) {
+  .Footer {
+    &__nav {
+      & li {
+        padding: 0 0.4rem 0 0.4rem;
+        font-size: $default-font-size-2;
+      }
     }
- }
-} 
+  }
+}
 
-@media(max-width: 420px){
-    .Footer{
-
-    &__nav{
-
-        & li{
-            padding: 0 .2rem 0 .2rem ;
-            font-size: $default-font-size-4;
-        }
+@media (max-width: 420px) {
+  .Footer {
+    &__nav {
+      & li {
+        padding: 0 0.2rem 0 0.2rem;
+        font-size: $default-font-size-4;
+      }
     }
-
- }
-} 
+  }
+}

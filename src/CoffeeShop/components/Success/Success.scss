@@ -1,13 +1,18 @@
-@import '../../../sass/variables';
+@import "../../../sass/variables";
 
-.Success{
-    background-color: $color-green-medium;
-    color: $color-white;
-    font-size: $default-font-size;
-    width: 100%;
-    height: 3rem;
-    border-radius: 4px;
-    vertical-align: center;
-    padding-top: 0.2rem;
-    margin-bottom: 0.75rem;
+.orderSuccess {
+  background-color: $color-green-medium;
+  color: $color-white;
+  font-size: $default-font-size;
+  width: 100%;
+  height: 3rem;
+  border-radius: 4px;
+  vertical-align: center;
+  padding-top: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.orderSuccess-icon {
+  transform: scale(1.2);
+  margin-right: 0.5rem;
 }

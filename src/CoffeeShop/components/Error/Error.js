@@ -1,17 +1,14 @@
-import React from 'react' ;
-import './Error.scss';
-import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
-import classes from './Error.module.css';
+import React from "react";
+import "./Error.scss";
+import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 const error = (props) => {
-   
-return (
-    <div class="ErrorCoffee">
-         <ErrorOutlineIcon className={classes.errorIcon}/> 
-        {props.errorMessage} 
+  return (
+    <div className="ErrorCoffee">
+      <ErrorOutlineIcon className="ErrorCoffee__icon" />
+      {props.errorMessage}
     </div>
-    ) 
-    
+  );
 };
 
 export default error;

@@ -1,13 +1,16 @@
-@import '../../../sass/variables';
+@import "../../../sass/variables";
 
-.ErrorCoffee{
-    background-color: $color-red-error;
-    color: $color-grey-light-1 ;
-    font-size: $default-font-size;
-    display: inline-block;
-    border: 2px solid $color-red-error;
-    border-radius: .4rem;
+.ErrorCoffee {
+  background-color: $color-red-error;
+  color: $color-grey-light-1;
+  font-size: $default-font-size;
+  display: inline-block;
+  border: 2px solid $color-red-error;
+  border-radius: 0.4rem;
 }
 
-
-
+.ErrorCoffee__icon {
+  transform: scale(1.2);
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+}
