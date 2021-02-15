@@ -1,15 +1,12 @@
-import React from 'react';
-import './DropdownItem.scss';
+import React from "react";
+import "./DropdownItem.scss";
 
+const dropDownItem = (props) => {
+  return (
+    <div className="dropdownCountriesSingleItem" onClick={props.clicked}>
+      {props.countryName}
+    </div>
+  );
+};
 
-const dropDownItem =(props)=> {
-    
-        return (
-            <div class="item" onClick={props.clicked}>
-                {props.countryName}
-            </div>
-        )
-    
-}
-
-export default dropDownItem
+export default dropDownItem;

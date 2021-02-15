@@ -33,11 +33,17 @@ const shoppingItemImg = (props) => {
       );
     case "Coffee Spice Mix":
       return (
-        <img src={coffeeSpiceMix} alt={props.name} className="u-margin-left-1" />
+        <img
+          src={coffeeSpiceMix}
+          alt={props.name}
+          className="u-margin-left-1"
+        />
       );
 
     case "Sandwitch":
-      return <img src={sandwitch} alt={props.name} className="u-margin-left-3" />;
+      return (
+        <img src={sandwitch} alt={props.name} className="u-margin-left-3" />
+      );
 
     case "Cake":
       return <img src={cake} alt={props.name} className="u-margin-left-4" />;

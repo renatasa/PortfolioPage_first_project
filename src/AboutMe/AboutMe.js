@@ -10,7 +10,7 @@ import gitSVG from "./logos/gitSVG.svg";
 import githubSVG from "./logos/githubSVG.svg";
 import emailSVG from "./logos/emailSVG.svg";
 
-const AboutMe = (props) => {
+const AboutMe = () => {
   return (
     <div className="aboutMe">
       <div>

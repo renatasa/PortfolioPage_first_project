@@ -72,10 +72,18 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .navBar {
     &__buttons {
       left: 64%;
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .navBar {
+    &__buttons {
+      left: 58%;
     }
   }
 }

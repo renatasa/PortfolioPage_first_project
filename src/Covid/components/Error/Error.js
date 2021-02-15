@@ -4,7 +4,7 @@ import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 const error = (props) => {
   return (
-    <div class="statisticsError">
+    <div className="statisticsError">
       <ErrorOutlineIcon className="statisticsErrorIcon" />
       {props.errorMessage}
     </div>

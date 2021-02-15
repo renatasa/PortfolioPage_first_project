@@ -1,87 +1,73 @@
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
-import {connect} from 'react-redux';
-import CovidSpinner from '../CovidSpinner/CovidSpinner';
+import React from "react";
+import { Bar } from "react-chartjs-2";
+import { connect } from "react-redux";
+import CovidSpinner from "../CovidSpinner/CovidSpinner";
 
-const confirmedRecoveredDeathChart=(props)=> {
-  let defaultProps={
-    displayTitle: true, 
-    displayLegend: false, 
-   // legendPosition: 'right'    
-}
+const confirmedRecoveredDeathChart = (props) => {
+  let defaultProps = {
+    displayTitle: true,
+    displayLegend: false,
+  };
 
-console.log('confirmedrecoveredDeathChart');
-console.log('confirmedrecovereddeathchart ',  props.allCountriesData[props.selectedCountryKey])
-console.log('confirmedrecovereddeathchart active ',  props.allCountriesData[props.selectedCountryKey].Active)
-console.log('confirmedrecovereddeathchart recovered ',  props.allCountriesData[props.selectedCountryKey].Recovered)
-console.log('confirmedrecovereddeathchart confirmed ',  props.allCountriesData[props.selectedCountryKey].Confirmed)
-console.log('confirmedrecovereddeathchart deaths ',  props.allCountriesData[props.selectedCountryKey].Deaths)
-      let barChart=<CovidSpinner/>;
+  let barChart = <CovidSpinner />;
 
-      if (
-            props.allCountriesData[props.selectedCountryKey].Active>=0 &&
-            props.allCountriesData[props.selectedCountryKey].Recovered>=0 &&
-            props.allCountriesData[props.selectedCountryKey].Confirmed>=0 &&
-            props.allCountriesData[props.selectedCountryKey].Deaths>=0 
-            ){
-              console.log('lala');
-        barChart= (
-          <Bar
-              data={ {
-                labels: ['Active', 'Recovered', 'Confirmed', 'Deaths'], 
-                datasets: [
-                    {
-                        label: props.selectedCountry,
-                        data:[
-                         
-                          props.allCountriesData[props.selectedCountryKey].Active,
-                          props.allCountriesData[props.selectedCountryKey].Recovered,
-                          props.allCountriesData[props.selectedCountryKey].Confirmed,
-                          props.allCountriesData[props.selectedCountryKey].Deaths,
-                        ], 
-                        backgroundColor:[
-                          'rgba(255, 159, 64, 0.6)',
-                          'rgba(75, 192, 192, 0.6)', 
-                          'rgba(255, 99, 132, 0.6)',
-                          'rgba(153, 102, 255, 0.6)'
-                        ]
-                    }
-                ]
-            }}
-              options={{
-                title:{
-                  display: defaultProps.displayTitle,
-                  text: props.allCountriesData[props.selectedCountryKey].Country+' '+props.selectedDate.slice(1,11),
-                  fontSize:25
-                },
-                legend:{
-                  display: defaultProps.displayLegend,
-                  position: defaultProps.legendPosition
-                }
-              }}
-            />
-    
-        )
-      }
-    
-       
-        return (
-            <div className="chart">
-              {barChart}
+  if (
+    props.allCountriesData[props.selectedCountryKey].Active >= 0 &&
+    props.allCountriesData[props.selectedCountryKey].Recovered >= 0 &&
+    props.allCountriesData[props.selectedCountryKey].Confirmed >= 0 &&
+    props.allCountriesData[props.selectedCountryKey].Deaths >= 0
+  ) {
+    barChart = (
+      <Bar
+        data={{
+          labels: ["Active", "Recovered", "Confirmed", "Deaths"],
+          datasets: [
+            {
+              label: props.selectedCountry,
+              data: [
+                props.allCountriesData[props.selectedCountryKey].Active,
+                props.allCountriesData[props.selectedCountryKey].Recovered,
+                props.allCountriesData[props.selectedCountryKey].Confirmed,
+                props.allCountriesData[props.selectedCountryKey].Deaths,
+              ],
+              backgroundColor: [
+                "rgba(255, 159, 64, 0.6)",
+                "rgba(75, 192, 192, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(153, 102, 255, 0.6)",
+              ],
+            },
+          ],
+        }}
+        options={{
+          title: {
+            display: defaultProps.displayTitle,
+            text:
+              props.allCountriesData[props.selectedCountryKey].Country +
+              " " +
+              props.selectedDate.slice(1, 11),
+            fontSize: 25,
+          },
+          legend: {
+            display: defaultProps.displayLegend,
+            position: defaultProps.legendPosition,
+          },
+        }}
+      />
+    );
+  }
 
-            </div>
-          )
-      }
+  return <div className="chart">{barChart}</div>;
+};
 
+const mapStateToProps = (state) => {
+  return {
+    selectedCountry: state.countriesReducer.selectedCountry,
+    selectedDate: state.countriesReducer.startDate,
+    selectedCountryKey: state.allCountriesDataReducer.selectedCountryKey,
+    allCountriesData: state.allCountriesDataReducer.allCountriesData,
+    loadingAllData: state.allCountriesDataReducer.loadingAllData,
+  };
+};
 
-const mapStateToProps=state=>{
-    return{
-        selectedCountry: state.countriesReducer.selectedCountry, 
-        selectedDate: state.countriesReducer.startDate,
-        selectedCountryKey: state.allCountriesDataReducer.selectedCountryKey,
-        allCountriesData: state.allCountriesDataReducer.allCountriesData,
-        loadingAllData: state.allCountriesDataReducer.loadingAllData
-    }
-}
-
-export default connect(mapStateToProps)(confirmedRecoveredDeathChart) 
+export default connect(mapStateToProps)(confirmedRecoveredDeathChart);
