@@ -1,9 +1,7 @@
+@import "../../../scss/variables";
 
-@import '../../../scss/variables';
-  
-  .item:hover {
-    display: block;
-    cursor: pointer; 
-    background-color: $text-color-primary;
-    
-  }
+.dropdownCountriesSingleItem:hover {
+  display: block;
+  cursor: pointer;
+  background-color: $text-color-primary;
+}

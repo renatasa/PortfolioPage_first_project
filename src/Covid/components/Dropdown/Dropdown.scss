@@ -1,51 +1,29 @@
 @import "../../scss/variables";
 
-ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+.dropdownCountries {
+  position: relative;
+  display: inline-block;
+  background-color: $color-white;
+  cursor: pointer;
+  width: 20rem;
 
-a{
-    color: $text-color-primary;
-    text-decoration: none;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    background-color: $color-white;
-    cursor: pointer;
-    width: 20rem;
-    
-    &-content{
-      // display: none;
-      // position: relative;
-        background-color: #f9f9f9;
-      // min-width: 20rem;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        overflow-y: scroll;
-        height: 30rem;
-      //  width: 15rem;
-    }
-
-    &-select{
-     border: .1rem solid $text-color-primary;
-     border-radius: .2rem;
-      padding: 0rem 2rem;
-      text-align: center;
-      transition: .3s;
-    }
-
-    &-select:hover{
-      // border: .1rem solid $color-grey-dark-2;
-      // border-radius: .2rem;
-      background-color: $text-color-primary;
-     // font-weight: $font-weight-bold-1;
-
-    }
-
+  &-content {
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow-y: scroll;
+    height: 30rem;
   }
 
+  &-select {
+    border: 0.1rem solid $text-color-primary;
+    border-radius: 0.2rem;
+    padding: 0rem 2rem;
+    text-align: center;
+    transition: 0.3s;
+  }
 
+  &-select:hover {
+    background-color: $text-color-primary;
+  }
+}

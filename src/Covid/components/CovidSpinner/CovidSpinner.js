@@ -1,16 +1,8 @@
-import React from 'react';
-import './CovidSpinner.scss';
+import React from "react";
+import "./CovidSpinner.scss";
 
+const covidSpinner = () => {
+  return <div className="loaderCovid">Loading...</div>;
+};
 
-const covidSpinner =(props)=> {
-    
-        return (
-            <div class="loaderCovid">
-                Loading...
-            </div>
-        )
-    
-}
-
-
-export default covidSpinner ;
+export default covidSpinner;

@@ -8,7 +8,7 @@ import Covid from "./Covid/Covid.js";
 
 function App() {
   return (
-    <div class="App">
+    <div className="App">
       <Switch>
         <Route path="/coffeeShop/myOrders">
           <MyOrders />

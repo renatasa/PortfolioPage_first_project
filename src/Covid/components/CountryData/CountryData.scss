@@ -1,59 +1,50 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
+.Country_data_table {
+  font-size: $default-font-size-2;
+  color: $color-grey-dark-3;
+  margin: 1rem;
+  color: $text-color-secondary;
+  display: inline-block;
 
-.Country_data_table{
- font-size: $default-font-size-2;
- color: $color-grey-dark-3;
- margin: 1rem;
- color: $text-color-secondary;
- display: inline-block;
- //border: 1px solid pink;
+  &-row {
+    display: flex;
+  }
 
-    &-row{
+  &-row:first-of-type {
+    display: inline-flex;
+    border-top: 0.1rem solid $text-color-primary;
+    padding: 0rem;
+  }
 
-        display: flex;
+  &-row:last-of-type {
+    display: inline-flex;
+    border-bottom: 0.2rem solid $text-color-primary;
+    padding: 0rem;
+  }
 
-        &-top{
-            display: inline-flex;
-            border-top: .1rem solid $text-color-primary;
-            padding: 0rem;
-        }
+  &-cell {
+    border-top: 0.1rem solid $text-color-primary;
+    border-bottom: 0rem solid $text-color-primary;
+    width: 12rem;
+    padding: 0.4rem;
+  }
 
-        &-bottom{
-            display: inline-flex;
-            border-bottom: .2rem solid $text-color-primary;
-            padding: 0rem;
-        }
-    }
+  &-propertyCell {
+    border-right: 0rem solid $text-color-primary;
+    border-left: 0.2rem solid $text-color-primary;
+    font-weight: 700;
+  }
 
-    &-cell{
-        border-top: .1rem solid $text-color-primary;
-        border-bottom: .0rem solid $text-color-primary;
-        width: 12rem;
-        padding: .4rem;
-    }
-
-    &-propertyCell{
-        border-right: .0rem solid $text-color-primary;
-        border-left: .2rem solid $text-color-primary;
-        font-weight: 700;
-    }
-
-    &-valueCell{
-        border-right: .2rem solid $text-color-primary;
-        border-left: .1rem solid $text-color-primary;
-        text-align: center;
-    }
-
+  &-valueCell {
+    border-right: 0.2rem solid $text-color-primary;
+    border-left: 0.1rem solid $text-color-primary;
+    text-align: center;
+  }
 }
 
-@media(max-width: 620px){
-    .Country_data_table{
-      display: block;
-    }
-
-  
-} 
-
-
-
+@media (max-width: 620px) {
+  .Country_data_table {
+    display: block;
+  }
+}

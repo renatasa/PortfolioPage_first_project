@@ -1,11 +1,15 @@
 @import "../sass/variables";
 
 .aboutMe {
-  width: 94vw;
+  margin-top: 5rem;
   letter-spacing: 0.2rem;
   font-size: $default-font-size;
   color: #63707e;
   text-align: center;
+
+  h2 {
+    margin-top: 2rem;
+  }
 
   h3 {
     font-weight: 100;
@@ -39,6 +43,11 @@
         margin-left: 0.5rem;
         color: #63707e;
         backface-visibility: hidden;
+
+        a {
+          color: #63707e;
+          text-decoration: none;
+        }
       }
     }
 
@@ -116,6 +125,7 @@
   .aboutMe {
     h2 {
       line-height: 2.8rem;
+      margin-bottom: 2rem;
     }
 
     h3 {
@@ -143,6 +153,16 @@
           width: 12rem;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .aboutMe {
+    margin-top: 1rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
     }
   }
 }

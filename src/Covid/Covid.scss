@@ -1,52 +1,48 @@
-@import './scss/variables';
+@import "./scss/variables";
 
-.Covid{
-    width: 94vw;
-    
-    &-countryTables{
-            width: 100%;
-            display: flex;
-            justify-content: center;
+.Covid {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-countryTables {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &_dropdownCalendar {
+    display: flex;
+    justify-content: center;
+    font-size: $default-font-size;
+    color: $color-grey-dark-3;
+
+    &_item {
+      margin: 1rem;
     }
+  }
 
-    &_dropdownCalendar{
-        display: flex;
-        justify-content: center;
-        font-size: $default-font-size;
-        color: $color-grey-dark-3;
-
-        &_item{
-            margin: 1rem;
-        }
-    
-    }
-
-    &-charts{
-        margin-left: 20%;
-        width: 60%;
-    }
-
+  &-charts {
+    margin-left: 20%;
+    width: 60%;
+  }
 }
 
-@media(max-width: 750px){
-    .Covid{
-        &-charts{
-            width: 100%;
-            margin-left: 0%;
-        }
-    
+@media (max-width: 750px) {
+  .Covid {
+    &-charts {
+      width: 100%;
+      margin-left: 0%;
     }
-} 
+  }
+}
 
-@media(max-width: 620px){
-    .Covid{
-        &_dropdownCalendar{
-            flex-direction: column;
-            align-items: center;
-       }
-
+@media (max-width: 620px) {
+  .Covid {
+    &_dropdownCalendar {
+      flex-direction: column;
+      align-items: center;
     }
-
-  
-
-} 
+  }
+}

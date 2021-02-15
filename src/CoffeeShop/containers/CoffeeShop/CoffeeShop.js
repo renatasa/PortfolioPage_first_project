@@ -117,8 +117,7 @@ export class CoffeeShop extends Component {
           <ShoppingNavBar clicked={this.props.showShoppingSummaryModalAction} />
 
           <div ref={this.coffeeHomeRef}>
-            {" "}
-            <Header />{" "}
+            <Header />
           </div>
 
           <div className="shoppingItems" ref={this.exploreOurProductsRef}>
@@ -128,8 +127,7 @@ export class CoffeeShop extends Component {
             <h2 className="heading-2">Today's special offer</h2>
 
             <div ref={this.todaySpecialRef}>
-              {" "}
-              <TodaySpecial />{" "}
+              <TodaySpecial />
             </div>
 
             <Modal
