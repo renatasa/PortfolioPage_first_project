@@ -38,7 +38,7 @@ export class CoffeeShop extends Component {
     if (this.props.totalPrice) {
       this.props.onSubmitOrder(this.props.items, this.props.totalPrice);
     }
-    this.props.onFetchItems();
+    //  this.props.onFetchItems();
   };
 
   scrollTocoffeeHomeRef = () =>

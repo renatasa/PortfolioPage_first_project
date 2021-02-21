@@ -26,7 +26,6 @@ const shoppingSummary = (props) => {
         onClick={props.submitOrder}
         className="shoppingSummaryPrice__buttons-noButton"
       >
-        {" "}
         submit
       </button>
     );
@@ -36,8 +35,8 @@ const shoppingSummary = (props) => {
     <div>
       <div className="shoppingSummary"> {listItemsInCart} </div>
       <div className="shoppingSummaryPrice">
-        {" "}
-        Total price: {props.totalPrice} €{" "}
+
+        Total price: {props.totalPrice} €
       </div>
       <div className="shoppingSummaryPrice__buttons">
         <button

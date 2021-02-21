@@ -70,11 +70,25 @@ const submitOrderStart = (state, action) => {
 };
 
 const submitOrderSuccess = (state, action) => {
+  let itemsCopy = [];
+  let newObj = {};
+  let count = 0;
+  for (let i = 0; i < state.items.length; i++) {
+    newObj = {
+      name: state.items[i].name,
+      description: state.items[i].description,
+      price: state.items[i].price,
+      count: count,
+    };
+    itemsCopy.push(newObj);
+  }
   return {
     ...state,
+    items: itemsCopy,
     loading: false,
     submitOrderSuccess: true,
     submitOrderError: false,
+    totalPrice: 0,
   };
 };
 
@@ -97,26 +111,38 @@ const showShoppingSummaryModalReducer = (state, action) => {
 };
 
 const closeShoppingSummaryModalReducer = (state, action) => {
-  return { ...state, showShoppingSummaryModal: false };
+  return { ...state, showShoppingSummaryModal: false, submitOrderError: false };
 };
 
-const reducer=(state=initialState, action)=>{
-  switch(action.type){
-      case actionTypes.FETCH_ITEMS_START: return fetchItemsStart(state, action);
-      case actionTypes.FETCH_ITEMS_SUCCESS: return fetchItemsSuccess(state, action);
-      case actionTypes.FETCH_ITEMS_FAIL: return fetchItemsFail(state, action);
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case actionTypes.FETCH_ITEMS_START:
+      return fetchItemsStart(state, action);
+    case actionTypes.FETCH_ITEMS_SUCCESS:
+      return fetchItemsSuccess(state, action);
+    case actionTypes.FETCH_ITEMS_FAIL:
+      return fetchItemsFail(state, action);
 
-      case actionTypes.ADD_ITEM: return addItem(state, action);
-      case actionTypes.REMOVE_ITEM: return removeItem(state, action);
-      case actionTypes.SUBMIT_ORDER_START: return submitOrderStart(state, action);
-      case actionTypes.SUBMIT_ORDER_SUCCESS: return submitOrderSuccess(state, action);
-      case actionTypes.SUBMIT_ORDER_SUCCESS_FALSE: return submitOrderSuccessFalse(state, action);
-      case actionTypes.SUBMIT_ORDER_FAIL: return submitOrderFail(state, action);
-      case actionTypes.SHOW_SHOPPING_SUMMARY_MODAL_ACTION : return showShoppingSummaryModalReducer(state, action);
-      case actionTypes.CLOSE_SHOPPING_SUMMARY_MODAL_ACTION : return closeShoppingSummaryModalReducer(state, action);
+    case actionTypes.ADD_ITEM:
+      return addItem(state, action);
+    case actionTypes.REMOVE_ITEM:
+      return removeItem(state, action);
+    case actionTypes.SUBMIT_ORDER_START:
+      return submitOrderStart(state, action);
+    case actionTypes.SUBMIT_ORDER_SUCCESS:
+      return submitOrderSuccess(state, action);
+    case actionTypes.SUBMIT_ORDER_SUCCESS_FALSE:
+      return submitOrderSuccessFalse(state, action);
+    case actionTypes.SUBMIT_ORDER_FAIL:
+      return submitOrderFail(state, action);
+    case actionTypes.SHOW_SHOPPING_SUMMARY_MODAL_ACTION:
+      return showShoppingSummaryModalReducer(state, action);
+    case actionTypes.CLOSE_SHOPPING_SUMMARY_MODAL_ACTION:
+      return closeShoppingSummaryModalReducer(state, action);
 
-      default: return state;
+    default:
+      return state;
   }
-}
+};
 
 export default reducer;

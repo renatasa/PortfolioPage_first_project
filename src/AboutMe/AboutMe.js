@@ -40,6 +40,9 @@ const AboutMe = () => {
           <NavLink to="/stats">
             <div className="aboutMe__buttons-item">Statistics</div>
           </NavLink>
+          <NavLink to="/auth">
+            <div className="aboutMe__buttons-item">TodosApp</div>
+          </NavLink>
         </div>
       </div>
 
