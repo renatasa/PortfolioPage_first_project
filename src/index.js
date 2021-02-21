@@ -11,12 +11,16 @@ import fetchItemsReducer from "./CoffeeShop/store/reducers/fetchItems";
 import fetchOrdersReducer from "./CoffeeShop/store/reducers/fetchOrders";
 import reducer from "./Covid/store/reducer/reducer";
 import allCountriesData from "./Covid/store/reducer/allCountriesData";
+import authReducer from './AuthorisationTodos/Authorisation/store/reducers/auth';
+import todosReducer from './AuthorisationTodos/Todos/store/reducers/reducer';
 
 const rootReducer = combineReducers({
   fetchItems: fetchItemsReducer,
   fetchOrders: fetchOrdersReducer,
   countriesReducer: reducer,
   allCountriesDataReducer: allCountriesData,
+  auth: authReducer,
+  todos: todosReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

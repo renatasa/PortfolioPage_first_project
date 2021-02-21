@@ -8,7 +8,6 @@ export const fetchOrdersStart = () => {
 };
 
 export const fetchOrdersSuccess = (orders) => {
-  console.log("fetchOrders action creator, orders: ", orders);
   return {
     type: actionTypes.FETCH_ORDERS_SUCCESS,
     orders: orders,

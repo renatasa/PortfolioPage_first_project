@@ -32,7 +32,7 @@ export class MyOrders extends Component {
       <div className="totalOrders">
         <div className="totalOrders__button">
           <NavLink to="/coffeeShop/">
-            <IconButton classNameName="navBar__buttons-iconButton">
+            <IconButton className="navBar__buttons-iconButton">
               <ShoppingCartIcon className="navBar__buttons-btn" />
             </IconButton>
           </NavLink>

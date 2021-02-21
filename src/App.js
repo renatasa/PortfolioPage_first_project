@@ -5,6 +5,8 @@ import MyOrders from "./CoffeeShop/containers/MyOrders/MyOrders";
 import TodaySpecial from "./CoffeeShop/components/TodaySpecial/TodaySpecial";
 import AboutMe from "./AboutMe/AboutMe.js";
 import Covid from "./Covid/Covid.js";
+import Auth from './AuthorisationTodos/Authorisation/containers/auth/Auth';
+import Todos from './AuthorisationTodos/Todos/containers/Todo/todo';
 
 function App() {
   return (
@@ -25,6 +27,14 @@ function App() {
         <Route exact path="/coffeeShop/todaysSpecial">
           <TodaySpecial />
         </Route>
+
+        <Route exact path="/todos">
+            <Todos/>
+          </Route>
+
+          <Route exact path="/auth">
+            <Auth/>
+          </Route>
 
         <Route exact path="/">
           <AboutMe />
